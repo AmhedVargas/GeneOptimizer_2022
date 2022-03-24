@@ -1,0 +1,179 @@
+LOCUS     Gene_contruct     729bp ds-DNA     linear     24-Mar-2022
+DEFINITION     .
+ACCESSION     .
+VERSION     .
+SOURCE     .
+ORGANISM     C.elegans
+COMMENT     Codon Adaptation Index 0.305166464695551
+COMMENT     %GC 41
+COMMENT     Total number of piRNAs targeting this sequence 20
+COMMENT     21ur-8480 AAGCTCACACTGAAATTCAT
+COMMENT     21ur-5494 CACACTGAAATTCATTTGCA
+COMMENT     21ur-11552 CTGAAATTCATTTGCACTAC
+COMMENT     21ur-13536 TCATATGAAACGTCATGACT
+COMMENT     21ur-9758 AAACGTCATGACTTTTTCAA
+COMMENT     21ur-3432 TTTTTCAAATCAGCAATGCC
+COMMENT     (type2) 21ur-905 ATTCTTCAAAGATGACGGAA
+COMMENT     21ur-12123 TTCAAAGATGACGGAAATTA
+COMMENT     21ur-106 AAAGTTTGAAGGAGACACTT
+COMMENT     21ur-12439 AAATATTTTGGGGCATAAGT
+COMMENT     (type2) 21ur-2450 AATATTTTGGGGCATAAGTT
+COMMENT     21ur-12628 TTTTGGGGCATAAGTTAGAA
+COMMENT     21ur-10432 TCACACAATGTATATATCAT
+COMMENT     21ur-4075 CACACAATGTATATATCATG
+COMMENT     21ur-7244 TCATGGCAGATAAACAAAAA
+COMMENT     21ur-12730 AAACAAAAAAACGGTATCAA
+COMMENT     (type2) 21ur-9098 AACAAAAAAACGGTATCAAA
+COMMENT     21ur-11073 AGTCAACTTTAAAATTCGGC
+COMMENT     21ur-5637 AAATTCGGCATAACATTGAA
+COMMENT     21ur-12076 TTATCAACAAAATACTCCGA
+COMMENT     BsaI GGTCTC
+COMMENT     BsaIrev GAGACC
+COMMENT     SapI GCTCTTC
+COMMENT     SapIrev GAAGAGC
+COMMENT     Esp3I CGTCTC
+COMMENT     Esp3Irev GAGACG
+COMMENT     Generated using wormbuilder.dev
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     primer_bind     127..146
+                          /locus_tag="21ur-8480"
+                          /ApEinfo_label="21ur-8480"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     132..151
+                          /locus_tag="21ur-5494"
+                          /ApEinfo_label="21ur-5494"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     136..155
+                          /locus_tag="21ur-11552"
+                          /ApEinfo_label="21ur-11552"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     234..253
+                          /locus_tag="21ur-13536"
+                          /ApEinfo_label="21ur-13536"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     241..260
+                          /locus_tag="21ur-9758"
+                          /ApEinfo_label="21ur-9758"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     253..272
+                          /locus_tag="21ur-3432"
+                          /ApEinfo_label="21ur-3432"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     300..319
+                          /locus_tag="(type2) 21ur-905"
+                          /ApEinfo_label="(type2) 21ur-905"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     304..323
+                          /locus_tag="21ur-12123"
+                          /ApEinfo_label="21ur-12123"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     342..361
+                          /locus_tag="21ur-106"
+                          /ApEinfo_label="21ur-106"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     408..427
+                          /locus_tag="21ur-12439"
+                          /ApEinfo_label="21ur-12439"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     409..428
+                          /locus_tag="(type2) 21ur-2450"
+                          /ApEinfo_label="(type2) 21ur-2450"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     413..432
+                          /locus_tag="21ur-12628"
+                          /ApEinfo_label="21ur-12628"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     445..464
+                          /locus_tag="21ur-10432"
+                          /ApEinfo_label="21ur-10432"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     446..465
+                          /locus_tag="21ur-4075"
+                          /ApEinfo_label="21ur-4075"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     461..480
+                          /locus_tag="21ur-7244"
+                          /ApEinfo_label="21ur-7244"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     472..491
+                          /locus_tag="21ur-12730"
+                          /ApEinfo_label="21ur-12730"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     473..492
+                          /locus_tag="(type2) 21ur-9098"
+                          /ApEinfo_label="(type2) 21ur-9098"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     492..511
+                          /locus_tag="21ur-11073"
+                          /ApEinfo_label="21ur-11073"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     503..522
+                          /locus_tag="21ur-5637"
+                          /ApEinfo_label="21ur-5637"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     549..568
+                          /locus_tag="21ur-12076"
+                          /ApEinfo_label="21ur-12076"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     650..655
+                          /locus_tag="BsaIrev"
+                          /ApEinfo_label="BsaIrev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+ORIGIN
+     1 ATGAGAAGTT CTAAAGGAGA AGAACTCTTC ACCGGCGTTG TCCCCATCCT CGTAGAACTC
+    61 GATGGTGATG TGAATGGACA CAAATTTTCA GTGTCCGGAG AAGGAGAGGG CGATGCGACT
+   121 TATGGTAAGC TCACACTGAA ATTCATTTGC ACTACGGGAA AGCTTCCTGT CCCGTGGCCG
+   181 ACTCTTGTCA CAACTTTCTG CTACGGTGTG CAATGCTTCT CCAGATACCC TGATCATATG
+   241 AAACGTCATG ACTTTTTCAA ATCAGCAATG CCAGAAGGTT ATGTCCAAGA GCGAACTATA
+   301 TTCTTCAAAG ATGACGGAAA TTACAAAACT CGTGCAGAGG TAAAGTTTGA AGGAGACACT
+   361 TTGGTAAACA GAATCGAACT GAAAGGGATT GATTTCAAGG AAGATGGAAA TATTTTGGGG
+   421 CATAAGTTAG AATACAATTA TAATTCACAC AATGTATATA TCATGGCAGA TAAACAAAAA
+   481 AACGGTATCA AAGTCAACTT TAAAATTCGG CATAACATTG AAGATGGATC TGTGCAGTTG
+   541 GCTGACCATT ATCAACAAAA TACTCCGATT GGAGATGGAC CTGTACTGCT ACCAGACAAC
+   601 CACTATTTGT CGACACAGTC GGCTTTGTCG AAGGATCCAA ATGAGAAACG AGACCACATG
+   661 GTCTTGTTGG AATTTGTCAC TGCTGCAGGC ATTACACACG GAATGGATGA ATTGTACAAG
+   721 GGATCCTAA
+//
