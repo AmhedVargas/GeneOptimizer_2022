@@ -76,6 +76,12 @@ shinyServer(function(input, output, session) {
   ###########################################################################################
   #########################Functions#########################################################
   ###########################################################################################
+  ##Start by simple loading
+  #output$DynamicUserInterface <- renderUI({HTML("<b>Loading interface</b>")})
+  #output$DynamicUserInterface <- renderUI({uiOutput("AllResults")})
+  #output$AllResults <- renderUI({fluidRow(uiOutput("button4later"))})
+    
+  #output$button4later <- renderUI({HTML("<b>Loading results ...</b>")})
   
   #########################Codon usage related###############################################
   ##Sample a codon
@@ -1278,7 +1284,6 @@ shinyServer(function(input, output, session) {
         #SeqtoOpt <- .
         ###Also, it seems future forgets about all variables created previously which makes sense
         ###THis allows to add dynamic outputs
-        
         output$DynamicUserInterface <- renderUI({uiOutput("AllResults")})
         ###Send custom messages to stop status
         session$sendCustomMessage("submitted-job", FALSE)
@@ -1532,7 +1537,6 @@ shinyServer(function(input, output, session) {
     }
     
   })##ENd main observer 
-  
   
   }) ####End of shiny server function
     

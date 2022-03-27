@@ -14,12 +14,50 @@ library(shinythemes)
 library(shinyWidgets)
 library(shinyjs)
 library(DT)
+
+####ExternalFunction
+busyIndicator <- function(text = "Server is worming up... Please wait", wait=2000) {
+  shiny::tagList(
+    shiny::div(class="loadbanner",id="loadmessage",text,img(src="elegans3.gif"))
+    ,shiny::tags$script(sprintf(
+      " setInterval(function(){
+         if ($('html').hasClass('shiny-busy')) {
+          setTimeout(function() {
+            if ($('html').hasClass('shiny-busy')) {
+              $('div.loadbanner').show()
+            }
+          }, %d)          
+        } else {
+          $('div.loadbanner').hide()
+        }
+      },100)
+      ",wait)
+    )
+  ) 
+}
+
 # Define User interface
 shinyUI(
     fluidPage(
       tags$head(
         tags$link(rel="stylesheet",type = "text/css", href="bootstrap.min.css")
       ),
+      ###Loading message
+      tags$head(tags$style(type="text/css", "
+             #loadmessage {
+               position: fixed;
+               top: 60px;
+               left: 0px;
+               width: 100%;
+               padding: 5px 0px 5px 0px;
+               text-align: center;
+               font-weight: bold;
+               font-size: 100%;
+               color: #000000;
+               background-color: #D3D3D3;
+               z-index: 105;
+             }
+          ")),
     ##Custom extra styles: single sliders background and title of navbar  
     tags$style(type = 'text/css', 
                ".js-irs-none .irs-single, .js-irs-none .irs-bar-edge, .js-irs-none .irs-bar {
@@ -58,7 +96,8 @@ Shiny.addCustomMessageHandler('JobStatusMessage', function(JobMessage) {
       });
     "),
     tags$style(type='text/css', '#PartialResult {white-space: pre-wrap;}'),
-    #Main tab pages
+#Main tab pages
+busyIndicator(),
     navbarPage(
       title=actionLink("link_to_tabpanel_sequenceadaptation", HTML("<b>Wormbuilder</b>")),
       windowTitle="WormBuilder transgenic tools",
