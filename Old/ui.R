@@ -95,6 +95,7 @@ Shiny.addCustomMessageHandler('JobStatusMessage', function(JobMessage) {
   document.getElementById(\"jobstat\").innerText = JobMessage;
       });
     "),
+    tags$style(type='text/css', '#PartialResult {white-space: pre-wrap;}'),
 #Main tab pages
 busyIndicator(),
     navbarPage(

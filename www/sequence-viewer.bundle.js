@@ -9565,10 +9565,10 @@ return jQuery2;
 
         function addSequenceSearch(inHeader) {
             if (inHeader){
-                $(divID + " .sequenceHeader").append('<input class=\"inputSearchSeq form-control pull-right\" type=\"text\" style=\"width:40%;margin-top: 3px;\" placeholder=\"Search in sequence.. (Regex not supported)\">');
+                $(divID + " .sequenceHeader").append('<input class=\"inputSearchSeq form-control pull-right\" type=\"text\" style=\"width:40%;margin-top: 3px;\" placeholder=\"Search in sequence\">');
             }
             else{
-                $(divID + " .sequenceBody").prepend('<input class=\"inputSearchSeq form-control\" type=\"text\" style=\"width:100%;margin:3px auto 10px;\" placeholder=\"Search in sequence.. (Regex not supported)\">');
+                $(divID + " .sequenceBody").prepend('<input class=\"inputSearchSeq form-control\" type=\"text\" style=\"width:100%;margin:3px auto 10px;\" placeholder=\"Search in sequence\">');
             }
             sequenceSearch();
 

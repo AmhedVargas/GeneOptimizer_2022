@@ -1,0 +1,63 @@
+LOCUS     Gene_contruct     729bp ds-DNA     linear     30-Mar-2022
+DEFINITION     .
+ACCESSION     .
+VERSION     .
+SOURCE     .
+ORGANISM     C.elegans
+COMMENT     Codon Adaptation Index 1
+COMMENT     %GC 56
+COMMENT     Total number of piRNAs targeting this sequence 3
+COMMENT     BsaI GGTCTC
+COMMENT     BsaIrev GAGACC
+COMMENT     SapI GCTCTTC
+COMMENT     SapIrev GAAGAGC
+COMMENT     Esp3I CGTCTC
+COMMENT     Esp3Irev GAGACG
+COMMENT     Generated using wormbuilder.dev
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     primer_bind     24..30
+                          /locus_tag="SapI"
+                          /ApEinfo_label="SapI"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     90..95
+                          /locus_tag="Esp3I"
+                          /ApEinfo_label="Esp3I"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     65..70
+                          /locus_tag="Esp3Irev"
+                          /ApEinfo_label="Esp3Irev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     110..115
+                          /locus_tag="Esp3Irev"
+                          /ApEinfo_label="Esp3Irev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     572..577
+                          /locus_tag="Esp3Irev"
+                          /ApEinfo_label="Esp3Irev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+ORIGIN
+     1 ATGCGTTCCT CCAAGGGAGA GGAGCTCTTC ACCGGAGTCG TCCCAATCCT CGTCGAGCTC
+    61 GACGGAGACG TCAACGGACA CAAGTTCTCC GTCTCCGGAG AGGGAGAGGG AGACGCCACC
+   121 TACGGAAAGC TCACCCTCAA GTTCATCTGC ACCACCGGAA AGCTCCCAGT CCCATGGCCA
+   181 ACCCTCGTCA CCACCTTCTG CTACGGAGTC CAATGCTTCT CCCGTTACCC AGACCACATG
+   241 AAGCGTCACG ACTTCTTCAA GTCCGCCATG CCAGAGGGAT ACGTCCAAGA GCGTACCATC
+   301 TTCTTCAAGG ACGACGGAAA CTACAAGACC CGTGCCGAGG TCAAGTTCGA GGGAGACACC
+   361 CTCGTCAACC GTATCGAGCT CAAGGGAATC GACTTCAAGG AGGACGGAAA CATCCTCGGA
+   421 CACAAGCTCG AGTACAACTA CAACTCCCAC AACGTCTACA TCATGGCCGA CAAGCAAAAG
+   481 AACGGAATCA AGGTCAACTT CAAGATCCGT CACAACATCG AGGACGGATC CGTCCAACTC
+   541 GCCGACCACT ACCAACAAAA CACCCCAATC GGAGACGGAC CAGTCCTCCT CCCAGACAAC
+   601 CACTACCTCT CCACCCAATC CGCCCTCTCC AAGGACCCAA ACGAGAAGCG TGACCACATG
+   661 GTCCTCCTCG AGTTCGTCAC CGCCGCCGGA ATCACCCACG GAATGGACGA GCTCTACAAG
+   721 GGATCCTAG
+//

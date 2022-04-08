@@ -1,0 +1,47 @@
+LOCUS     Gene_contruct     881bp ds-DNA     linear     -Apr-14:55:43
+DEFINITION     .
+ACCESSION     .
+VERSION     .
+SOURCE     .
+ORGANISM     C.elegans
+COMMENT     Codon Adaptation Index 
+COMMENT     %GC 40
+COMMENT     Total number of piRNAs targeting this sequence 21
+COMMENT     BsaI GGTCTC
+COMMENT     BsaIrev GAGACC
+COMMENT     SapI GCTCTTC
+COMMENT     SapIrev GAAGAGC
+COMMENT     Esp3I CGTCTC
+COMMENT     Esp3Irev GAGACG
+COMMENT     Generated using wormbuilder.dev
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     primer_bind     120..126
+                          /locus_tag="SapI"
+                          /ApEinfo_label="SapI"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     115..121
+                          /locus_tag="SapIrev"
+                          /ApEinfo_label="SapIrev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+ORIGIN
+     1 CCGGGATTGG CCAAAGGACC CAAAGgtatg tttcgaatga tactaacata acatagaaca
+    61 ttttcagGAG GACCCTTGGA GGGTACCGGT AGaaaaATGA GATCAAGTAA AGGGGAAGAG
+   121 CTCTTCACAG GAGTTGTGCC AATCCTAGTC GAGCTTGATG GAGATGTAAA TGGACACAAA
+   181 TTTTCAGTTT CAGGTGAAGG AGAAGGAGAT GCTACATATG GTAAATTGAC GCTGAAATTC
+   241 ATATGTACCA CTGGAAAGCT CCCAGTCCCT TGGCCAACAT TAGTCACAAC TTTCTGTTAT
+   301 GGAGTGCAAT GCTTCTCTCG ATATCCCGAT CACATGAAAC GGCATGACTT TTTTAAGTCG
+   361 GCTATGCCTG AGGGCTACGT TCAGGAAAGA ACCATTTTTT TCAAGGATGA CGGCAATTAC
+   421 AAGACACGAG CGGAAGTGAA ATTCGAAGGA GATACATTGG TAAACCGAAT CGAGCTCAAA
+   481 GGAATCGACT TCAAAGAAGA CGGGAATATT CTTGGACATA AGTTAGAATA TAATTATAAT
+   541 TCTCATAACG TTTACATTAT GGCCGATAAA CAAAAAAATG GAATCAAAGT GAATTTTAAG
+   601 ATTCGGCACA ATATTGAGGA TGGGTCAGTG CAACTCGCCG ATCATTATCA ACAAAACACA
+   661 CCCATTGGTG ATGGACCAGT TTTATTACCA GATAATCATT ACTTAAGCAC ACAGTCAGCA
+   721 TTGTCAAAAG ACCCGAACGA AAAGAGAGAT CATATGGTGC TCCTAGAATT CGTGACCGCA
+   781 GCTGGAATCA CACATGGAAT GGACGAGCTT TACAAAGGGT CATGAtctta taatttcatt
+   841 gttatgtcgc attgcgataa atgttaaaat taaaaaactt c
+//
