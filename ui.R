@@ -16,7 +16,7 @@ library(shinyjs)
 library(DT)
 
 ####ExternalFunction
-busyIndicator <- function(text = "Server is worming up... Please wait", wait=2000) {
+busyIndicator <- function(text = "Loading...", wait=2000) {
   shiny::tagList(
     shiny::div(class="loadbanner",id="loadmessage",text,img(src="elegans3.gif"))
     ,shiny::tags$script(sprintf(

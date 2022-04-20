@@ -1,0 +1,71 @@
+LOCUS     Optimized_Input sequence     1066bp ds-DNA     linear     18-Apr-2022
+DEFINITION     .
+ACCESSION     .
+VERSION     .
+SOURCE     .
+ORGANISM     C.elegans
+COMMENT     Optimized_Input sequence
+COMMENT     Codon Adaptation Index 
+COMMENT     %GC 48
+COMMENT     piRNAs sites with less than 4 mismatches seen in this sequence 3
+COMMENT     Input sequence: ATGAGATCCAGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTGTTATGGTGTTCAATGCTTCTCGAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGCGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGACCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAAGGATCTTAA
+COMMENT     Optimization routine: Redemann et al. (2011)
+COMMENT     RBS optimization: No
+COMMENT     Remove piRNA sites: No
+COMMENT     Remove RE sites: No
+COMMENT     Add introns: Yes
+COMMENT     Add UTRs: Yes
+COMMENT     Add consensus start site: Yes
+COMMENT     BsaI GGTCTC
+COMMENT     BsaIrev GAGACC
+COMMENT     SapI GCTCTTC
+COMMENT     SapIrev GAAGAGC
+COMMENT     Esp3I CGTCTC
+COMMENT     Esp3Irev GAGACG
+COMMENT     Generated using wormbuilder.dev
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     primer_bind     120..126
+                          /locus_tag="SapI"
+                          /ApEinfo_label="SapI"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     261..266
+                          /locus_tag="Esp3I"
+                          /ApEinfo_label="Esp3I"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     281..286
+                          /locus_tag="Esp3Irev"
+                          /ApEinfo_label="Esp3Irev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     853..858
+                          /locus_tag="Esp3Irev"
+                          /ApEinfo_label="Esp3Irev"
+                     /ApEinfo_fwdcolor="purple"
+                     /ApEinfo_revcolor="purple"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+ORIGIN
+     1 ccgggattgg ccaaaggacc caaaggtatg tttcgaatga tactaacata acatagaaca
+    61 ttttcaggag gacccttgga gggtaccggt agaaaaATGC GTTCCTCCAA GGGAGAGGAG
+   121 CTCTTCACCG GAGTCGTCCC AATCCTCGTC GAGCTCGACG GAGgtgagtt ttattatcga
+   181 ttttcgggat tttctacttg taattacctt ttgtttttaa taagttgctt ttttccagAC
+   241 GTCAACGGAC ACAAGTTCTC CGTCTCCGGA GAGGGAGAGG GAGACGCCAC CTACGGAAAG
+   301 CTCACCCTCA AGTTCATCTG CACCACCGGA AAGCTCCCAG TCCCATGGCC AACCCTCGTC
+   361 ACCACCTTCT GCTACGGAGT CCAATGCTTC TCCCGTTACC CAGgtaggtt ttcagtttca
+   421 atttttgttg caactacctc aactctatgt tttcagACCA CATGAAGCGT CACGACTTCT
+   481 TCAAGTCCGC CATGCCAGAG GGATACGTCC AAGAGCGTAC CATCTTCTTC AAGGACGACG
+   541 GAAACTACAA GACCCGTGCC GAGGTCAAGT TCGAGGGAGA CACCCTCGTC AACCGTATCG
+   601 AGCTCAAGgt aaatttttca agcttctaaa ttccaaaata aaccatttta atttcttaat
+   661 tccagGGAAT CGACTTCAAG GAGGACGGAA ACATCCTCGG ACACAAGCTC GAGTACAACT
+   721 ACAACTCCCA CAACGTCTAC ATCATGGCCG ACAAGCAAAA GAACGGAATC AAGGTCAACT
+   781 TCAAGATCCG TCACAACATC GAGGACGGAT CCGTCCAACT CGCCGACCAC TACCAACAAA
+   841 ACACCCCAAT CGGAGACGGA CCAGTCCTCC TCCCAGACAA CCACTACCTC TCCACCCAAT
+   901 CCGCCCTCTC CAAGGACCCA AACGAGAAGC GTGACCACAT GGTCCTCCTC GAGTTCGTCA
+   961 CCGCCGCCGG AATCACCCAC GGAATGGACG AGCTCTACAA GGGATCCTAA tcttataatt
+  1021 tcattgttat gtcgcattgc gataaatgtt aaaattaaaa aacttc
+//

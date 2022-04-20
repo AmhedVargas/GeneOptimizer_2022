@@ -15362,2488 +15362,2488 @@
 21ur-15257
 21ur-15508
 21ur-14885
-21ur-1 (type 2)
-21ur-2 (type 2)
-21ur-3 (type 2)
-21ur-4 (type 2)
-21ur-5 (type 2)
-21ur-7 (type 2)
-21ur-8 (type 2)
-21ur-9 (type 2)
-21ur-11 (type 2)
-21ur-12 (type 2)
-21ur-14 (type 2)
-21ur-15 (type 2)
-21ur-16 (type 2)
-21ur-17 (type 2)
-21ur-18 (type 2)
-21ur-19 (type 2)
-21ur-21 (type 2)
-21ur-22 (type 2)
-21ur-24 (type 2)
-21ur-25 (type 2)
-21ur-26 (type 2)
-21ur-27 (type 2)
-21ur-28 (type 2)
-21ur-29 (type 2)
-21ur-30 (type 2)
-21ur-32 (type 2)
-21ur-33 (type 2)
-21ur-34 (type 2)
-21ur-35 (type 2)
-21ur-37 (type 2)
-21ur-39 (type 2)
-21ur-40 (type 2)
-21ur-41 (type 2)
-21ur-42 (type 2)
-21ur-43 (type 2)
-21ur-45 (type 2)
-21ur-46 (type 2)
-21ur-48 (type 2)
-21ur-49 (type 2)
-21ur-50 (type 2)
-21ur-51 (type 2)
-21ur-52 (type 2)
-21ur-53 (type 2)
-21ur-54 (type 2)
-21ur-55 (type 2)
-21ur-56 (type 2)
-21ur-57 (type 2)
-21ur-58 (type 2)
-21ur-59 (type 2)
-21ur-60 (type 2)
-21ur-61 (type 2)
-21ur-62 (type 2)
-21ur-63 (type 2)
-21ur-64 (type 2)
-21ur-65 (type 2)
-21ur-66 (type 2)
-21ur-67 (type 2)
-21ur-68 (type 2)
-21ur-69 (type 2)
-21ur-70 (type 2)
-21ur-71 (type 2)
-21ur-73 (type 2)
-21ur-74 (type 2)
-21ur-75 (type 2)
-21ur-76 (type 2)
-21ur-78 (type 2)
-21ur-79 (type 2)
-21ur-80 (type 2)
-21ur-82 (type 2)
-21ur-83 (type 2)
-21ur-84 (type 2)
-21ur-85 (type 2)
-21ur-87 (type 2)
-21ur-89 (type 2)
-21ur-90 (type 2)
-21ur-92 (type 2)
-21ur-93 (type 2)
-21ur-95 (type 2)
-21ur-96 (type 2)
-21ur-97 (type 2)
-21ur-99 (type 2)
-21ur-100 (type 2)
-21ur-101 (type 2)
-21ur-102 (type 2)
-21ur-103 (type 2)
-21ur-104 (type 2)
-21ur-105 (type 2)
-21ur-106 (type 2)
-21ur-107 (type 2)
-21ur-109 (type 2)
-21ur-110 (type 2)
-21ur-111 (type 2)
-21ur-113 (type 2)
-21ur-114 (type 2)
-21ur-115 (type 2)
-21ur-116 (type 2)
-21ur-118 (type 2)
-21ur-119 (type 2)
-21ur-120 (type 2)
-21ur-121 (type 2)
-21ur-122 (type 2)
-21ur-123 (type 2)
-21ur-124 (type 2)
-21ur-125 (type 2)
-21ur-126 (type 2)
-21ur-127 (type 2)
-21ur-128 (type 2)
-21ur-130 (type 2)
-21ur-131 (type 2)
-21ur-132 (type 2)
-21ur-133 (type 2)
-21ur-134 (type 2)
-21ur-135 (type 2)
-21ur-136 (type 2)
-21ur-137 (type 2)
-21ur-138 (type 2)
-21ur-139 (type 2)
-21ur-140 (type 2)
-21ur-141 (type 2)
-21ur-143 (type 2)
-21ur-144 (type 2)
-21ur-145 (type 2)
-21ur-147 (type 2)
-21ur-149 (type 2)
-21ur-150 (type 2)
-21ur-151 (type 2)
-21ur-153 (type 2)
-21ur-156 (type 2)
-21ur-158 (type 2)
-21ur-159 (type 2)
-21ur-160 (type 2)
-21ur-161 (type 2)
-21ur-162 (type 2)
-21ur-163 (type 2)
-21ur-164 (type 2)
-21ur-165 (type 2)
-21ur-166 (type 2)
-21ur-167 (type 2)
-21ur-168 (type 2)
-21ur-169 (type 2)
-21ur-170 (type 2)
-21ur-171 (type 2)
-21ur-172 (type 2)
-21ur-173 (type 2)
-21ur-174 (type 2)
-21ur-175 (type 2)
-21ur-177 (type 2)
-21ur-178 (type 2)
-21ur-179 (type 2)
-21ur-183 (type 2)
-21ur-184 (type 2)
-21ur-185 (type 2)
-21ur-188 (type 2)
-21ur-189 (type 2)
-21ur-191 (type 2)
-21ur-192 (type 2)
-21ur-193 (type 2)
-21ur-194 (type 2)
-21ur-195 (type 2)
-21ur-196 (type 2)
-21ur-197 (type 2)
-21ur-198 (type 2)
-21ur-199 (type 2)
-21ur-200 (type 2)
-21ur-201 (type 2)
-21ur-202 (type 2)
-21ur-203 (type 2)
-21ur-204 (type 2)
-21ur-205 (type 2)
-21ur-206 (type 2)
-21ur-207 (type 2)
-21ur-208 (type 2)
-21ur-211 (type 2)
-21ur-212 (type 2)
-21ur-214 (type 2)
-21ur-216 (type 2)
-21ur-218 (type 2)
-21ur-219 (type 2)
-21ur-220 (type 2)
-21ur-221 (type 2)
-21ur-222 (type 2)
-21ur-223 (type 2)
-21ur-224 (type 2)
-21ur-226 (type 2)
-21ur-227 (type 2)
-21ur-229 (type 2)
-21ur-231 (type 2)
-21ur-232 (type 2)
-21ur-233 (type 2)
-21ur-234 (type 2)
-21ur-235 (type 2)
-21ur-236 (type 2)
-21ur-237 (type 2)
-21ur-238 (type 2)
-21ur-239 (type 2)
-21ur-240 (type 2)
-21ur-244 (type 2)
-21ur-245 (type 2)
-21ur-246 (type 2)
-21ur-248 (type 2)
-21ur-250 (type 2)
-21ur-251 (type 2)
-21ur-253 (type 2)
-21ur-254 (type 2)
-21ur-255 (type 2)
-21ur-257 (type 2)
-21ur-258 (type 2)
-21ur-259 (type 2)
-21ur-260 (type 2)
-21ur-264 (type 2)
-21ur-265 (type 2)
-21ur-266 (type 2)
-21ur-267 (type 2)
-21ur-268 (type 2)
-21ur-269 (type 2)
-21ur-270 (type 2)
-21ur-279 (type 2)
-21ur-280 (type 2)
-21ur-281 (type 2)
-21ur-282 (type 2)
-21ur-283 (type 2)
-21ur-285 (type 2)
-21ur-286 (type 2)
-21ur-287 (type 2)
-21ur-288 (type 2)
-21ur-289 (type 2)
-21ur-290 (type 2)
-21ur-292 (type 2)
-21ur-296 (type 2)
-21ur-298 (type 2)
-21ur-302 (type 2)
-21ur-304 (type 2)
-21ur-305 (type 2)
-21ur-306 (type 2)
-21ur-307 (type 2)
-21ur-310 (type 2)
-21ur-312 (type 2)
-21ur-313 (type 2)
-21ur-314 (type 2)
-21ur-315 (type 2)
-21ur-316 (type 2)
-21ur-317 (type 2)
-21ur-319 (type 2)
-21ur-320 (type 2)
-21ur-321 (type 2)
-21ur-323 (type 2)
-21ur-324 (type 2)
-21ur-328 (type 2)
-21ur-329 (type 2)
-21ur-330 (type 2)
-21ur-331 (type 2)
-21ur-332 (type 2)
-21ur-333 (type 2)
-21ur-334 (type 2)
-21ur-335 (type 2)
-21ur-337 (type 2)
-21ur-338 (type 2)
-21ur-339 (type 2)
-21ur-340 (type 2)
-21ur-341 (type 2)
-21ur-342 (type 2)
-21ur-343 (type 2)
-21ur-344 (type 2)
-21ur-345 (type 2)
-21ur-348 (type 2)
-21ur-350 (type 2)
-21ur-352 (type 2)
-21ur-355 (type 2)
-21ur-356 (type 2)
-21ur-359 (type 2)
-21ur-360 (type 2)
-21ur-361 (type 2)
-21ur-362 (type 2)
-21ur-363 (type 2)
-21ur-364 (type 2)
-21ur-365 (type 2)
-21ur-366 (type 2)
-21ur-368 (type 2)
-21ur-369 (type 2)
-21ur-371 (type 2)
-21ur-372 (type 2)
-21ur-376 (type 2)
-21ur-377 (type 2)
-21ur-380 (type 2)
-21ur-381 (type 2)
-21ur-382 (type 2)
-21ur-383 (type 2)
-21ur-385 (type 2)
-21ur-388 (type 2)
-21ur-389 (type 2)
-21ur-391 (type 2)
-21ur-392 (type 2)
-21ur-393 (type 2)
-21ur-394 (type 2)
-21ur-396 (type 2)
-21ur-399 (type 2)
-21ur-400 (type 2)
-21ur-402 (type 2)
-21ur-403 (type 2)
-21ur-404 (type 2)
-21ur-405 (type 2)
-21ur-406 (type 2)
-21ur-408 (type 2)
-21ur-409 (type 2)
-21ur-410 (type 2)
-21ur-412 (type 2)
-21ur-414 (type 2)
-21ur-417 (type 2)
-21ur-418 (type 2)
-21ur-419 (type 2)
-21ur-420 (type 2)
-21ur-423 (type 2)
-21ur-424 (type 2)
-21ur-431 (type 2)
-21ur-432 (type 2)
-21ur-433 (type 2)
-21ur-434 (type 2)
-21ur-436 (type 2)
-21ur-438 (type 2)
-21ur-439 (type 2)
-21ur-442 (type 2)
-21ur-443 (type 2)
-21ur-445 (type 2)
-21ur-446 (type 2)
-21ur-450 (type 2)
-21ur-451 (type 2)
-21ur-452 (type 2)
-21ur-453 (type 2)
-21ur-454 (type 2)
-21ur-455 (type 2)
-21ur-458 (type 2)
-21ur-459 (type 2)
-21ur-460 (type 2)
-21ur-461 (type 2)
-21ur-462 (type 2)
-21ur-463 (type 2)
-21ur-464 (type 2)
-21ur-467 (type 2)
-21ur-468 (type 2)
-21ur-469 (type 2)
-21ur-472 (type 2)
-21ur-473 (type 2)
-21ur-477 (type 2)
-21ur-478 (type 2)
-21ur-480 (type 2)
-21ur-481 (type 2)
-21ur-482 (type 2)
-21ur-484 (type 2)
-21ur-485 (type 2)
-21ur-486 (type 2)
-21ur-493 (type 2)
-21ur-495 (type 2)
-21ur-496 (type 2)
-21ur-497 (type 2)
-21ur-498 (type 2)
-21ur-499 (type 2)
-21ur-502 (type 2)
-21ur-503 (type 2)
-21ur-504 (type 2)
-21ur-505 (type 2)
-21ur-506 (type 2)
-21ur-507 (type 2)
-21ur-508 (type 2)
-21ur-510 (type 2)
-21ur-511 (type 2)
-21ur-512 (type 2)
-21ur-513 (type 2)
-21ur-514 (type 2)
-21ur-515 (type 2)
-21ur-518 (type 2)
-21ur-519 (type 2)
-21ur-520 (type 2)
-21ur-521 (type 2)
-21ur-523 (type 2)
-21ur-524 (type 2)
-21ur-525 (type 2)
-21ur-526 (type 2)
-21ur-528 (type 2)
-21ur-530 (type 2)
-21ur-531 (type 2)
-21ur-532 (type 2)
-21ur-533 (type 2)
-21ur-534 (type 2)
-21ur-543 (type 2)
-21ur-544 (type 2)
-21ur-546 (type 2)
-21ur-547 (type 2)
-21ur-549 (type 2)
-21ur-550 (type 2)
-21ur-553 (type 2)
-21ur-554 (type 2)
-21ur-555 (type 2)
-21ur-556 (type 2)
-21ur-558 (type 2)
-21ur-560 (type 2)
-21ur-561 (type 2)
-21ur-562 (type 2)
-21ur-563 (type 2)
-21ur-564 (type 2)
-21ur-566 (type 2)
-21ur-567 (type 2)
-21ur-568 (type 2)
-21ur-569 (type 2)
-21ur-570 (type 2)
-21ur-572 (type 2)
-21ur-574 (type 2)
-21ur-576 (type 2)
-21ur-579 (type 2)
-21ur-580 (type 2)
-21ur-581 (type 2)
-21ur-583 (type 2)
-21ur-585 (type 2)
-21ur-586 (type 2)
-21ur-587 (type 2)
-21ur-588 (type 2)
-21ur-594 (type 2)
-21ur-595 (type 2)
-21ur-599 (type 2)
-21ur-600 (type 2)
-21ur-603 (type 2)
-21ur-604 (type 2)
-21ur-605 (type 2)
-21ur-606 (type 2)
-21ur-609 (type 2)
-21ur-611 (type 2)
-21ur-612 (type 2)
-21ur-614 (type 2)
-21ur-615 (type 2)
-21ur-616 (type 2)
-21ur-617 (type 2)
-21ur-618 (type 2)
-21ur-619 (type 2)
-21ur-624 (type 2)
-21ur-625 (type 2)
-21ur-628 (type 2)
-21ur-634 (type 2)
-21ur-636 (type 2)
-21ur-639 (type 2)
-21ur-642 (type 2)
-21ur-644 (type 2)
-21ur-645 (type 2)
-21ur-651 (type 2)
-21ur-652 (type 2)
-21ur-655 (type 2)
-21ur-657 (type 2)
-21ur-661 (type 2)
-21ur-662 (type 2)
-21ur-664 (type 2)
-21ur-665 (type 2)
-21ur-667 (type 2)
-21ur-669 (type 2)
-21ur-670 (type 2)
-21ur-671 (type 2)
-21ur-672 (type 2)
-21ur-673 (type 2)
-21ur-675 (type 2)
-21ur-676 (type 2)
-21ur-679 (type 2)
-21ur-681 (type 2)
-21ur-682 (type 2)
-21ur-683 (type 2)
-21ur-686 (type 2)
-21ur-688 (type 2)
-21ur-689 (type 2)
-21ur-690 (type 2)
-21ur-691 (type 2)
-21ur-692 (type 2)
-21ur-699 (type 2)
-21ur-700 (type 2)
-21ur-706 (type 2)
-21ur-707 (type 2)
-21ur-709 (type 2)
-21ur-711 (type 2)
-21ur-712 (type 2)
-21ur-713 (type 2)
-21ur-718 (type 2)
-21ur-722 (type 2)
-21ur-723 (type 2)
-21ur-725 (type 2)
-21ur-727 (type 2)
-21ur-730 (type 2)
-21ur-731 (type 2)
-21ur-733 (type 2)
-21ur-734 (type 2)
-21ur-735 (type 2)
-21ur-739 (type 2)
-21ur-740 (type 2)
-21ur-741 (type 2)
-21ur-742 (type 2)
-21ur-745 (type 2)
-21ur-746 (type 2)
-21ur-747 (type 2)
-21ur-749 (type 2)
-21ur-750 (type 2)
-21ur-751 (type 2)
-21ur-752 (type 2)
-21ur-753 (type 2)
-21ur-754 (type 2)
-21ur-757 (type 2)
-21ur-758 (type 2)
-21ur-759 (type 2)
-21ur-760 (type 2)
-21ur-764 (type 2)
-21ur-767 (type 2)
-21ur-768 (type 2)
-21ur-772 (type 2)
-21ur-773 (type 2)
-21ur-775 (type 2)
-21ur-777 (type 2)
-21ur-778 (type 2)
-21ur-781 (type 2)
-21ur-783 (type 2)
-21ur-788 (type 2)
-21ur-789 (type 2)
-21ur-790 (type 2)
-21ur-791 (type 2)
-21ur-794 (type 2)
-21ur-795 (type 2)
-21ur-796 (type 2)
-21ur-797 (type 2)
-21ur-798 (type 2)
-21ur-800 (type 2)
-21ur-801 (type 2)
-21ur-802 (type 2)
-21ur-803 (type 2)
-21ur-807 (type 2)
-21ur-808 (type 2)
-21ur-811 (type 2)
-21ur-812 (type 2)
-21ur-814 (type 2)
-21ur-817 (type 2)
-21ur-818 (type 2)
-21ur-819 (type 2)
-21ur-821 (type 2)
-21ur-822 (type 2)
-21ur-824 (type 2)
-21ur-825 (type 2)
-21ur-828 (type 2)
-21ur-829 (type 2)
-21ur-831 (type 2)
-21ur-832 (type 2)
-21ur-833 (type 2)
-21ur-834 (type 2)
-21ur-835 (type 2)
-21ur-836 (type 2)
-21ur-838 (type 2)
-21ur-839 (type 2)
-21ur-840 (type 2)
-21ur-843 (type 2)
-21ur-846 (type 2)
-21ur-849 (type 2)
-21ur-851 (type 2)
-21ur-854 (type 2)
-21ur-860 (type 2)
-21ur-861 (type 2)
-21ur-862 (type 2)
-21ur-864 (type 2)
-21ur-866 (type 2)
-21ur-868 (type 2)
-21ur-869 (type 2)
-21ur-870 (type 2)
-21ur-871 (type 2)
-21ur-872 (type 2)
-21ur-873 (type 2)
-21ur-878 (type 2)
-21ur-879 (type 2)
-21ur-882 (type 2)
-21ur-883 (type 2)
-21ur-886 (type 2)
-21ur-889 (type 2)
-21ur-892 (type 2)
-21ur-895 (type 2)
-21ur-897 (type 2)
-21ur-898 (type 2)
-21ur-899 (type 2)
-21ur-900 (type 2)
-21ur-901 (type 2)
-21ur-905 (type 2)
-21ur-906 (type 2)
-21ur-907 (type 2)
-21ur-909 (type 2)
-21ur-910 (type 2)
-21ur-911 (type 2)
-21ur-913 (type 2)
-21ur-916 (type 2)
-21ur-917 (type 2)
-21ur-919 (type 2)
-21ur-920 (type 2)
-21ur-921 (type 2)
-21ur-922 (type 2)
-21ur-923 (type 2)
-21ur-930 (type 2)
-21ur-932 (type 2)
-21ur-934 (type 2)
-21ur-936 (type 2)
-21ur-939 (type 2)
-21ur-944 (type 2)
-21ur-945 (type 2)
-21ur-947 (type 2)
-21ur-948 (type 2)
-21ur-951 (type 2)
-21ur-955 (type 2)
-21ur-957 (type 2)
-21ur-958 (type 2)
-21ur-965 (type 2)
-21ur-967 (type 2)
-21ur-968 (type 2)
-21ur-970 (type 2)
-21ur-972 (type 2)
-21ur-977 (type 2)
-21ur-980 (type 2)
-21ur-981 (type 2)
-21ur-984 (type 2)
-21ur-987 (type 2)
-21ur-988 (type 2)
-21ur-989 (type 2)
-21ur-990 (type 2)
-21ur-991 (type 2)
-21ur-992 (type 2)
-21ur-993 (type 2)
-21ur-999 (type 2)
-21ur-1002 (type 2)
-21ur-1004 (type 2)
-21ur-1005 (type 2)
-21ur-1009 (type 2)
-21ur-1013 (type 2)
-21ur-1014 (type 2)
-21ur-1015 (type 2)
-21ur-1016 (type 2)
-21ur-1018 (type 2)
-21ur-1019 (type 2)
-21ur-1020 (type 2)
-21ur-1023 (type 2)
-21ur-1025 (type 2)
-21ur-1027 (type 2)
-21ur-1030 (type 2)
-21ur-1031 (type 2)
-21ur-1036 (type 2)
-21ur-1039 (type 2)
-21ur-1041 (type 2)
-21ur-1042 (type 2)
-21ur-1043 (type 2)
-21ur-1046 (type 2)
-21ur-1050 (type 2)
-21ur-1055 (type 2)
-21ur-1064 (type 2)
-21ur-1067 (type 2)
-21ur-1069 (type 2)
-21ur-1072 (type 2)
-21ur-1073 (type 2)
-21ur-1076 (type 2)
-21ur-1077 (type 2)
-21ur-1078 (type 2)
-21ur-1080 (type 2)
-21ur-1084 (type 2)
-21ur-1086 (type 2)
-21ur-1087 (type 2)
-21ur-1090 (type 2)
-21ur-1091 (type 2)
-21ur-1093 (type 2)
-21ur-1094 (type 2)
-21ur-1096 (type 2)
-21ur-1097 (type 2)
-21ur-1098 (type 2)
-21ur-1099 (type 2)
-21ur-1100 (type 2)
-21ur-1101 (type 2)
-21ur-1102 (type 2)
-21ur-1103 (type 2)
-21ur-1104 (type 2)
-21ur-1108 (type 2)
-21ur-1110 (type 2)
-21ur-1111 (type 2)
-21ur-1114 (type 2)
-21ur-1117 (type 2)
-21ur-1118 (type 2)
-21ur-1121 (type 2)
-21ur-1122 (type 2)
-21ur-1123 (type 2)
-21ur-1124 (type 2)
-21ur-1125 (type 2)
-21ur-1128 (type 2)
-21ur-1129 (type 2)
-21ur-1132 (type 2)
-21ur-1134 (type 2)
-21ur-1135 (type 2)
-21ur-1138 (type 2)
-21ur-1139 (type 2)
-21ur-1140 (type 2)
-21ur-1143 (type 2)
-21ur-1145 (type 2)
-21ur-1147 (type 2)
-21ur-1148 (type 2)
-21ur-1149 (type 2)
-21ur-1150 (type 2)
-21ur-1152 (type 2)
-21ur-1154 (type 2)
-21ur-1155 (type 2)
-21ur-1163 (type 2)
-21ur-1167 (type 2)
-21ur-1171 (type 2)
-21ur-1175 (type 2)
-21ur-1176 (type 2)
-21ur-1181 (type 2)
-21ur-1182 (type 2)
-21ur-1185 (type 2)
-21ur-1186 (type 2)
-21ur-1194 (type 2)
-21ur-1195 (type 2)
-21ur-1197 (type 2)
-21ur-1199 (type 2)
-21ur-1202 (type 2)
-21ur-1206 (type 2)
-21ur-1207 (type 2)
-21ur-1208 (type 2)
-21ur-1214 (type 2)
-21ur-1215 (type 2)
-21ur-1216 (type 2)
-21ur-1217 (type 2)
-21ur-1218 (type 2)
-21ur-1220 (type 2)
-21ur-1221 (type 2)
-21ur-1222 (type 2)
-21ur-1223 (type 2)
-21ur-1224 (type 2)
-21ur-1228 (type 2)
-21ur-1229 (type 2)
-21ur-1230 (type 2)
-21ur-1234 (type 2)
-21ur-1237 (type 2)
-21ur-1240 (type 2)
-21ur-1242 (type 2)
-21ur-1243 (type 2)
-21ur-1244 (type 2)
-21ur-1245 (type 2)
-21ur-1246 (type 2)
-21ur-1247 (type 2)
-21ur-1248 (type 2)
-21ur-1250 (type 2)
-21ur-1251 (type 2)
-21ur-1256 (type 2)
-21ur-1257 (type 2)
-21ur-1260 (type 2)
-21ur-1261 (type 2)
-21ur-1265 (type 2)
-21ur-1267 (type 2)
-21ur-1270 (type 2)
-21ur-1271 (type 2)
-21ur-1273 (type 2)
-21ur-1274 (type 2)
-21ur-1275 (type 2)
-21ur-1279 (type 2)
-21ur-1282 (type 2)
-21ur-1284 (type 2)
-21ur-1285 (type 2)
-21ur-1286 (type 2)
-21ur-1290 (type 2)
-21ur-1292 (type 2)
-21ur-1294 (type 2)
-21ur-1295 (type 2)
-21ur-1297 (type 2)
-21ur-1299 (type 2)
-21ur-1300 (type 2)
-21ur-1304 (type 2)
-21ur-1305 (type 2)
-21ur-1307 (type 2)
-21ur-1309 (type 2)
-21ur-1310 (type 2)
-21ur-1312 (type 2)
-21ur-1314 (type 2)
-21ur-1315 (type 2)
-21ur-1316 (type 2)
-21ur-1317 (type 2)
-21ur-1319 (type 2)
-21ur-1321 (type 2)
-21ur-1326 (type 2)
-21ur-1327 (type 2)
-21ur-1333 (type 2)
-21ur-1334 (type 2)
-21ur-1336 (type 2)
-21ur-1337 (type 2)
-21ur-1339 (type 2)
-21ur-1340 (type 2)
-21ur-1342 (type 2)
-21ur-1343 (type 2)
-21ur-1345 (type 2)
-21ur-1346 (type 2)
-21ur-1347 (type 2)
-21ur-1350 (type 2)
-21ur-1352 (type 2)
-21ur-1356 (type 2)
-21ur-1357 (type 2)
-21ur-1358 (type 2)
-21ur-1359 (type 2)
-21ur-1360 (type 2)
-21ur-1361 (type 2)
-21ur-1363 (type 2)
-21ur-1366 (type 2)
-21ur-1367 (type 2)
-21ur-1368 (type 2)
-21ur-1369 (type 2)
-21ur-1370 (type 2)
-21ur-1371 (type 2)
-21ur-1375 (type 2)
-21ur-1376 (type 2)
-21ur-1380 (type 2)
-21ur-1383 (type 2)
-21ur-1384 (type 2)
-21ur-1388 (type 2)
-21ur-1389 (type 2)
-21ur-1390 (type 2)
-21ur-1391 (type 2)
-21ur-1393 (type 2)
-21ur-1396 (type 2)
-21ur-1400 (type 2)
-21ur-1401 (type 2)
-21ur-1404 (type 2)
-21ur-1406 (type 2)
-21ur-1410 (type 2)
-21ur-1411 (type 2)
-21ur-1412 (type 2)
-21ur-1414 (type 2)
-21ur-1416 (type 2)
-21ur-1418 (type 2)
-21ur-1419 (type 2)
-21ur-1420 (type 2)
-21ur-1421 (type 2)
-21ur-1423 (type 2)
-21ur-1426 (type 2)
-21ur-1428 (type 2)
-21ur-1429 (type 2)
-21ur-1433 (type 2)
-21ur-1435 (type 2)
-21ur-1437 (type 2)
-21ur-1439 (type 2)
-21ur-1447 (type 2)
-21ur-1451 (type 2)
-21ur-1452 (type 2)
-21ur-1455 (type 2)
-21ur-1457 (type 2)
-21ur-1458 (type 2)
-21ur-1467 (type 2)
-21ur-1468 (type 2)
-21ur-1469 (type 2)
-21ur-1473 (type 2)
-21ur-1475 (type 2)
-21ur-1476 (type 2)
-21ur-1480 (type 2)
-21ur-1482 (type 2)
-21ur-1484 (type 2)
-21ur-1485 (type 2)
-21ur-1487 (type 2)
-21ur-1488 (type 2)
-21ur-1490 (type 2)
-21ur-1497 (type 2)
-21ur-1499 (type 2)
-21ur-1500 (type 2)
-21ur-1502 (type 2)
-21ur-1503 (type 2)
-21ur-1506 (type 2)
-21ur-1507 (type 2)
-21ur-1508 (type 2)
-21ur-1509 (type 2)
-21ur-1510 (type 2)
-21ur-1511 (type 2)
-21ur-1513 (type 2)
-21ur-1516 (type 2)
-21ur-1519 (type 2)
-21ur-1538 (type 2)
-21ur-1539 (type 2)
-21ur-1543 (type 2)
-21ur-1545 (type 2)
-21ur-1558 (type 2)
-21ur-1560 (type 2)
-21ur-1565 (type 2)
-21ur-1567 (type 2)
-21ur-1569 (type 2)
-21ur-1574 (type 2)
-21ur-1579 (type 2)
-21ur-1580 (type 2)
-21ur-1584 (type 2)
-21ur-1585 (type 2)
-21ur-1592 (type 2)
-21ur-1594 (type 2)
-21ur-1596 (type 2)
-21ur-1597 (type 2)
-21ur-1600 (type 2)
-21ur-1601 (type 2)
-21ur-1604 (type 2)
-21ur-1605 (type 2)
-21ur-1607 (type 2)
-21ur-1608 (type 2)
-21ur-1609 (type 2)
-21ur-1613 (type 2)
-21ur-1615 (type 2)
-21ur-1622 (type 2)
-21ur-1623 (type 2)
-21ur-1624 (type 2)
-21ur-1625 (type 2)
-21ur-1626 (type 2)
-21ur-1628 (type 2)
-21ur-1629 (type 2)
-21ur-1630 (type 2)
-21ur-1631 (type 2)
-21ur-1632 (type 2)
-21ur-1633 (type 2)
-21ur-1634 (type 2)
-21ur-1639 (type 2)
-21ur-1642 (type 2)
-21ur-1643 (type 2)
-21ur-1644 (type 2)
-21ur-1648 (type 2)
-21ur-1649 (type 2)
-21ur-1650 (type 2)
-21ur-1651 (type 2)
-21ur-1652 (type 2)
-21ur-1653 (type 2)
-21ur-1654 (type 2)
-21ur-1658 (type 2)
-21ur-1660 (type 2)
-21ur-1662 (type 2)
-21ur-1663 (type 2)
-21ur-1665 (type 2)
-21ur-1668 (type 2)
-21ur-1669 (type 2)
-21ur-1670 (type 2)
-21ur-1671 (type 2)
-21ur-1674 (type 2)
-21ur-1675 (type 2)
-21ur-1676 (type 2)
-21ur-1677 (type 2)
-21ur-1682 (type 2)
-21ur-1683 (type 2)
-21ur-1685 (type 2)
-21ur-1689 (type 2)
-21ur-1691 (type 2)
-21ur-1693 (type 2)
-21ur-1696 (type 2)
-21ur-1697 (type 2)
-21ur-1699 (type 2)
-21ur-1701 (type 2)
-21ur-1702 (type 2)
-21ur-1704 (type 2)
-21ur-1706 (type 2)
-21ur-1708 (type 2)
-21ur-1709 (type 2)
-21ur-1710 (type 2)
-21ur-1716 (type 2)
-21ur-1717 (type 2)
-21ur-1719 (type 2)
-21ur-1720 (type 2)
-21ur-1721 (type 2)
-21ur-1722 (type 2)
-21ur-1724 (type 2)
-21ur-1728 (type 2)
-21ur-1729 (type 2)
-21ur-1731 (type 2)
-21ur-1735 (type 2)
-21ur-1736 (type 2)
-21ur-1737 (type 2)
-21ur-1738 (type 2)
-21ur-1742 (type 2)
-21ur-1743 (type 2)
-21ur-1744 (type 2)
-21ur-1746 (type 2)
-21ur-1751 (type 2)
-21ur-1752 (type 2)
-21ur-1753 (type 2)
-21ur-1754 (type 2)
-21ur-1760 (type 2)
-21ur-1761 (type 2)
-21ur-1763 (type 2)
-21ur-1764 (type 2)
-21ur-1766 (type 2)
-21ur-1768 (type 2)
-21ur-1769 (type 2)
-21ur-1772 (type 2)
-21ur-1773 (type 2)
-21ur-1775 (type 2)
-21ur-1777 (type 2)
-21ur-1787 (type 2)
-21ur-1789 (type 2)
-21ur-1791 (type 2)
-21ur-1792 (type 2)
-21ur-1793 (type 2)
-21ur-1798 (type 2)
-21ur-1799 (type 2)
-21ur-1800 (type 2)
-21ur-1801 (type 2)
-21ur-1804 (type 2)
-21ur-1806 (type 2)
-21ur-1807 (type 2)
-21ur-1808 (type 2)
-21ur-1810 (type 2)
-21ur-1811 (type 2)
-21ur-1813 (type 2)
-21ur-1814 (type 2)
-21ur-1816 (type 2)
-21ur-1817 (type 2)
-21ur-1821 (type 2)
-21ur-1824 (type 2)
-21ur-1825 (type 2)
-21ur-1827 (type 2)
-21ur-1829 (type 2)
-21ur-1830 (type 2)
-21ur-1831 (type 2)
-21ur-1839 (type 2)
-21ur-1840 (type 2)
-21ur-1842 (type 2)
-21ur-1843 (type 2)
-21ur-1844 (type 2)
-21ur-1845 (type 2)
-21ur-1847 (type 2)
-21ur-1849 (type 2)
-21ur-1850 (type 2)
-21ur-1851 (type 2)
-21ur-1868 (type 2)
-21ur-1869 (type 2)
-21ur-1870 (type 2)
-21ur-1872 (type 2)
-21ur-1876 (type 2)
-21ur-1877 (type 2)
-21ur-1878 (type 2)
-21ur-1880 (type 2)
-21ur-1884 (type 2)
-21ur-1885 (type 2)
-21ur-1888 (type 2)
-21ur-1890 (type 2)
-21ur-1892 (type 2)
-21ur-1893 (type 2)
-21ur-1894 (type 2)
-21ur-1896 (type 2)
-21ur-1900 (type 2)
-21ur-1901 (type 2)
-21ur-1902 (type 2)
-21ur-1903 (type 2)
-21ur-1907 (type 2)
-21ur-1910 (type 2)
-21ur-1918 (type 2)
-21ur-1919 (type 2)
-21ur-1923 (type 2)
-21ur-1924 (type 2)
-21ur-1925 (type 2)
-21ur-1929 (type 2)
-21ur-1931 (type 2)
-21ur-1934 (type 2)
-21ur-1935 (type 2)
-21ur-1937 (type 2)
-21ur-1940 (type 2)
-21ur-1941 (type 2)
-21ur-1947 (type 2)
-21ur-1948 (type 2)
-21ur-1949 (type 2)
-21ur-1950 (type 2)
-21ur-1957 (type 2)
-21ur-1959 (type 2)
-21ur-1960 (type 2)
-21ur-1964 (type 2)
-21ur-1967 (type 2)
-21ur-1968 (type 2)
-21ur-1971 (type 2)
-21ur-1973 (type 2)
-21ur-1978 (type 2)
-21ur-1982 (type 2)
-21ur-1988 (type 2)
-21ur-1990 (type 2)
-21ur-1991 (type 2)
-21ur-1993 (type 2)
-21ur-1994 (type 2)
-21ur-1995 (type 2)
-21ur-1997 (type 2)
-21ur-1999 (type 2)
-21ur-2000 (type 2)
-21ur-2003 (type 2)
-21ur-2004 (type 2)
-21ur-2005 (type 2)
-21ur-2008 (type 2)
-21ur-2009 (type 2)
-21ur-2014 (type 2)
-21ur-2016 (type 2)
-21ur-2019 (type 2)
-21ur-2028 (type 2)
-21ur-2029 (type 2)
-21ur-2031 (type 2)
-21ur-2037 (type 2)
-21ur-2041 (type 2)
-21ur-2045 (type 2)
-21ur-2052 (type 2)
-21ur-2055 (type 2)
-21ur-2056 (type 2)
-21ur-2057 (type 2)
-21ur-2061 (type 2)
-21ur-2062 (type 2)
-21ur-2072 (type 2)
-21ur-2073 (type 2)
-21ur-2075 (type 2)
-21ur-2080 (type 2)
-21ur-2082 (type 2)
-21ur-2084 (type 2)
-21ur-2092 (type 2)
-21ur-2093 (type 2)
-21ur-2094 (type 2)
-21ur-2096 (type 2)
-21ur-2100 (type 2)
-21ur-2101 (type 2)
-21ur-2105 (type 2)
-21ur-2106 (type 2)
-21ur-2107 (type 2)
-21ur-2109 (type 2)
-21ur-2110 (type 2)
-21ur-2116 (type 2)
-21ur-2122 (type 2)
-21ur-2124 (type 2)
-21ur-2127 (type 2)
-21ur-2128 (type 2)
-21ur-2134 (type 2)
-21ur-2137 (type 2)
-21ur-2139 (type 2)
-21ur-2146 (type 2)
-21ur-2148 (type 2)
-21ur-2149 (type 2)
-21ur-2150 (type 2)
-21ur-2152 (type 2)
-21ur-2158 (type 2)
-21ur-2160 (type 2)
-21ur-2162 (type 2)
-21ur-2163 (type 2)
-21ur-2164 (type 2)
-21ur-2166 (type 2)
-21ur-2167 (type 2)
-21ur-2168 (type 2)
-21ur-2170 (type 2)
-21ur-2172 (type 2)
-21ur-2173 (type 2)
-21ur-2175 (type 2)
-21ur-2178 (type 2)
-21ur-2180 (type 2)
-21ur-2182 (type 2)
-21ur-2188 (type 2)
-21ur-2192 (type 2)
-21ur-2195 (type 2)
-21ur-2196 (type 2)
-21ur-2199 (type 2)
-21ur-2201 (type 2)
-21ur-2202 (type 2)
-21ur-2203 (type 2)
-21ur-2204 (type 2)
-21ur-2205 (type 2)
-21ur-2208 (type 2)
-21ur-2210 (type 2)
-21ur-2215 (type 2)
-21ur-2217 (type 2)
-21ur-2220 (type 2)
-21ur-2221 (type 2)
-21ur-2223 (type 2)
-21ur-2226 (type 2)
-21ur-2228 (type 2)
-21ur-2229 (type 2)
-21ur-2230 (type 2)
-21ur-2235 (type 2)
-21ur-2236 (type 2)
-21ur-2237 (type 2)
-21ur-2241 (type 2)
-21ur-2243 (type 2)
-21ur-2244 (type 2)
-21ur-2247 (type 2)
-21ur-2248 (type 2)
-21ur-2251 (type 2)
-21ur-2252 (type 2)
-21ur-2257 (type 2)
-21ur-2258 (type 2)
-21ur-2261 (type 2)
-21ur-2264 (type 2)
-21ur-2273 (type 2)
-21ur-2274 (type 2)
-21ur-2275 (type 2)
-21ur-2276 (type 2)
-21ur-2278 (type 2)
-21ur-2279 (type 2)
-21ur-2281 (type 2)
-21ur-2286 (type 2)
-21ur-2289 (type 2)
-21ur-2291 (type 2)
-21ur-2292 (type 2)
-21ur-2296 (type 2)
-21ur-2297 (type 2)
-21ur-2298 (type 2)
-21ur-2299 (type 2)
-21ur-2300 (type 2)
-21ur-2304 (type 2)
-21ur-2306 (type 2)
-21ur-2311 (type 2)
-21ur-2313 (type 2)
-21ur-2314 (type 2)
-21ur-2318 (type 2)
-21ur-2323 (type 2)
-21ur-2328 (type 2)
-21ur-2331 (type 2)
-21ur-2332 (type 2)
-21ur-2333 (type 2)
-21ur-2337 (type 2)
-21ur-2341 (type 2)
-21ur-2342 (type 2)
-21ur-2344 (type 2)
-21ur-2347 (type 2)
-21ur-2348 (type 2)
-21ur-2349 (type 2)
-21ur-2350 (type 2)
-21ur-2352 (type 2)
-21ur-2354 (type 2)
-21ur-2358 (type 2)
-21ur-2359 (type 2)
-21ur-2365 (type 2)
-21ur-2368 (type 2)
-21ur-2370 (type 2)
-21ur-2373 (type 2)
-21ur-2386 (type 2)
-21ur-2387 (type 2)
-21ur-2390 (type 2)
-21ur-2391 (type 2)
-21ur-2394 (type 2)
-21ur-2397 (type 2)
-21ur-2405 (type 2)
-21ur-2406 (type 2)
-21ur-2408 (type 2)
-21ur-2423 (type 2)
-21ur-2430 (type 2)
-21ur-2436 (type 2)
-21ur-2450 (type 2)
-21ur-2452 (type 2)
-21ur-2457 (type 2)
-21ur-2458 (type 2)
-21ur-2460 (type 2)
-21ur-2470 (type 2)
-21ur-2476 (type 2)
-21ur-2480 (type 2)
-21ur-2486 (type 2)
-21ur-2490 (type 2)
-21ur-2493 (type 2)
-21ur-2496 (type 2)
-21ur-2499 (type 2)
-21ur-2500 (type 2)
-21ur-2504 (type 2)
-21ur-2519 (type 2)
-21ur-2520 (type 2)
-21ur-2523 (type 2)
-21ur-2526 (type 2)
-21ur-2534 (type 2)
-21ur-2547 (type 2)
-21ur-2553 (type 2)
-21ur-2554 (type 2)
-21ur-2557 (type 2)
-21ur-2563 (type 2)
-21ur-2565 (type 2)
-21ur-2570 (type 2)
-21ur-2581 (type 2)
-21ur-2590 (type 2)
-21ur-2599 (type 2)
-21ur-2601 (type 2)
-21ur-2605 (type 2)
-21ur-2607 (type 2)
-21ur-2612 (type 2)
-21ur-2614 (type 2)
-21ur-2617 (type 2)
-21ur-2620 (type 2)
-21ur-2622 (type 2)
-21ur-2624 (type 2)
-21ur-2629 (type 2)
-21ur-2630 (type 2)
-21ur-2647 (type 2)
-21ur-2648 (type 2)
-21ur-2662 (type 2)
-21ur-2666 (type 2)
-21ur-2673 (type 2)
-21ur-2677 (type 2)
-21ur-2688 (type 2)
-21ur-2689 (type 2)
-21ur-2696 (type 2)
-21ur-2704 (type 2)
-21ur-2707 (type 2)
-21ur-2710 (type 2)
-21ur-2713 (type 2)
-21ur-2715 (type 2)
-21ur-2718 (type 2)
-21ur-2728 (type 2)
-21ur-2730 (type 2)
-21ur-2735 (type 2)
-21ur-2743 (type 2)
-21ur-2748 (type 2)
-21ur-2750 (type 2)
-21ur-2753 (type 2)
-21ur-2755 (type 2)
-21ur-2777 (type 2)
-21ur-2779 (type 2)
-21ur-2781 (type 2)
-21ur-2786 (type 2)
-21ur-2789 (type 2)
-21ur-2790 (type 2)
-21ur-2791 (type 2)
-21ur-2796 (type 2)
-21ur-2797 (type 2)
-21ur-2804 (type 2)
-21ur-2809 (type 2)
-21ur-2817 (type 2)
-21ur-2823 (type 2)
-21ur-2827 (type 2)
-21ur-2828 (type 2)
-21ur-2833 (type 2)
-21ur-2835 (type 2)
-21ur-2836 (type 2)
-21ur-2838 (type 2)
-21ur-2840 (type 2)
-21ur-2841 (type 2)
-21ur-2843 (type 2)
-21ur-2846 (type 2)
-21ur-2849 (type 2)
-21ur-2852 (type 2)
-21ur-2864 (type 2)
-21ur-2865 (type 2)
-21ur-2868 (type 2)
-21ur-2873 (type 2)
-21ur-2877 (type 2)
-21ur-2878 (type 2)
-21ur-2879 (type 2)
-21ur-2880 (type 2)
-21ur-2883 (type 2)
-21ur-2886 (type 2)
-21ur-2888 (type 2)
-21ur-2889 (type 2)
-21ur-2890 (type 2)
-21ur-2896 (type 2)
-21ur-2897 (type 2)
-21ur-2902 (type 2)
-21ur-2905 (type 2)
-21ur-2906 (type 2)
-21ur-2907 (type 2)
-21ur-2912 (type 2)
-21ur-2915 (type 2)
-21ur-2922 (type 2)
-21ur-2923 (type 2)
-21ur-2931 (type 2)
-21ur-2932 (type 2)
-21ur-2937 (type 2)
-21ur-2939 (type 2)
-21ur-2941 (type 2)
-21ur-2942 (type 2)
-21ur-2947 (type 2)
-21ur-2965 (type 2)
-21ur-2974 (type 2)
-21ur-2975 (type 2)
-21ur-2976 (type 2)
-21ur-2978 (type 2)
-21ur-2983 (type 2)
-21ur-2988 (type 2)
-21ur-2990 (type 2)
-21ur-2992 (type 2)
-21ur-2994 (type 2)
-21ur-2995 (type 2)
-21ur-2996 (type 2)
-21ur-2997 (type 2)
-21ur-3007 (type 2)
-21ur-3008 (type 2)
-21ur-3009 (type 2)
-21ur-3010 (type 2)
-21ur-3012 (type 2)
-21ur-3014 (type 2)
-21ur-3016 (type 2)
-21ur-3018 (type 2)
-21ur-3019 (type 2)
-21ur-3021 (type 2)
-21ur-3024 (type 2)
-21ur-3025 (type 2)
-21ur-3026 (type 2)
-21ur-3028 (type 2)
-21ur-3030 (type 2)
-21ur-3044 (type 2)
-21ur-3047 (type 2)
-21ur-3048 (type 2)
-21ur-3050 (type 2)
-21ur-3055 (type 2)
-21ur-3056 (type 2)
-21ur-3060 (type 2)
-21ur-3061 (type 2)
-21ur-3069 (type 2)
-21ur-3070 (type 2)
-21ur-3071 (type 2)
-21ur-3077 (type 2)
-21ur-3081 (type 2)
-21ur-3083 (type 2)
-21ur-3084 (type 2)
-21ur-3088 (type 2)
-21ur-3090 (type 2)
-21ur-3091 (type 2)
-21ur-3095 (type 2)
-21ur-3100 (type 2)
-21ur-3101 (type 2)
-21ur-3102 (type 2)
-21ur-3112 (type 2)
-21ur-3113 (type 2)
-21ur-3114 (type 2)
-21ur-3116 (type 2)
-21ur-3118 (type 2)
-21ur-3122 (type 2)
-21ur-3123 (type 2)
-21ur-3125 (type 2)
-21ur-3126 (type 2)
-21ur-3138 (type 2)
-21ur-3143 (type 2)
-21ur-3149 (type 2)
-21ur-3163 (type 2)
-21ur-3166 (type 2)
-21ur-3167 (type 2)
-21ur-3173 (type 2)
-21ur-3174 (type 2)
-21ur-3175 (type 2)
-21ur-3177 (type 2)
-21ur-3182 (type 2)
-21ur-3183 (type 2)
-21ur-3186 (type 2)
-21ur-3193 (type 2)
-21ur-3200 (type 2)
-21ur-3201 (type 2)
-21ur-3206 (type 2)
-21ur-3207 (type 2)
-21ur-3210 (type 2)
-21ur-3211 (type 2)
-21ur-3216 (type 2)
-21ur-3218 (type 2)
-21ur-3224 (type 2)
-21ur-3226 (type 2)
-21ur-3230 (type 2)
-21ur-3231 (type 2)
-21ur-3235 (type 2)
-21ur-3247 (type 2)
-21ur-3248 (type 2)
-21ur-3253 (type 2)
-21ur-3254 (type 2)
-21ur-3257 (type 2)
-21ur-3262 (type 2)
-21ur-3265 (type 2)
-21ur-3267 (type 2)
-21ur-3268 (type 2)
-21ur-3269 (type 2)
-21ur-3270 (type 2)
-21ur-3272 (type 2)
-21ur-3273 (type 2)
-21ur-3276 (type 2)
-21ur-3277 (type 2)
-21ur-3279 (type 2)
-21ur-3280 (type 2)
-21ur-3283 (type 2)
-21ur-3284 (type 2)
-21ur-3290 (type 2)
-21ur-3298 (type 2)
-21ur-3302 (type 2)
-21ur-3304 (type 2)
-21ur-3307 (type 2)
-21ur-3308 (type 2)
-21ur-3311 (type 2)
-21ur-3313 (type 2)
-21ur-3316 (type 2)
-21ur-3319 (type 2)
-21ur-3323 (type 2)
-21ur-3325 (type 2)
-21ur-3326 (type 2)
-21ur-3331 (type 2)
-21ur-3334 (type 2)
-21ur-3338 (type 2)
-21ur-3340 (type 2)
-21ur-3348 (type 2)
-21ur-3349 (type 2)
-21ur-3352 (type 2)
-21ur-3353 (type 2)
-21ur-3359 (type 2)
-21ur-3366 (type 2)
-21ur-3369 (type 2)
-21ur-3371 (type 2)
-21ur-3372 (type 2)
-21ur-3374 (type 2)
-21ur-3376 (type 2)
-21ur-3379 (type 2)
-21ur-3383 (type 2)
-21ur-3388 (type 2)
-21ur-3390 (type 2)
-21ur-3392 (type 2)
-21ur-3394 (type 2)
-21ur-3397 (type 2)
-21ur-3398 (type 2)
-21ur-3400 (type 2)
-21ur-3402 (type 2)
-21ur-3404 (type 2)
-21ur-3407 (type 2)
-21ur-3408 (type 2)
-21ur-3412 (type 2)
-21ur-3413 (type 2)
-21ur-3414 (type 2)
-21ur-3418 (type 2)
-21ur-3420 (type 2)
-21ur-3421 (type 2)
-21ur-3427 (type 2)
-21ur-3428 (type 2)
-21ur-3433 (type 2)
-21ur-3436 (type 2)
-21ur-3441 (type 2)
-21ur-3442 (type 2)
-21ur-3447 (type 2)
-21ur-3448 (type 2)
-21ur-3449 (type 2)
-21ur-3452 (type 2)
-21ur-3456 (type 2)
-21ur-3457 (type 2)
-21ur-3458 (type 2)
-21ur-3459 (type 2)
-21ur-3461 (type 2)
-21ur-3462 (type 2)
-21ur-3463 (type 2)
-21ur-3464 (type 2)
-21ur-3470 (type 2)
-21ur-3473 (type 2)
-21ur-3475 (type 2)
-21ur-3476 (type 2)
-21ur-3480 (type 2)
-21ur-3481 (type 2)
-21ur-3482 (type 2)
-21ur-3486 (type 2)
-21ur-3489 (type 2)
-21ur-3491 (type 2)
-21ur-3494 (type 2)
-21ur-3495 (type 2)
-21ur-3503 (type 2)
-21ur-3506 (type 2)
-21ur-3507 (type 2)
-21ur-3513 (type 2)
-21ur-3514 (type 2)
-21ur-3515 (type 2)
-21ur-3521 (type 2)
-21ur-3525 (type 2)
-21ur-3528 (type 2)
-21ur-3529 (type 2)
-21ur-3532 (type 2)
-21ur-3536 (type 2)
-21ur-3541 (type 2)
-21ur-3543 (type 2)
-21ur-3544 (type 2)
-21ur-3547 (type 2)
-21ur-3551 (type 2)
-21ur-3559 (type 2)
-21ur-3560 (type 2)
-21ur-3564 (type 2)
-21ur-3567 (type 2)
-21ur-3575 (type 2)
-21ur-3576 (type 2)
-21ur-3580 (type 2)
-21ur-3582 (type 2)
-21ur-3589 (type 2)
-21ur-3592 (type 2)
-21ur-3597 (type 2)
-21ur-3600 (type 2)
-21ur-3601 (type 2)
-21ur-3602 (type 2)
-21ur-3605 (type 2)
-21ur-3607 (type 2)
-21ur-3608 (type 2)
-21ur-3611 (type 2)
-21ur-3617 (type 2)
-21ur-3619 (type 2)
-21ur-3624 (type 2)
-21ur-3633 (type 2)
-21ur-3638 (type 2)
-21ur-3639 (type 2)
-21ur-3641 (type 2)
-21ur-3642 (type 2)
-21ur-3643 (type 2)
-21ur-3652 (type 2)
-21ur-3653 (type 2)
-21ur-3655 (type 2)
-21ur-3658 (type 2)
-21ur-3659 (type 2)
-21ur-3662 (type 2)
-21ur-3663 (type 2)
-21ur-3665 (type 2)
-21ur-3666 (type 2)
-21ur-3670 (type 2)
-21ur-3675 (type 2)
-21ur-3681 (type 2)
-21ur-3687 (type 2)
-21ur-3688 (type 2)
-21ur-3692 (type 2)
-21ur-3696 (type 2)
-21ur-3700 (type 2)
-21ur-3702 (type 2)
-21ur-3703 (type 2)
-21ur-3711 (type 2)
-21ur-3715 (type 2)
-21ur-3718 (type 2)
-21ur-3719 (type 2)
-21ur-3722 (type 2)
-21ur-3726 (type 2)
-21ur-3727 (type 2)
-21ur-3728 (type 2)
-21ur-3736 (type 2)
-21ur-3738 (type 2)
-21ur-3744 (type 2)
-21ur-3746 (type 2)
-21ur-3747 (type 2)
-21ur-3750 (type 2)
-21ur-3751 (type 2)
-21ur-3752 (type 2)
-21ur-3753 (type 2)
-21ur-3754 (type 2)
-21ur-3757 (type 2)
-21ur-3759 (type 2)
-21ur-3763 (type 2)
-21ur-3767 (type 2)
-21ur-3770 (type 2)
-21ur-3771 (type 2)
-21ur-3772 (type 2)
-21ur-3773 (type 2)
-21ur-3774 (type 2)
-21ur-3775 (type 2)
-21ur-3778 (type 2)
-21ur-3780 (type 2)
-21ur-3786 (type 2)
-21ur-3795 (type 2)
-21ur-3800 (type 2)
-21ur-3829 (type 2)
-21ur-3860 (type 2)
-21ur-3861 (type 2)
-21ur-3864 (type 2)
-21ur-3867 (type 2)
-21ur-3868 (type 2)
-21ur-3869 (type 2)
-21ur-3880 (type 2)
-21ur-3881 (type 2)
-21ur-3883 (type 2)
-21ur-3893 (type 2)
-21ur-3896 (type 2)
-21ur-3901 (type 2)
-21ur-3909 (type 2)
-21ur-3912 (type 2)
-21ur-3925 (type 2)
-21ur-3926 (type 2)
-21ur-3936 (type 2)
-21ur-3937 (type 2)
-21ur-3938 (type 2)
-21ur-3944 (type 2)
-21ur-3962 (type 2)
-21ur-3965 (type 2)
-21ur-3968 (type 2)
-21ur-3981 (type 2)
-21ur-3999 (type 2)
-21ur-4017 (type 2)
-21ur-4020 (type 2)
-21ur-4034 (type 2)
-21ur-4035 (type 2)
-21ur-4040 (type 2)
-21ur-4048 (type 2)
-21ur-4064 (type 2)
-21ur-4069 (type 2)
-21ur-4071 (type 2)
-21ur-4099 (type 2)
-21ur-4100 (type 2)
-21ur-4111 (type 2)
-21ur-4124 (type 2)
-21ur-4126 (type 2)
-21ur-4133 (type 2)
-21ur-4138 (type 2)
-21ur-4141 (type 2)
-21ur-4150 (type 2)
-21ur-4168 (type 2)
-21ur-4170 (type 2)
-21ur-4178 (type 2)
-21ur-4191 (type 2)
-21ur-4195 (type 2)
-21ur-4201 (type 2)
-21ur-4276 (type 2)
-21ur-4284 (type 2)
-21ur-4294 (type 2)
-21ur-4306 (type 2)
-21ur-4314 (type 2)
-21ur-4322 (type 2)
-21ur-4328 (type 2)
-21ur-4329 (type 2)
-21ur-4347 (type 2)
-21ur-4402 (type 2)
-21ur-4406 (type 2)
-21ur-4412 (type 2)
-21ur-4421 (type 2)
-21ur-4431 (type 2)
-21ur-4438 (type 2)
-21ur-4471 (type 2)
-21ur-4507 (type 2)
-21ur-4511 (type 2)
-21ur-4521 (type 2)
-21ur-4525 (type 2)
-21ur-4537 (type 2)
-21ur-4555 (type 2)
-21ur-4557 (type 2)
-21ur-4559 (type 2)
-21ur-4560 (type 2)
-21ur-4563 (type 2)
-21ur-4568 (type 2)
-21ur-4577 (type 2)
-21ur-4582 (type 2)
-21ur-4583 (type 2)
-21ur-4596 (type 2)
-21ur-4604 (type 2)
-21ur-4612 (type 2)
-21ur-4614 (type 2)
-21ur-4617 (type 2)
-21ur-4631 (type 2)
-21ur-4637 (type 2)
-21ur-4645 (type 2)
-21ur-4659 (type 2)
-21ur-4663 (type 2)
-21ur-4664 (type 2)
-21ur-4667 (type 2)
-21ur-4682 (type 2)
-21ur-4685 (type 2)
-21ur-4689 (type 2)
-21ur-4722 (type 2)
-21ur-4735 (type 2)
-21ur-4750 (type 2)
-21ur-4753 (type 2)
-21ur-4757 (type 2)
-21ur-4760 (type 2)
-21ur-4768 (type 2)
-21ur-4779 (type 2)
-21ur-4791 (type 2)
-21ur-4795 (type 2)
-21ur-4806 (type 2)
-21ur-4818 (type 2)
-21ur-4819 (type 2)
-21ur-4829 (type 2)
-21ur-4835 (type 2)
-21ur-4848 (type 2)
-21ur-4849 (type 2)
-21ur-4857 (type 2)
-21ur-4875 (type 2)
-21ur-4879 (type 2)
-21ur-4894 (type 2)
-21ur-4905 (type 2)
-21ur-4907 (type 2)
-21ur-4910 (type 2)
-21ur-4949 (type 2)
-21ur-4952 (type 2)
-21ur-4953 (type 2)
-21ur-4954 (type 2)
-21ur-4956 (type 2)
-21ur-4964 (type 2)
-21ur-4967 (type 2)
-21ur-4968 (type 2)
-21ur-4969 (type 2)
-21ur-4970 (type 2)
-21ur-4974 (type 2)
-21ur-4982 (type 2)
-21ur-4987 (type 2)
-21ur-4997 (type 2)
-21ur-5005 (type 2)
-21ur-5006 (type 2)
-21ur-5047 (type 2)
-21ur-5049 (type 2)
-21ur-5054 (type 2)
-21ur-5062 (type 2)
-21ur-5074 (type 2)
-21ur-5084 (type 2)
-21ur-5125 (type 2)
-21ur-5138 (type 2)
-21ur-5156 (type 2)
-21ur-5165 (type 2)
-21ur-5167 (type 2)
-21ur-5170 (type 2)
-21ur-5176 (type 2)
-21ur-5193 (type 2)
-21ur-5194 (type 2)
-21ur-5203 (type 2)
-21ur-5204 (type 2)
-21ur-5206 (type 2)
-21ur-5207 (type 2)
-21ur-5241 (type 2)
-21ur-5249 (type 2)
-21ur-5258 (type 2)
-21ur-5262 (type 2)
-21ur-5264 (type 2)
-21ur-5268 (type 2)
-21ur-5279 (type 2)
-21ur-5284 (type 2)
-21ur-5285 (type 2)
-21ur-5287 (type 2)
-21ur-5292 (type 2)
-21ur-5295 (type 2)
-21ur-5307 (type 2)
-21ur-5317 (type 2)
-21ur-5319 (type 2)
-21ur-5335 (type 2)
-21ur-5348 (type 2)
-21ur-5384 (type 2)
-21ur-5385 (type 2)
-21ur-5404 (type 2)
-21ur-5406 (type 2)
-21ur-5410 (type 2)
-21ur-5413 (type 2)
-21ur-5414 (type 2)
-21ur-5418 (type 2)
-21ur-5422 (type 2)
-21ur-5423 (type 2)
-21ur-5425 (type 2)
-21ur-5439 (type 2)
-21ur-5460 (type 2)
-21ur-5463 (type 2)
-21ur-5478 (type 2)
-21ur-5481 (type 2)
-21ur-5485 (type 2)
-21ur-5501 (type 2)
-21ur-5507 (type 2)
-21ur-5510 (type 2)
-21ur-5517 (type 2)
-21ur-5521 (type 2)
-21ur-5522 (type 2)
-21ur-5525 (type 2)
-21ur-5561 (type 2)
-21ur-5566 (type 2)
-21ur-5569 (type 2)
-21ur-5571 (type 2)
-21ur-5585 (type 2)
-21ur-5597 (type 2)
-21ur-5607 (type 2)
-21ur-5618 (type 2)
-21ur-5624 (type 2)
-21ur-5634 (type 2)
-21ur-5647 (type 2)
-21ur-5651 (type 2)
-21ur-5652 (type 2)
-21ur-5654 (type 2)
-21ur-5657 (type 2)
-21ur-5664 (type 2)
-21ur-5671 (type 2)
-21ur-5700 (type 2)
-21ur-5716 (type 2)
-21ur-5719 (type 2)
-21ur-5723 (type 2)
-21ur-5736 (type 2)
-21ur-5755 (type 2)
-21ur-5768 (type 2)
-21ur-5772 (type 2)
-21ur-5774 (type 2)
-21ur-5776 (type 2)
-21ur-5777 (type 2)
-21ur-5790 (type 2)
-21ur-5793 (type 2)
-21ur-5798 (type 2)
-21ur-5803 (type 2)
-21ur-5804 (type 2)
-21ur-5809 (type 2)
-21ur-5812 (type 2)
-21ur-5816 (type 2)
-21ur-5818 (type 2)
-21ur-5827 (type 2)
-21ur-5831 (type 2)
-21ur-5838 (type 2)
-21ur-5845 (type 2)
-21ur-5859 (type 2)
-21ur-5860 (type 2)
-21ur-5864 (type 2)
-21ur-5871 (type 2)
-21ur-5878 (type 2)
-21ur-5884 (type 2)
-21ur-5895 (type 2)
-21ur-5899 (type 2)
-21ur-5902 (type 2)
-21ur-5904 (type 2)
-21ur-5917 (type 2)
-21ur-5929 (type 2)
-21ur-5938 (type 2)
-21ur-5939 (type 2)
-21ur-5940 (type 2)
-21ur-5944 (type 2)
-21ur-5945 (type 2)
-21ur-5961 (type 2)
-21ur-5968 (type 2)
-21ur-5969 (type 2)
-21ur-5972 (type 2)
-21ur-5979 (type 2)
-21ur-5993 (type 2)
-21ur-6009 (type 2)
-21ur-6032 (type 2)
-21ur-6037 (type 2)
-21ur-6042 (type 2)
-21ur-6051 (type 2)
-21ur-6061 (type 2)
-21ur-6064 (type 2)
-21ur-6070 (type 2)
-21ur-6071 (type 2)
-21ur-6089 (type 2)
-21ur-6099 (type 2)
-21ur-6104 (type 2)
-21ur-6110 (type 2)
-21ur-6115 (type 2)
-21ur-6116 (type 2)
-21ur-6118 (type 2)
-21ur-6120 (type 2)
-21ur-6122 (type 2)
-21ur-6125 (type 2)
-21ur-6129 (type 2)
-21ur-6131 (type 2)
-21ur-6133 (type 2)
-21ur-6135 (type 2)
-21ur-6143 (type 2)
-21ur-6149 (type 2)
-21ur-6152 (type 2)
-21ur-6154 (type 2)
-21ur-6156 (type 2)
-21ur-6158 (type 2)
-21ur-6159 (type 2)
-21ur-6164 (type 2)
-21ur-6177 (type 2)
-21ur-6181 (type 2)
-21ur-6182 (type 2)
-21ur-6184 (type 2)
-21ur-6195 (type 2)
-21ur-6207 (type 2)
-21ur-6209 (type 2)
-21ur-6226 (type 2)
-21ur-6234 (type 2)
-21ur-6242 (type 2)
-21ur-6249 (type 2)
-21ur-6250 (type 2)
-21ur-6254 (type 2)
-21ur-6258 (type 2)
-21ur-6259 (type 2)
-21ur-6266 (type 2)
-21ur-6285 (type 2)
-21ur-6298 (type 2)
-21ur-6306 (type 2)
-21ur-6307 (type 2)
-21ur-6309 (type 2)
-21ur-6320 (type 2)
-21ur-6323 (type 2)
-21ur-6329 (type 2)
-21ur-6332 (type 2)
-21ur-6337 (type 2)
-21ur-6338 (type 2)
-21ur-6367 (type 2)
-21ur-6370 (type 2)
-21ur-6390 (type 2)
-21ur-6391 (type 2)
-21ur-6398 (type 2)
-21ur-6399 (type 2)
-21ur-6400 (type 2)
-21ur-6405 (type 2)
-21ur-6410 (type 2)
-21ur-6417 (type 2)
-21ur-6418 (type 2)
-21ur-6423 (type 2)
-21ur-6424 (type 2)
-21ur-6434 (type 2)
-21ur-6440 (type 2)
-21ur-6444 (type 2)
-21ur-6454 (type 2)
-21ur-6458 (type 2)
-21ur-6459 (type 2)
-21ur-6466 (type 2)
-21ur-6471 (type 2)
-21ur-6472 (type 2)
-21ur-6476 (type 2)
-21ur-6479 (type 2)
-21ur-6483 (type 2)
-21ur-6494 (type 2)
-21ur-6504 (type 2)
-21ur-6543 (type 2)
-21ur-6545 (type 2)
-21ur-6551 (type 2)
-21ur-6559 (type 2)
-21ur-6560 (type 2)
-21ur-6562 (type 2)
-21ur-6576 (type 2)
-21ur-6578 (type 2)
-21ur-6579 (type 2)
-21ur-6589 (type 2)
-21ur-6590 (type 2)
-21ur-6597 (type 2)
-21ur-6605 (type 2)
-21ur-6608 (type 2)
-21ur-6611 (type 2)
-21ur-6613 (type 2)
-21ur-6615 (type 2)
-21ur-6621 (type 2)
-21ur-6630 (type 2)
-21ur-6631 (type 2)
-21ur-6646 (type 2)
-21ur-6648 (type 2)
-21ur-6650 (type 2)
-21ur-6653 (type 2)
-21ur-6655 (type 2)
-21ur-6664 (type 2)
-21ur-6667 (type 2)
-21ur-6670 (type 2)
-21ur-6675 (type 2)
-21ur-6678 (type 2)
-21ur-6681 (type 2)
-21ur-6682 (type 2)
-21ur-6686 (type 2)
-21ur-6687 (type 2)
-21ur-6698 (type 2)
-21ur-6700 (type 2)
-21ur-6701 (type 2)
-21ur-6704 (type 2)
-21ur-6715 (type 2)
-21ur-6718 (type 2)
-21ur-6722 (type 2)
-21ur-6729 (type 2)
-21ur-6731 (type 2)
-21ur-6732 (type 2)
-21ur-6733 (type 2)
-21ur-6737 (type 2)
-21ur-6748 (type 2)
-21ur-6755 (type 2)
-21ur-6766 (type 2)
-21ur-6774 (type 2)
-21ur-6781 (type 2)
-21ur-6784 (type 2)
-21ur-6786 (type 2)
-21ur-6798 (type 2)
-21ur-6800 (type 2)
-21ur-6802 (type 2)
-21ur-6818 (type 2)
-21ur-6824 (type 2)
-21ur-6827 (type 2)
-21ur-6829 (type 2)
-21ur-6839 (type 2)
-21ur-6840 (type 2)
-21ur-6847 (type 2)
-21ur-6852 (type 2)
-21ur-6856 (type 2)
-21ur-6871 (type 2)
-21ur-6909 (type 2)
-21ur-6929 (type 2)
-21ur-6933 (type 2)
-21ur-6955 (type 2)
-21ur-6962 (type 2)
-21ur-6963 (type 2)
-21ur-6972 (type 2)
-21ur-6975 (type 2)
-21ur-6976 (type 2)
-21ur-6977 (type 2)
-21ur-6979 (type 2)
-21ur-6980 (type 2)
-21ur-6989 (type 2)
-21ur-7007 (type 2)
-21ur-7018 (type 2)
-21ur-7028 (type 2)
-21ur-7030 (type 2)
-21ur-7031 (type 2)
-21ur-7044 (type 2)
-21ur-7046 (type 2)
-21ur-7047 (type 2)
-21ur-7048 (type 2)
-21ur-7061 (type 2)
-21ur-7069 (type 2)
-21ur-7075 (type 2)
-21ur-7077 (type 2)
-21ur-7085 (type 2)
-21ur-7091 (type 2)
-21ur-7121 (type 2)
-21ur-7126 (type 2)
-21ur-7136 (type 2)
-21ur-7138 (type 2)
-21ur-7140 (type 2)
-21ur-7147 (type 2)
-21ur-7182 (type 2)
-21ur-7203 (type 2)
-21ur-7207 (type 2)
-21ur-7209 (type 2)
-21ur-7217 (type 2)
-21ur-7231 (type 2)
-21ur-7237 (type 2)
-21ur-7243 (type 2)
-21ur-7263 (type 2)
-21ur-7268 (type 2)
-21ur-7289 (type 2)
-21ur-7292 (type 2)
-21ur-7298 (type 2)
-21ur-7313 (type 2)
-21ur-7314 (type 2)
-21ur-7344 (type 2)
-21ur-7374 (type 2)
-21ur-7409 (type 2)
-21ur-7410 (type 2)
-21ur-7431 (type 2)
-21ur-7432 (type 2)
-21ur-7444 (type 2)
-21ur-7448 (type 2)
-21ur-7451 (type 2)
-21ur-7462 (type 2)
-21ur-7467 (type 2)
-21ur-7480 (type 2)
-21ur-7488 (type 2)
-21ur-7501 (type 2)
-21ur-7507 (type 2)
-21ur-7515 (type 2)
-21ur-7523 (type 2)
-21ur-7524 (type 2)
-21ur-7538 (type 2)
-21ur-7553 (type 2)
-21ur-7561 (type 2)
-21ur-7568 (type 2)
-21ur-7571 (type 2)
-21ur-7589 (type 2)
-21ur-7604 (type 2)
-21ur-7606 (type 2)
-21ur-7607 (type 2)
-21ur-7617 (type 2)
-21ur-7618 (type 2)
-21ur-7620 (type 2)
-21ur-7622 (type 2)
-21ur-7629 (type 2)
-21ur-7634 (type 2)
-21ur-7635 (type 2)
-21ur-7636 (type 2)
-21ur-7651 (type 2)
-21ur-7660 (type 2)
-21ur-7663 (type 2)
-21ur-7669 (type 2)
-21ur-7683 (type 2)
-21ur-7696 (type 2)
-21ur-7705 (type 2)
-21ur-7716 (type 2)
-21ur-7721 (type 2)
-21ur-7724 (type 2)
-21ur-7727 (type 2)
-21ur-7731 (type 2)
-21ur-7732 (type 2)
-21ur-7734 (type 2)
-21ur-7756 (type 2)
-21ur-7763 (type 2)
-21ur-7765 (type 2)
-21ur-7767 (type 2)
-21ur-7776 (type 2)
-21ur-7786 (type 2)
-21ur-7790 (type 2)
-21ur-7792 (type 2)
-21ur-7794 (type 2)
-21ur-7803 (type 2)
-21ur-7804 (type 2)
-21ur-7808 (type 2)
-21ur-7812 (type 2)
-21ur-7819 (type 2)
-21ur-7821 (type 2)
-21ur-7822 (type 2)
-21ur-7823 (type 2)
-21ur-7824 (type 2)
-21ur-7825 (type 2)
-21ur-7827 (type 2)
-21ur-7830 (type 2)
-21ur-7833 (type 2)
-21ur-7841 (type 2)
-21ur-7842 (type 2)
-21ur-7846 (type 2)
-21ur-7847 (type 2)
-21ur-7868 (type 2)
-21ur-7876 (type 2)
-21ur-7884 (type 2)
-21ur-7887 (type 2)
-21ur-7889 (type 2)
-21ur-7891 (type 2)
-21ur-7898 (type 2)
-21ur-7916 (type 2)
-21ur-7919 (type 2)
-21ur-7920 (type 2)
-21ur-7928 (type 2)
-21ur-7938 (type 2)
-21ur-7939 (type 2)
-21ur-7940 (type 2)
-21ur-7944 (type 2)
-21ur-7953 (type 2)
-21ur-7964 (type 2)
-21ur-7968 (type 2)
-21ur-7969 (type 2)
-21ur-7974 (type 2)
-21ur-7979 (type 2)
-21ur-7981 (type 2)
-21ur-7983 (type 2)
-21ur-7985 (type 2)
-21ur-7987 (type 2)
-21ur-7990 (type 2)
-21ur-8000 (type 2)
-21ur-8001 (type 2)
-21ur-8006 (type 2)
-21ur-8015 (type 2)
-21ur-8023 (type 2)
-21ur-8040 (type 2)
-21ur-8044 (type 2)
-21ur-8057 (type 2)
-21ur-8060 (type 2)
-21ur-8068 (type 2)
-21ur-8074 (type 2)
-21ur-8078 (type 2)
-21ur-8080 (type 2)
-21ur-8084 (type 2)
-21ur-8091 (type 2)
-21ur-8096 (type 2)
-21ur-8104 (type 2)
-21ur-8120 (type 2)
-21ur-8134 (type 2)
-21ur-8136 (type 2)
-21ur-8139 (type 2)
-21ur-8146 (type 2)
-21ur-8147 (type 2)
-21ur-8152 (type 2)
-21ur-8153 (type 2)
-21ur-8170 (type 2)
-21ur-8172 (type 2)
-21ur-8173 (type 2)
-21ur-8175 (type 2)
-21ur-8183 (type 2)
-21ur-8184 (type 2)
-21ur-8194 (type 2)
-21ur-8197 (type 2)
-21ur-8204 (type 2)
-21ur-8207 (type 2)
-21ur-8208 (type 2)
-21ur-8211 (type 2)
-21ur-8215 (type 2)
-21ur-8220 (type 2)
-21ur-8225 (type 2)
-21ur-8227 (type 2)
-21ur-8231 (type 2)
-21ur-8236 (type 2)
-21ur-8240 (type 2)
-21ur-8243 (type 2)
-21ur-8245 (type 2)
-21ur-8249 (type 2)
-21ur-8251 (type 2)
-21ur-8261 (type 2)
-21ur-8262 (type 2)
-21ur-8263 (type 2)
-21ur-8273 (type 2)
-21ur-8286 (type 2)
-21ur-8288 (type 2)
-21ur-8292 (type 2)
-21ur-8298 (type 2)
-21ur-8315 (type 2)
-21ur-8316 (type 2)
-21ur-8321 (type 2)
-21ur-8326 (type 2)
-21ur-8333 (type 2)
-21ur-8339 (type 2)
-21ur-8344 (type 2)
-21ur-8355 (type 2)
-21ur-8360 (type 2)
-21ur-8368 (type 2)
-21ur-8382 (type 2)
-21ur-8383 (type 2)
-21ur-8384 (type 2)
-21ur-8385 (type 2)
-21ur-8386 (type 2)
-21ur-8394 (type 2)
-21ur-8399 (type 2)
-21ur-8406 (type 2)
-21ur-8415 (type 2)
-21ur-8420 (type 2)
-21ur-8423 (type 2)
-21ur-8430 (type 2)
-21ur-8431 (type 2)
-21ur-8446 (type 2)
-21ur-8448 (type 2)
-21ur-8449 (type 2)
-21ur-8460 (type 2)
-21ur-8464 (type 2)
-21ur-8465 (type 2)
-21ur-8473 (type 2)
-21ur-8474 (type 2)
-21ur-8484 (type 2)
-21ur-8485 (type 2)
-21ur-8490 (type 2)
-21ur-8492 (type 2)
-21ur-8496 (type 2)
-21ur-8499 (type 2)
-21ur-8511 (type 2)
-21ur-8520 (type 2)
-21ur-8530 (type 2)
-21ur-8534 (type 2)
-21ur-8539 (type 2)
-21ur-8541 (type 2)
-21ur-8546 (type 2)
-21ur-8556 (type 2)
-21ur-8558 (type 2)
-21ur-8560 (type 2)
-21ur-8566 (type 2)
-21ur-8572 (type 2)
-21ur-8576 (type 2)
-21ur-8577 (type 2)
-21ur-8581 (type 2)
-21ur-8583 (type 2)
-21ur-8587 (type 2)
-21ur-8591 (type 2)
-21ur-8599 (type 2)
-21ur-8600 (type 2)
-21ur-8602 (type 2)
-21ur-8604 (type 2)
-21ur-8605 (type 2)
-21ur-8609 (type 2)
-21ur-8617 (type 2)
-21ur-8619 (type 2)
-21ur-8622 (type 2)
-21ur-8623 (type 2)
-21ur-8630 (type 2)
-21ur-8631 (type 2)
-21ur-8637 (type 2)
-21ur-8638 (type 2)
-21ur-8642 (type 2)
-21ur-8648 (type 2)
-21ur-8649 (type 2)
-21ur-8650 (type 2)
-21ur-8669 (type 2)
-21ur-8674 (type 2)
-21ur-8690 (type 2)
-21ur-8692 (type 2)
-21ur-8698 (type 2)
-21ur-8701 (type 2)
-21ur-8705 (type 2)
-21ur-8716 (type 2)
-21ur-8717 (type 2)
-21ur-8721 (type 2)
-21ur-8724 (type 2)
-21ur-8737 (type 2)
-21ur-8738 (type 2)
-21ur-8739 (type 2)
-21ur-8740 (type 2)
-21ur-8741 (type 2)
-21ur-8750 (type 2)
-21ur-8758 (type 2)
-21ur-8760 (type 2)
-21ur-8761 (type 2)
-21ur-8767 (type 2)
-21ur-8775 (type 2)
-21ur-8785 (type 2)
-21ur-8786 (type 2)
-21ur-8790 (type 2)
-21ur-8795 (type 2)
-21ur-8800 (type 2)
-21ur-8803 (type 2)
-21ur-8808 (type 2)
-21ur-8809 (type 2)
-21ur-8819 (type 2)
-21ur-8826 (type 2)
-21ur-8828 (type 2)
-21ur-8830 (type 2)
-21ur-8835 (type 2)
-21ur-8837 (type 2)
-21ur-8839 (type 2)
-21ur-8842 (type 2)
-21ur-8843 (type 2)
-21ur-8848 (type 2)
-21ur-8853 (type 2)
-21ur-8857 (type 2)
-21ur-8858 (type 2)
-21ur-8860 (type 2)
-21ur-8866 (type 2)
-21ur-8869 (type 2)
-21ur-8873 (type 2)
-21ur-8881 (type 2)
-21ur-8887 (type 2)
-21ur-8890 (type 2)
-21ur-8901 (type 2)
-21ur-8906 (type 2)
-21ur-8914 (type 2)
-21ur-8925 (type 2)
-21ur-8928 (type 2)
-21ur-8939 (type 2)
-21ur-8940 (type 2)
-21ur-8950 (type 2)
-21ur-8951 (type 2)
-21ur-8959 (type 2)
-21ur-8963 (type 2)
-21ur-8967 (type 2)
-21ur-8973 (type 2)
-21ur-8984 (type 2)
-21ur-8985 (type 2)
-21ur-8986 (type 2)
-21ur-9004 (type 2)
-21ur-9013 (type 2)
-21ur-9020 (type 2)
-21ur-9023 (type 2)
-21ur-9041 (type 2)
-21ur-9047 (type 2)
-21ur-9049 (type 2)
-21ur-9066 (type 2)
-21ur-9067 (type 2)
-21ur-9074 (type 2)
-21ur-9078 (type 2)
-21ur-9079 (type 2)
-21ur-9088 (type 2)
-21ur-9094 (type 2)
-21ur-9096 (type 2)
-21ur-9098 (type 2)
-21ur-9099 (type 2)
-21ur-9109 (type 2)
-21ur-9111 (type 2)
-21ur-9112 (type 2)
-21ur-9122 (type 2)
-21ur-9123 (type 2)
-21ur-9124 (type 2)
-21ur-9131 (type 2)
-21ur-9138 (type 2)
-21ur-9141 (type 2)
-21ur-9145 (type 2)
-21ur-9147 (type 2)
-21ur-9148 (type 2)
-21ur-9149 (type 2)
-21ur-9155 (type 2)
-21ur-9162 (type 2)
-21ur-9165 (type 2)
-21ur-9166 (type 2)
-21ur-9170 (type 2)
-21ur-9171 (type 2)
-21ur-9173 (type 2)
-21ur-9180 (type 2)
-21ur-9194 (type 2)
-21ur-9204 (type 2)
-21ur-9207 (type 2)
-21ur-9208 (type 2)
-21ur-9216 (type 2)
-21ur-9225 (type 2)
-21ur-9230 (type 2)
-21ur-9232 (type 2)
-21ur-9237 (type 2)
-21ur-9242 (type 2)
-21ur-9243 (type 2)
-21ur-9245 (type 2)
-21ur-9246 (type 2)
-21ur-9247 (type 2)
-21ur-9261 (type 2)
-21ur-9263 (type 2)
-21ur-9264 (type 2)
-21ur-9265 (type 2)
-21ur-9266 (type 2)
-21ur-9274 (type 2)
-21ur-9287 (type 2)
-21ur-9292 (type 2)
-21ur-9294 (type 2)
-21ur-9302 (type 2)
-21ur-9303 (type 2)
-21ur-9304 (type 2)
-21ur-9311 (type 2)
-21ur-9313 (type 2)
-21ur-9321 (type 2)
-21ur-9332 (type 2)
-21ur-9333 (type 2)
-21ur-9337 (type 2)
-21ur-9346 (type 2)
-21ur-9347 (type 2)
-21ur-9350 (type 2)
-21ur-9358 (type 2)
-21ur-9359 (type 2)
-21ur-9361 (type 2)
-21ur-9362 (type 2)
-21ur-9365 (type 2)
-21ur-9369 (type 2)
-21ur-9376 (type 2)
-21ur-9379 (type 2)
-21ur-9385 (type 2)
-21ur-9389 (type 2)
-21ur-9390 (type 2)
-21ur-9397 (type 2)
-21ur-9398 (type 2)
-21ur-9404 (type 2)
-21ur-9408 (type 2)
-21ur-9417 (type 2)
-21ur-9425 (type 2)
-21ur-9431 (type 2)
-21ur-9438 (type 2)
-21ur-9440 (type 2)
-21ur-9441 (type 2)
-21ur-9442 (type 2)
-21ur-9443 (type 2)
-21ur-9445 (type 2)
-21ur-9447 (type 2)
-21ur-9455 (type 2)
-21ur-9460 (type 2)
-21ur-9461 (type 2)
-21ur-9469 (type 2)
-21ur-9470 (type 2)
-21ur-9480 (type 2)
-21ur-9491 (type 2)
+(type2) 21ur-1
+(type2) 21ur-2
+(type2) 21ur-3
+(type2) 21ur-4
+(type2) 21ur-5
+(type2) 21ur-7
+(type2) 21ur-8
+(type2) 21ur-9
+(type2) 21ur-11
+(type2) 21ur-12
+(type2) 21ur-14
+(type2) 21ur-15
+(type2) 21ur-16
+(type2) 21ur-17
+(type2) 21ur-18
+(type2) 21ur-19
+(type2) 21ur-21
+(type2) 21ur-22
+(type2) 21ur-24
+(type2) 21ur-25
+(type2) 21ur-26
+(type2) 21ur-27
+(type2) 21ur-28
+(type2) 21ur-29
+(type2) 21ur-30
+(type2) 21ur-32
+(type2) 21ur-33
+(type2) 21ur-34
+(type2) 21ur-35
+(type2) 21ur-37
+(type2) 21ur-39
+(type2) 21ur-40
+(type2) 21ur-41
+(type2) 21ur-42
+(type2) 21ur-43
+(type2) 21ur-45
+(type2) 21ur-46
+(type2) 21ur-48
+(type2) 21ur-49
+(type2) 21ur-50
+(type2) 21ur-51
+(type2) 21ur-52
+(type2) 21ur-53
+(type2) 21ur-54
+(type2) 21ur-55
+(type2) 21ur-56
+(type2) 21ur-57
+(type2) 21ur-58
+(type2) 21ur-59
+(type2) 21ur-60
+(type2) 21ur-61
+(type2) 21ur-62
+(type2) 21ur-63
+(type2) 21ur-64
+(type2) 21ur-65
+(type2) 21ur-66
+(type2) 21ur-67
+(type2) 21ur-68
+(type2) 21ur-69
+(type2) 21ur-70
+(type2) 21ur-71
+(type2) 21ur-73
+(type2) 21ur-74
+(type2) 21ur-75
+(type2) 21ur-76
+(type2) 21ur-78
+(type2) 21ur-79
+(type2) 21ur-80
+(type2) 21ur-82
+(type2) 21ur-83
+(type2) 21ur-84
+(type2) 21ur-85
+(type2) 21ur-87
+(type2) 21ur-89
+(type2) 21ur-90
+(type2) 21ur-92
+(type2) 21ur-93
+(type2) 21ur-95
+(type2) 21ur-96
+(type2) 21ur-97
+(type2) 21ur-99
+(type2) 21ur-100
+(type2) 21ur-101
+(type2) 21ur-102
+(type2) 21ur-103
+(type2) 21ur-104
+(type2) 21ur-105
+(type2) 21ur-106
+(type2) 21ur-107
+(type2) 21ur-109
+(type2) 21ur-110
+(type2) 21ur-111
+(type2) 21ur-113
+(type2) 21ur-114
+(type2) 21ur-115
+(type2) 21ur-116
+(type2) 21ur-118
+(type2) 21ur-119
+(type2) 21ur-120
+(type2) 21ur-121
+(type2) 21ur-122
+(type2) 21ur-123
+(type2) 21ur-124
+(type2) 21ur-125
+(type2) 21ur-126
+(type2) 21ur-127
+(type2) 21ur-128
+(type2) 21ur-130
+(type2) 21ur-131
+(type2) 21ur-132
+(type2) 21ur-133
+(type2) 21ur-134
+(type2) 21ur-135
+(type2) 21ur-136
+(type2) 21ur-137
+(type2) 21ur-138
+(type2) 21ur-139
+(type2) 21ur-140
+(type2) 21ur-141
+(type2) 21ur-143
+(type2) 21ur-144
+(type2) 21ur-145
+(type2) 21ur-147
+(type2) 21ur-149
+(type2) 21ur-150
+(type2) 21ur-151
+(type2) 21ur-153
+(type2) 21ur-156
+(type2) 21ur-158
+(type2) 21ur-159
+(type2) 21ur-160
+(type2) 21ur-161
+(type2) 21ur-162
+(type2) 21ur-163
+(type2) 21ur-164
+(type2) 21ur-165
+(type2) 21ur-166
+(type2) 21ur-167
+(type2) 21ur-168
+(type2) 21ur-169
+(type2) 21ur-170
+(type2) 21ur-171
+(type2) 21ur-172
+(type2) 21ur-173
+(type2) 21ur-174
+(type2) 21ur-175
+(type2) 21ur-177
+(type2) 21ur-178
+(type2) 21ur-179
+(type2) 21ur-183
+(type2) 21ur-184
+(type2) 21ur-185
+(type2) 21ur-188
+(type2) 21ur-189
+(type2) 21ur-191
+(type2) 21ur-192
+(type2) 21ur-193
+(type2) 21ur-194
+(type2) 21ur-195
+(type2) 21ur-196
+(type2) 21ur-197
+(type2) 21ur-198
+(type2) 21ur-199
+(type2) 21ur-200
+(type2) 21ur-201
+(type2) 21ur-202
+(type2) 21ur-203
+(type2) 21ur-204
+(type2) 21ur-205
+(type2) 21ur-206
+(type2) 21ur-207
+(type2) 21ur-208
+(type2) 21ur-211
+(type2) 21ur-212
+(type2) 21ur-214
+(type2) 21ur-216
+(type2) 21ur-218
+(type2) 21ur-219
+(type2) 21ur-220
+(type2) 21ur-221
+(type2) 21ur-222
+(type2) 21ur-223
+(type2) 21ur-224
+(type2) 21ur-226
+(type2) 21ur-227
+(type2) 21ur-229
+(type2) 21ur-231
+(type2) 21ur-232
+(type2) 21ur-233
+(type2) 21ur-234
+(type2) 21ur-235
+(type2) 21ur-236
+(type2) 21ur-237
+(type2) 21ur-238
+(type2) 21ur-239
+(type2) 21ur-240
+(type2) 21ur-244
+(type2) 21ur-245
+(type2) 21ur-246
+(type2) 21ur-248
+(type2) 21ur-250
+(type2) 21ur-251
+(type2) 21ur-253
+(type2) 21ur-254
+(type2) 21ur-255
+(type2) 21ur-257
+(type2) 21ur-258
+(type2) 21ur-259
+(type2) 21ur-260
+(type2) 21ur-264
+(type2) 21ur-265
+(type2) 21ur-266
+(type2) 21ur-267
+(type2) 21ur-268
+(type2) 21ur-269
+(type2) 21ur-270
+(type2) 21ur-279
+(type2) 21ur-280
+(type2) 21ur-281
+(type2) 21ur-282
+(type2) 21ur-283
+(type2) 21ur-285
+(type2) 21ur-286
+(type2) 21ur-287
+(type2) 21ur-288
+(type2) 21ur-289
+(type2) 21ur-290
+(type2) 21ur-292
+(type2) 21ur-296
+(type2) 21ur-298
+(type2) 21ur-302
+(type2) 21ur-304
+(type2) 21ur-305
+(type2) 21ur-306
+(type2) 21ur-307
+(type2) 21ur-310
+(type2) 21ur-312
+(type2) 21ur-313
+(type2) 21ur-314
+(type2) 21ur-315
+(type2) 21ur-316
+(type2) 21ur-317
+(type2) 21ur-319
+(type2) 21ur-320
+(type2) 21ur-321
+(type2) 21ur-323
+(type2) 21ur-324
+(type2) 21ur-328
+(type2) 21ur-329
+(type2) 21ur-330
+(type2) 21ur-331
+(type2) 21ur-332
+(type2) 21ur-333
+(type2) 21ur-334
+(type2) 21ur-335
+(type2) 21ur-337
+(type2) 21ur-338
+(type2) 21ur-339
+(type2) 21ur-340
+(type2) 21ur-341
+(type2) 21ur-342
+(type2) 21ur-343
+(type2) 21ur-344
+(type2) 21ur-345
+(type2) 21ur-348
+(type2) 21ur-350
+(type2) 21ur-352
+(type2) 21ur-355
+(type2) 21ur-356
+(type2) 21ur-359
+(type2) 21ur-360
+(type2) 21ur-361
+(type2) 21ur-362
+(type2) 21ur-363
+(type2) 21ur-364
+(type2) 21ur-365
+(type2) 21ur-366
+(type2) 21ur-368
+(type2) 21ur-369
+(type2) 21ur-371
+(type2) 21ur-372
+(type2) 21ur-376
+(type2) 21ur-377
+(type2) 21ur-380
+(type2) 21ur-381
+(type2) 21ur-382
+(type2) 21ur-383
+(type2) 21ur-385
+(type2) 21ur-388
+(type2) 21ur-389
+(type2) 21ur-391
+(type2) 21ur-392
+(type2) 21ur-393
+(type2) 21ur-394
+(type2) 21ur-396
+(type2) 21ur-399
+(type2) 21ur-400
+(type2) 21ur-402
+(type2) 21ur-403
+(type2) 21ur-404
+(type2) 21ur-405
+(type2) 21ur-406
+(type2) 21ur-408
+(type2) 21ur-409
+(type2) 21ur-410
+(type2) 21ur-412
+(type2) 21ur-414
+(type2) 21ur-417
+(type2) 21ur-418
+(type2) 21ur-419
+(type2) 21ur-420
+(type2) 21ur-423
+(type2) 21ur-424
+(type2) 21ur-431
+(type2) 21ur-432
+(type2) 21ur-433
+(type2) 21ur-434
+(type2) 21ur-436
+(type2) 21ur-438
+(type2) 21ur-439
+(type2) 21ur-442
+(type2) 21ur-443
+(type2) 21ur-445
+(type2) 21ur-446
+(type2) 21ur-450
+(type2) 21ur-451
+(type2) 21ur-452
+(type2) 21ur-453
+(type2) 21ur-454
+(type2) 21ur-455
+(type2) 21ur-458
+(type2) 21ur-459
+(type2) 21ur-460
+(type2) 21ur-461
+(type2) 21ur-462
+(type2) 21ur-463
+(type2) 21ur-464
+(type2) 21ur-467
+(type2) 21ur-468
+(type2) 21ur-469
+(type2) 21ur-472
+(type2) 21ur-473
+(type2) 21ur-477
+(type2) 21ur-478
+(type2) 21ur-480
+(type2) 21ur-481
+(type2) 21ur-482
+(type2) 21ur-484
+(type2) 21ur-485
+(type2) 21ur-486
+(type2) 21ur-493
+(type2) 21ur-495
+(type2) 21ur-496
+(type2) 21ur-497
+(type2) 21ur-498
+(type2) 21ur-499
+(type2) 21ur-502
+(type2) 21ur-503
+(type2) 21ur-504
+(type2) 21ur-505
+(type2) 21ur-506
+(type2) 21ur-507
+(type2) 21ur-508
+(type2) 21ur-510
+(type2) 21ur-511
+(type2) 21ur-512
+(type2) 21ur-513
+(type2) 21ur-514
+(type2) 21ur-515
+(type2) 21ur-518
+(type2) 21ur-519
+(type2) 21ur-520
+(type2) 21ur-521
+(type2) 21ur-523
+(type2) 21ur-524
+(type2) 21ur-525
+(type2) 21ur-526
+(type2) 21ur-528
+(type2) 21ur-530
+(type2) 21ur-531
+(type2) 21ur-532
+(type2) 21ur-533
+(type2) 21ur-534
+(type2) 21ur-543
+(type2) 21ur-544
+(type2) 21ur-546
+(type2) 21ur-547
+(type2) 21ur-549
+(type2) 21ur-550
+(type2) 21ur-553
+(type2) 21ur-554
+(type2) 21ur-555
+(type2) 21ur-556
+(type2) 21ur-558
+(type2) 21ur-560
+(type2) 21ur-561
+(type2) 21ur-562
+(type2) 21ur-563
+(type2) 21ur-564
+(type2) 21ur-566
+(type2) 21ur-567
+(type2) 21ur-568
+(type2) 21ur-569
+(type2) 21ur-570
+(type2) 21ur-572
+(type2) 21ur-574
+(type2) 21ur-576
+(type2) 21ur-579
+(type2) 21ur-580
+(type2) 21ur-581
+(type2) 21ur-583
+(type2) 21ur-585
+(type2) 21ur-586
+(type2) 21ur-587
+(type2) 21ur-588
+(type2) 21ur-594
+(type2) 21ur-595
+(type2) 21ur-599
+(type2) 21ur-600
+(type2) 21ur-603
+(type2) 21ur-604
+(type2) 21ur-605
+(type2) 21ur-606
+(type2) 21ur-609
+(type2) 21ur-611
+(type2) 21ur-612
+(type2) 21ur-614
+(type2) 21ur-615
+(type2) 21ur-616
+(type2) 21ur-617
+(type2) 21ur-618
+(type2) 21ur-619
+(type2) 21ur-624
+(type2) 21ur-625
+(type2) 21ur-628
+(type2) 21ur-634
+(type2) 21ur-636
+(type2) 21ur-639
+(type2) 21ur-642
+(type2) 21ur-644
+(type2) 21ur-645
+(type2) 21ur-651
+(type2) 21ur-652
+(type2) 21ur-655
+(type2) 21ur-657
+(type2) 21ur-661
+(type2) 21ur-662
+(type2) 21ur-664
+(type2) 21ur-665
+(type2) 21ur-667
+(type2) 21ur-669
+(type2) 21ur-670
+(type2) 21ur-671
+(type2) 21ur-672
+(type2) 21ur-673
+(type2) 21ur-675
+(type2) 21ur-676
+(type2) 21ur-679
+(type2) 21ur-681
+(type2) 21ur-682
+(type2) 21ur-683
+(type2) 21ur-686
+(type2) 21ur-688
+(type2) 21ur-689
+(type2) 21ur-690
+(type2) 21ur-691
+(type2) 21ur-692
+(type2) 21ur-699
+(type2) 21ur-700
+(type2) 21ur-706
+(type2) 21ur-707
+(type2) 21ur-709
+(type2) 21ur-711
+(type2) 21ur-712
+(type2) 21ur-713
+(type2) 21ur-718
+(type2) 21ur-722
+(type2) 21ur-723
+(type2) 21ur-725
+(type2) 21ur-727
+(type2) 21ur-730
+(type2) 21ur-731
+(type2) 21ur-733
+(type2) 21ur-734
+(type2) 21ur-735
+(type2) 21ur-739
+(type2) 21ur-740
+(type2) 21ur-741
+(type2) 21ur-742
+(type2) 21ur-745
+(type2) 21ur-746
+(type2) 21ur-747
+(type2) 21ur-749
+(type2) 21ur-750
+(type2) 21ur-751
+(type2) 21ur-752
+(type2) 21ur-753
+(type2) 21ur-754
+(type2) 21ur-757
+(type2) 21ur-758
+(type2) 21ur-759
+(type2) 21ur-760
+(type2) 21ur-764
+(type2) 21ur-767
+(type2) 21ur-768
+(type2) 21ur-772
+(type2) 21ur-773
+(type2) 21ur-775
+(type2) 21ur-777
+(type2) 21ur-778
+(type2) 21ur-781
+(type2) 21ur-783
+(type2) 21ur-788
+(type2) 21ur-789
+(type2) 21ur-790
+(type2) 21ur-791
+(type2) 21ur-794
+(type2) 21ur-795
+(type2) 21ur-796
+(type2) 21ur-797
+(type2) 21ur-798
+(type2) 21ur-800
+(type2) 21ur-801
+(type2) 21ur-802
+(type2) 21ur-803
+(type2) 21ur-807
+(type2) 21ur-808
+(type2) 21ur-811
+(type2) 21ur-812
+(type2) 21ur-814
+(type2) 21ur-817
+(type2) 21ur-818
+(type2) 21ur-819
+(type2) 21ur-821
+(type2) 21ur-822
+(type2) 21ur-824
+(type2) 21ur-825
+(type2) 21ur-828
+(type2) 21ur-829
+(type2) 21ur-831
+(type2) 21ur-832
+(type2) 21ur-833
+(type2) 21ur-834
+(type2) 21ur-835
+(type2) 21ur-836
+(type2) 21ur-838
+(type2) 21ur-839
+(type2) 21ur-840
+(type2) 21ur-843
+(type2) 21ur-846
+(type2) 21ur-849
+(type2) 21ur-851
+(type2) 21ur-854
+(type2) 21ur-860
+(type2) 21ur-861
+(type2) 21ur-862
+(type2) 21ur-864
+(type2) 21ur-866
+(type2) 21ur-868
+(type2) 21ur-869
+(type2) 21ur-870
+(type2) 21ur-871
+(type2) 21ur-872
+(type2) 21ur-873
+(type2) 21ur-878
+(type2) 21ur-879
+(type2) 21ur-882
+(type2) 21ur-883
+(type2) 21ur-886
+(type2) 21ur-889
+(type2) 21ur-892
+(type2) 21ur-895
+(type2) 21ur-897
+(type2) 21ur-898
+(type2) 21ur-899
+(type2) 21ur-900
+(type2) 21ur-901
+(type2) 21ur-905
+(type2) 21ur-906
+(type2) 21ur-907
+(type2) 21ur-909
+(type2) 21ur-910
+(type2) 21ur-911
+(type2) 21ur-913
+(type2) 21ur-916
+(type2) 21ur-917
+(type2) 21ur-919
+(type2) 21ur-920
+(type2) 21ur-921
+(type2) 21ur-922
+(type2) 21ur-923
+(type2) 21ur-930
+(type2) 21ur-932
+(type2) 21ur-934
+(type2) 21ur-936
+(type2) 21ur-939
+(type2) 21ur-944
+(type2) 21ur-945
+(type2) 21ur-947
+(type2) 21ur-948
+(type2) 21ur-951
+(type2) 21ur-955
+(type2) 21ur-957
+(type2) 21ur-958
+(type2) 21ur-965
+(type2) 21ur-967
+(type2) 21ur-968
+(type2) 21ur-970
+(type2) 21ur-972
+(type2) 21ur-977
+(type2) 21ur-980
+(type2) 21ur-981
+(type2) 21ur-984
+(type2) 21ur-987
+(type2) 21ur-988
+(type2) 21ur-989
+(type2) 21ur-990
+(type2) 21ur-991
+(type2) 21ur-992
+(type2) 21ur-993
+(type2) 21ur-999
+(type2) 21ur-1002
+(type2) 21ur-1004
+(type2) 21ur-1005
+(type2) 21ur-1009
+(type2) 21ur-1013
+(type2) 21ur-1014
+(type2) 21ur-1015
+(type2) 21ur-1016
+(type2) 21ur-1018
+(type2) 21ur-1019
+(type2) 21ur-1020
+(type2) 21ur-1023
+(type2) 21ur-1025
+(type2) 21ur-1027
+(type2) 21ur-1030
+(type2) 21ur-1031
+(type2) 21ur-1036
+(type2) 21ur-1039
+(type2) 21ur-1041
+(type2) 21ur-1042
+(type2) 21ur-1043
+(type2) 21ur-1046
+(type2) 21ur-1050
+(type2) 21ur-1055
+(type2) 21ur-1064
+(type2) 21ur-1067
+(type2) 21ur-1069
+(type2) 21ur-1072
+(type2) 21ur-1073
+(type2) 21ur-1076
+(type2) 21ur-1077
+(type2) 21ur-1078
+(type2) 21ur-1080
+(type2) 21ur-1084
+(type2) 21ur-1086
+(type2) 21ur-1087
+(type2) 21ur-1090
+(type2) 21ur-1091
+(type2) 21ur-1093
+(type2) 21ur-1094
+(type2) 21ur-1096
+(type2) 21ur-1097
+(type2) 21ur-1098
+(type2) 21ur-1099
+(type2) 21ur-1100
+(type2) 21ur-1101
+(type2) 21ur-1102
+(type2) 21ur-1103
+(type2) 21ur-1104
+(type2) 21ur-1108
+(type2) 21ur-1110
+(type2) 21ur-1111
+(type2) 21ur-1114
+(type2) 21ur-1117
+(type2) 21ur-1118
+(type2) 21ur-1121
+(type2) 21ur-1122
+(type2) 21ur-1123
+(type2) 21ur-1124
+(type2) 21ur-1125
+(type2) 21ur-1128
+(type2) 21ur-1129
+(type2) 21ur-1132
+(type2) 21ur-1134
+(type2) 21ur-1135
+(type2) 21ur-1138
+(type2) 21ur-1139
+(type2) 21ur-1140
+(type2) 21ur-1143
+(type2) 21ur-1145
+(type2) 21ur-1147
+(type2) 21ur-1148
+(type2) 21ur-1149
+(type2) 21ur-1150
+(type2) 21ur-1152
+(type2) 21ur-1154
+(type2) 21ur-1155
+(type2) 21ur-1163
+(type2) 21ur-1167
+(type2) 21ur-1171
+(type2) 21ur-1175
+(type2) 21ur-1176
+(type2) 21ur-1181
+(type2) 21ur-1182
+(type2) 21ur-1185
+(type2) 21ur-1186
+(type2) 21ur-1194
+(type2) 21ur-1195
+(type2) 21ur-1197
+(type2) 21ur-1199
+(type2) 21ur-1202
+(type2) 21ur-1206
+(type2) 21ur-1207
+(type2) 21ur-1208
+(type2) 21ur-1214
+(type2) 21ur-1215
+(type2) 21ur-1216
+(type2) 21ur-1217
+(type2) 21ur-1218
+(type2) 21ur-1220
+(type2) 21ur-1221
+(type2) 21ur-1222
+(type2) 21ur-1223
+(type2) 21ur-1224
+(type2) 21ur-1228
+(type2) 21ur-1229
+(type2) 21ur-1230
+(type2) 21ur-1234
+(type2) 21ur-1237
+(type2) 21ur-1240
+(type2) 21ur-1242
+(type2) 21ur-1243
+(type2) 21ur-1244
+(type2) 21ur-1245
+(type2) 21ur-1246
+(type2) 21ur-1247
+(type2) 21ur-1248
+(type2) 21ur-1250
+(type2) 21ur-1251
+(type2) 21ur-1256
+(type2) 21ur-1257
+(type2) 21ur-1260
+(type2) 21ur-1261
+(type2) 21ur-1265
+(type2) 21ur-1267
+(type2) 21ur-1270
+(type2) 21ur-1271
+(type2) 21ur-1273
+(type2) 21ur-1274
+(type2) 21ur-1275
+(type2) 21ur-1279
+(type2) 21ur-1282
+(type2) 21ur-1284
+(type2) 21ur-1285
+(type2) 21ur-1286
+(type2) 21ur-1290
+(type2) 21ur-1292
+(type2) 21ur-1294
+(type2) 21ur-1295
+(type2) 21ur-1297
+(type2) 21ur-1299
+(type2) 21ur-1300
+(type2) 21ur-1304
+(type2) 21ur-1305
+(type2) 21ur-1307
+(type2) 21ur-1309
+(type2) 21ur-1310
+(type2) 21ur-1312
+(type2) 21ur-1314
+(type2) 21ur-1315
+(type2) 21ur-1316
+(type2) 21ur-1317
+(type2) 21ur-1319
+(type2) 21ur-1321
+(type2) 21ur-1326
+(type2) 21ur-1327
+(type2) 21ur-1333
+(type2) 21ur-1334
+(type2) 21ur-1336
+(type2) 21ur-1337
+(type2) 21ur-1339
+(type2) 21ur-1340
+(type2) 21ur-1342
+(type2) 21ur-1343
+(type2) 21ur-1345
+(type2) 21ur-1346
+(type2) 21ur-1347
+(type2) 21ur-1350
+(type2) 21ur-1352
+(type2) 21ur-1356
+(type2) 21ur-1357
+(type2) 21ur-1358
+(type2) 21ur-1359
+(type2) 21ur-1360
+(type2) 21ur-1361
+(type2) 21ur-1363
+(type2) 21ur-1366
+(type2) 21ur-1367
+(type2) 21ur-1368
+(type2) 21ur-1369
+(type2) 21ur-1370
+(type2) 21ur-1371
+(type2) 21ur-1375
+(type2) 21ur-1376
+(type2) 21ur-1380
+(type2) 21ur-1383
+(type2) 21ur-1384
+(type2) 21ur-1388
+(type2) 21ur-1389
+(type2) 21ur-1390
+(type2) 21ur-1391
+(type2) 21ur-1393
+(type2) 21ur-1396
+(type2) 21ur-1400
+(type2) 21ur-1401
+(type2) 21ur-1404
+(type2) 21ur-1406
+(type2) 21ur-1410
+(type2) 21ur-1411
+(type2) 21ur-1412
+(type2) 21ur-1414
+(type2) 21ur-1416
+(type2) 21ur-1418
+(type2) 21ur-1419
+(type2) 21ur-1420
+(type2) 21ur-1421
+(type2) 21ur-1423
+(type2) 21ur-1426
+(type2) 21ur-1428
+(type2) 21ur-1429
+(type2) 21ur-1433
+(type2) 21ur-1435
+(type2) 21ur-1437
+(type2) 21ur-1439
+(type2) 21ur-1447
+(type2) 21ur-1451
+(type2) 21ur-1452
+(type2) 21ur-1455
+(type2) 21ur-1457
+(type2) 21ur-1458
+(type2) 21ur-1467
+(type2) 21ur-1468
+(type2) 21ur-1469
+(type2) 21ur-1473
+(type2) 21ur-1475
+(type2) 21ur-1476
+(type2) 21ur-1480
+(type2) 21ur-1482
+(type2) 21ur-1484
+(type2) 21ur-1485
+(type2) 21ur-1487
+(type2) 21ur-1488
+(type2) 21ur-1490
+(type2) 21ur-1497
+(type2) 21ur-1499
+(type2) 21ur-1500
+(type2) 21ur-1502
+(type2) 21ur-1503
+(type2) 21ur-1506
+(type2) 21ur-1507
+(type2) 21ur-1508
+(type2) 21ur-1509
+(type2) 21ur-1510
+(type2) 21ur-1511
+(type2) 21ur-1513
+(type2) 21ur-1516
+(type2) 21ur-1519
+(type2) 21ur-1538
+(type2) 21ur-1539
+(type2) 21ur-1543
+(type2) 21ur-1545
+(type2) 21ur-1558
+(type2) 21ur-1560
+(type2) 21ur-1565
+(type2) 21ur-1567
+(type2) 21ur-1569
+(type2) 21ur-1574
+(type2) 21ur-1579
+(type2) 21ur-1580
+(type2) 21ur-1584
+(type2) 21ur-1585
+(type2) 21ur-1592
+(type2) 21ur-1594
+(type2) 21ur-1596
+(type2) 21ur-1597
+(type2) 21ur-1600
+(type2) 21ur-1601
+(type2) 21ur-1604
+(type2) 21ur-1605
+(type2) 21ur-1607
+(type2) 21ur-1608
+(type2) 21ur-1609
+(type2) 21ur-1613
+(type2) 21ur-1615
+(type2) 21ur-1622
+(type2) 21ur-1623
+(type2) 21ur-1624
+(type2) 21ur-1625
+(type2) 21ur-1626
+(type2) 21ur-1628
+(type2) 21ur-1629
+(type2) 21ur-1630
+(type2) 21ur-1631
+(type2) 21ur-1632
+(type2) 21ur-1633
+(type2) 21ur-1634
+(type2) 21ur-1639
+(type2) 21ur-1642
+(type2) 21ur-1643
+(type2) 21ur-1644
+(type2) 21ur-1648
+(type2) 21ur-1649
+(type2) 21ur-1650
+(type2) 21ur-1651
+(type2) 21ur-1652
+(type2) 21ur-1653
+(type2) 21ur-1654
+(type2) 21ur-1658
+(type2) 21ur-1660
+(type2) 21ur-1662
+(type2) 21ur-1663
+(type2) 21ur-1665
+(type2) 21ur-1668
+(type2) 21ur-1669
+(type2) 21ur-1670
+(type2) 21ur-1671
+(type2) 21ur-1674
+(type2) 21ur-1675
+(type2) 21ur-1676
+(type2) 21ur-1677
+(type2) 21ur-1682
+(type2) 21ur-1683
+(type2) 21ur-1685
+(type2) 21ur-1689
+(type2) 21ur-1691
+(type2) 21ur-1693
+(type2) 21ur-1696
+(type2) 21ur-1697
+(type2) 21ur-1699
+(type2) 21ur-1701
+(type2) 21ur-1702
+(type2) 21ur-1704
+(type2) 21ur-1706
+(type2) 21ur-1708
+(type2) 21ur-1709
+(type2) 21ur-1710
+(type2) 21ur-1716
+(type2) 21ur-1717
+(type2) 21ur-1719
+(type2) 21ur-1720
+(type2) 21ur-1721
+(type2) 21ur-1722
+(type2) 21ur-1724
+(type2) 21ur-1728
+(type2) 21ur-1729
+(type2) 21ur-1731
+(type2) 21ur-1735
+(type2) 21ur-1736
+(type2) 21ur-1737
+(type2) 21ur-1738
+(type2) 21ur-1742
+(type2) 21ur-1743
+(type2) 21ur-1744
+(type2) 21ur-1746
+(type2) 21ur-1751
+(type2) 21ur-1752
+(type2) 21ur-1753
+(type2) 21ur-1754
+(type2) 21ur-1760
+(type2) 21ur-1761
+(type2) 21ur-1763
+(type2) 21ur-1764
+(type2) 21ur-1766
+(type2) 21ur-1768
+(type2) 21ur-1769
+(type2) 21ur-1772
+(type2) 21ur-1773
+(type2) 21ur-1775
+(type2) 21ur-1777
+(type2) 21ur-1787
+(type2) 21ur-1789
+(type2) 21ur-1791
+(type2) 21ur-1792
+(type2) 21ur-1793
+(type2) 21ur-1798
+(type2) 21ur-1799
+(type2) 21ur-1800
+(type2) 21ur-1801
+(type2) 21ur-1804
+(type2) 21ur-1806
+(type2) 21ur-1807
+(type2) 21ur-1808
+(type2) 21ur-1810
+(type2) 21ur-1811
+(type2) 21ur-1813
+(type2) 21ur-1814
+(type2) 21ur-1816
+(type2) 21ur-1817
+(type2) 21ur-1821
+(type2) 21ur-1824
+(type2) 21ur-1825
+(type2) 21ur-1827
+(type2) 21ur-1829
+(type2) 21ur-1830
+(type2) 21ur-1831
+(type2) 21ur-1839
+(type2) 21ur-1840
+(type2) 21ur-1842
+(type2) 21ur-1843
+(type2) 21ur-1844
+(type2) 21ur-1845
+(type2) 21ur-1847
+(type2) 21ur-1849
+(type2) 21ur-1850
+(type2) 21ur-1851
+(type2) 21ur-1868
+(type2) 21ur-1869
+(type2) 21ur-1870
+(type2) 21ur-1872
+(type2) 21ur-1876
+(type2) 21ur-1877
+(type2) 21ur-1878
+(type2) 21ur-1880
+(type2) 21ur-1884
+(type2) 21ur-1885
+(type2) 21ur-1888
+(type2) 21ur-1890
+(type2) 21ur-1892
+(type2) 21ur-1893
+(type2) 21ur-1894
+(type2) 21ur-1896
+(type2) 21ur-1900
+(type2) 21ur-1901
+(type2) 21ur-1902
+(type2) 21ur-1903
+(type2) 21ur-1907
+(type2) 21ur-1910
+(type2) 21ur-1918
+(type2) 21ur-1919
+(type2) 21ur-1923
+(type2) 21ur-1924
+(type2) 21ur-1925
+(type2) 21ur-1929
+(type2) 21ur-1931
+(type2) 21ur-1934
+(type2) 21ur-1935
+(type2) 21ur-1937
+(type2) 21ur-1940
+(type2) 21ur-1941
+(type2) 21ur-1947
+(type2) 21ur-1948
+(type2) 21ur-1949
+(type2) 21ur-1950
+(type2) 21ur-1957
+(type2) 21ur-1959
+(type2) 21ur-1960
+(type2) 21ur-1964
+(type2) 21ur-1967
+(type2) 21ur-1968
+(type2) 21ur-1971
+(type2) 21ur-1973
+(type2) 21ur-1978
+(type2) 21ur-1982
+(type2) 21ur-1988
+(type2) 21ur-1990
+(type2) 21ur-1991
+(type2) 21ur-1993
+(type2) 21ur-1994
+(type2) 21ur-1995
+(type2) 21ur-1997
+(type2) 21ur-1999
+(type2) 21ur-2000
+(type2) 21ur-2003
+(type2) 21ur-2004
+(type2) 21ur-2005
+(type2) 21ur-2008
+(type2) 21ur-2009
+(type2) 21ur-2014
+(type2) 21ur-2016
+(type2) 21ur-2019
+(type2) 21ur-2028
+(type2) 21ur-2029
+(type2) 21ur-2031
+(type2) 21ur-2037
+(type2) 21ur-2041
+(type2) 21ur-2045
+(type2) 21ur-2052
+(type2) 21ur-2055
+(type2) 21ur-2056
+(type2) 21ur-2057
+(type2) 21ur-2061
+(type2) 21ur-2062
+(type2) 21ur-2072
+(type2) 21ur-2073
+(type2) 21ur-2075
+(type2) 21ur-2080
+(type2) 21ur-2082
+(type2) 21ur-2084
+(type2) 21ur-2092
+(type2) 21ur-2093
+(type2) 21ur-2094
+(type2) 21ur-2096
+(type2) 21ur-2100
+(type2) 21ur-2101
+(type2) 21ur-2105
+(type2) 21ur-2106
+(type2) 21ur-2107
+(type2) 21ur-2109
+(type2) 21ur-2110
+(type2) 21ur-2116
+(type2) 21ur-2122
+(type2) 21ur-2124
+(type2) 21ur-2127
+(type2) 21ur-2128
+(type2) 21ur-2134
+(type2) 21ur-2137
+(type2) 21ur-2139
+(type2) 21ur-2146
+(type2) 21ur-2148
+(type2) 21ur-2149
+(type2) 21ur-2150
+(type2) 21ur-2152
+(type2) 21ur-2158
+(type2) 21ur-2160
+(type2) 21ur-2162
+(type2) 21ur-2163
+(type2) 21ur-2164
+(type2) 21ur-2166
+(type2) 21ur-2167
+(type2) 21ur-2168
+(type2) 21ur-2170
+(type2) 21ur-2172
+(type2) 21ur-2173
+(type2) 21ur-2175
+(type2) 21ur-2178
+(type2) 21ur-2180
+(type2) 21ur-2182
+(type2) 21ur-2188
+(type2) 21ur-2192
+(type2) 21ur-2195
+(type2) 21ur-2196
+(type2) 21ur-2199
+(type2) 21ur-2201
+(type2) 21ur-2202
+(type2) 21ur-2203
+(type2) 21ur-2204
+(type2) 21ur-2205
+(type2) 21ur-2208
+(type2) 21ur-2210
+(type2) 21ur-2215
+(type2) 21ur-2217
+(type2) 21ur-2220
+(type2) 21ur-2221
+(type2) 21ur-2223
+(type2) 21ur-2226
+(type2) 21ur-2228
+(type2) 21ur-2229
+(type2) 21ur-2230
+(type2) 21ur-2235
+(type2) 21ur-2236
+(type2) 21ur-2237
+(type2) 21ur-2241
+(type2) 21ur-2243
+(type2) 21ur-2244
+(type2) 21ur-2247
+(type2) 21ur-2248
+(type2) 21ur-2251
+(type2) 21ur-2252
+(type2) 21ur-2257
+(type2) 21ur-2258
+(type2) 21ur-2261
+(type2) 21ur-2264
+(type2) 21ur-2273
+(type2) 21ur-2274
+(type2) 21ur-2275
+(type2) 21ur-2276
+(type2) 21ur-2278
+(type2) 21ur-2279
+(type2) 21ur-2281
+(type2) 21ur-2286
+(type2) 21ur-2289
+(type2) 21ur-2291
+(type2) 21ur-2292
+(type2) 21ur-2296
+(type2) 21ur-2297
+(type2) 21ur-2298
+(type2) 21ur-2299
+(type2) 21ur-2300
+(type2) 21ur-2304
+(type2) 21ur-2306
+(type2) 21ur-2311
+(type2) 21ur-2313
+(type2) 21ur-2314
+(type2) 21ur-2318
+(type2) 21ur-2323
+(type2) 21ur-2328
+(type2) 21ur-2331
+(type2) 21ur-2332
+(type2) 21ur-2333
+(type2) 21ur-2337
+(type2) 21ur-2341
+(type2) 21ur-2342
+(type2) 21ur-2344
+(type2) 21ur-2347
+(type2) 21ur-2348
+(type2) 21ur-2349
+(type2) 21ur-2350
+(type2) 21ur-2352
+(type2) 21ur-2354
+(type2) 21ur-2358
+(type2) 21ur-2359
+(type2) 21ur-2365
+(type2) 21ur-2368
+(type2) 21ur-2370
+(type2) 21ur-2373
+(type2) 21ur-2386
+(type2) 21ur-2387
+(type2) 21ur-2390
+(type2) 21ur-2391
+(type2) 21ur-2394
+(type2) 21ur-2397
+(type2) 21ur-2405
+(type2) 21ur-2406
+(type2) 21ur-2408
+(type2) 21ur-2423
+(type2) 21ur-2430
+(type2) 21ur-2436
+(type2) 21ur-2450
+(type2) 21ur-2452
+(type2) 21ur-2457
+(type2) 21ur-2458
+(type2) 21ur-2460
+(type2) 21ur-2470
+(type2) 21ur-2476
+(type2) 21ur-2480
+(type2) 21ur-2486
+(type2) 21ur-2490
+(type2) 21ur-2493
+(type2) 21ur-2496
+(type2) 21ur-2499
+(type2) 21ur-2500
+(type2) 21ur-2504
+(type2) 21ur-2519
+(type2) 21ur-2520
+(type2) 21ur-2523
+(type2) 21ur-2526
+(type2) 21ur-2534
+(type2) 21ur-2547
+(type2) 21ur-2553
+(type2) 21ur-2554
+(type2) 21ur-2557
+(type2) 21ur-2563
+(type2) 21ur-2565
+(type2) 21ur-2570
+(type2) 21ur-2581
+(type2) 21ur-2590
+(type2) 21ur-2599
+(type2) 21ur-2601
+(type2) 21ur-2605
+(type2) 21ur-2607
+(type2) 21ur-2612
+(type2) 21ur-2614
+(type2) 21ur-2617
+(type2) 21ur-2620
+(type2) 21ur-2622
+(type2) 21ur-2624
+(type2) 21ur-2629
+(type2) 21ur-2630
+(type2) 21ur-2647
+(type2) 21ur-2648
+(type2) 21ur-2662
+(type2) 21ur-2666
+(type2) 21ur-2673
+(type2) 21ur-2677
+(type2) 21ur-2688
+(type2) 21ur-2689
+(type2) 21ur-2696
+(type2) 21ur-2704
+(type2) 21ur-2707
+(type2) 21ur-2710
+(type2) 21ur-2713
+(type2) 21ur-2715
+(type2) 21ur-2718
+(type2) 21ur-2728
+(type2) 21ur-2730
+(type2) 21ur-2735
+(type2) 21ur-2743
+(type2) 21ur-2748
+(type2) 21ur-2750
+(type2) 21ur-2753
+(type2) 21ur-2755
+(type2) 21ur-2777
+(type2) 21ur-2779
+(type2) 21ur-2781
+(type2) 21ur-2786
+(type2) 21ur-2789
+(type2) 21ur-2790
+(type2) 21ur-2791
+(type2) 21ur-2796
+(type2) 21ur-2797
+(type2) 21ur-2804
+(type2) 21ur-2809
+(type2) 21ur-2817
+(type2) 21ur-2823
+(type2) 21ur-2827
+(type2) 21ur-2828
+(type2) 21ur-2833
+(type2) 21ur-2835
+(type2) 21ur-2836
+(type2) 21ur-2838
+(type2) 21ur-2840
+(type2) 21ur-2841
+(type2) 21ur-2843
+(type2) 21ur-2846
+(type2) 21ur-2849
+(type2) 21ur-2852
+(type2) 21ur-2864
+(type2) 21ur-2865
+(type2) 21ur-2868
+(type2) 21ur-2873
+(type2) 21ur-2877
+(type2) 21ur-2878
+(type2) 21ur-2879
+(type2) 21ur-2880
+(type2) 21ur-2883
+(type2) 21ur-2886
+(type2) 21ur-2888
+(type2) 21ur-2889
+(type2) 21ur-2890
+(type2) 21ur-2896
+(type2) 21ur-2897
+(type2) 21ur-2902
+(type2) 21ur-2905
+(type2) 21ur-2906
+(type2) 21ur-2907
+(type2) 21ur-2912
+(type2) 21ur-2915
+(type2) 21ur-2922
+(type2) 21ur-2923
+(type2) 21ur-2931
+(type2) 21ur-2932
+(type2) 21ur-2937
+(type2) 21ur-2939
+(type2) 21ur-2941
+(type2) 21ur-2942
+(type2) 21ur-2947
+(type2) 21ur-2965
+(type2) 21ur-2974
+(type2) 21ur-2975
+(type2) 21ur-2976
+(type2) 21ur-2978
+(type2) 21ur-2983
+(type2) 21ur-2988
+(type2) 21ur-2990
+(type2) 21ur-2992
+(type2) 21ur-2994
+(type2) 21ur-2995
+(type2) 21ur-2996
+(type2) 21ur-2997
+(type2) 21ur-3007
+(type2) 21ur-3008
+(type2) 21ur-3009
+(type2) 21ur-3010
+(type2) 21ur-3012
+(type2) 21ur-3014
+(type2) 21ur-3016
+(type2) 21ur-3018
+(type2) 21ur-3019
+(type2) 21ur-3021
+(type2) 21ur-3024
+(type2) 21ur-3025
+(type2) 21ur-3026
+(type2) 21ur-3028
+(type2) 21ur-3030
+(type2) 21ur-3044
+(type2) 21ur-3047
+(type2) 21ur-3048
+(type2) 21ur-3050
+(type2) 21ur-3055
+(type2) 21ur-3056
+(type2) 21ur-3060
+(type2) 21ur-3061
+(type2) 21ur-3069
+(type2) 21ur-3070
+(type2) 21ur-3071
+(type2) 21ur-3077
+(type2) 21ur-3081
+(type2) 21ur-3083
+(type2) 21ur-3084
+(type2) 21ur-3088
+(type2) 21ur-3090
+(type2) 21ur-3091
+(type2) 21ur-3095
+(type2) 21ur-3100
+(type2) 21ur-3101
+(type2) 21ur-3102
+(type2) 21ur-3112
+(type2) 21ur-3113
+(type2) 21ur-3114
+(type2) 21ur-3116
+(type2) 21ur-3118
+(type2) 21ur-3122
+(type2) 21ur-3123
+(type2) 21ur-3125
+(type2) 21ur-3126
+(type2) 21ur-3138
+(type2) 21ur-3143
+(type2) 21ur-3149
+(type2) 21ur-3163
+(type2) 21ur-3166
+(type2) 21ur-3167
+(type2) 21ur-3173
+(type2) 21ur-3174
+(type2) 21ur-3175
+(type2) 21ur-3177
+(type2) 21ur-3182
+(type2) 21ur-3183
+(type2) 21ur-3186
+(type2) 21ur-3193
+(type2) 21ur-3200
+(type2) 21ur-3201
+(type2) 21ur-3206
+(type2) 21ur-3207
+(type2) 21ur-3210
+(type2) 21ur-3211
+(type2) 21ur-3216
+(type2) 21ur-3218
+(type2) 21ur-3224
+(type2) 21ur-3226
+(type2) 21ur-3230
+(type2) 21ur-3231
+(type2) 21ur-3235
+(type2) 21ur-3247
+(type2) 21ur-3248
+(type2) 21ur-3253
+(type2) 21ur-3254
+(type2) 21ur-3257
+(type2) 21ur-3262
+(type2) 21ur-3265
+(type2) 21ur-3267
+(type2) 21ur-3268
+(type2) 21ur-3269
+(type2) 21ur-3270
+(type2) 21ur-3272
+(type2) 21ur-3273
+(type2) 21ur-3276
+(type2) 21ur-3277
+(type2) 21ur-3279
+(type2) 21ur-3280
+(type2) 21ur-3283
+(type2) 21ur-3284
+(type2) 21ur-3290
+(type2) 21ur-3298
+(type2) 21ur-3302
+(type2) 21ur-3304
+(type2) 21ur-3307
+(type2) 21ur-3308
+(type2) 21ur-3311
+(type2) 21ur-3313
+(type2) 21ur-3316
+(type2) 21ur-3319
+(type2) 21ur-3323
+(type2) 21ur-3325
+(type2) 21ur-3326
+(type2) 21ur-3331
+(type2) 21ur-3334
+(type2) 21ur-3338
+(type2) 21ur-3340
+(type2) 21ur-3348
+(type2) 21ur-3349
+(type2) 21ur-3352
+(type2) 21ur-3353
+(type2) 21ur-3359
+(type2) 21ur-3366
+(type2) 21ur-3369
+(type2) 21ur-3371
+(type2) 21ur-3372
+(type2) 21ur-3374
+(type2) 21ur-3376
+(type2) 21ur-3379
+(type2) 21ur-3383
+(type2) 21ur-3388
+(type2) 21ur-3390
+(type2) 21ur-3392
+(type2) 21ur-3394
+(type2) 21ur-3397
+(type2) 21ur-3398
+(type2) 21ur-3400
+(type2) 21ur-3402
+(type2) 21ur-3404
+(type2) 21ur-3407
+(type2) 21ur-3408
+(type2) 21ur-3412
+(type2) 21ur-3413
+(type2) 21ur-3414
+(type2) 21ur-3418
+(type2) 21ur-3420
+(type2) 21ur-3421
+(type2) 21ur-3427
+(type2) 21ur-3428
+(type2) 21ur-3433
+(type2) 21ur-3436
+(type2) 21ur-3441
+(type2) 21ur-3442
+(type2) 21ur-3447
+(type2) 21ur-3448
+(type2) 21ur-3449
+(type2) 21ur-3452
+(type2) 21ur-3456
+(type2) 21ur-3457
+(type2) 21ur-3458
+(type2) 21ur-3459
+(type2) 21ur-3461
+(type2) 21ur-3462
+(type2) 21ur-3463
+(type2) 21ur-3464
+(type2) 21ur-3470
+(type2) 21ur-3473
+(type2) 21ur-3475
+(type2) 21ur-3476
+(type2) 21ur-3480
+(type2) 21ur-3481
+(type2) 21ur-3482
+(type2) 21ur-3486
+(type2) 21ur-3489
+(type2) 21ur-3491
+(type2) 21ur-3494
+(type2) 21ur-3495
+(type2) 21ur-3503
+(type2) 21ur-3506
+(type2) 21ur-3507
+(type2) 21ur-3513
+(type2) 21ur-3514
+(type2) 21ur-3515
+(type2) 21ur-3521
+(type2) 21ur-3525
+(type2) 21ur-3528
+(type2) 21ur-3529
+(type2) 21ur-3532
+(type2) 21ur-3536
+(type2) 21ur-3541
+(type2) 21ur-3543
+(type2) 21ur-3544
+(type2) 21ur-3547
+(type2) 21ur-3551
+(type2) 21ur-3559
+(type2) 21ur-3560
+(type2) 21ur-3564
+(type2) 21ur-3567
+(type2) 21ur-3575
+(type2) 21ur-3576
+(type2) 21ur-3580
+(type2) 21ur-3582
+(type2) 21ur-3589
+(type2) 21ur-3592
+(type2) 21ur-3597
+(type2) 21ur-3600
+(type2) 21ur-3601
+(type2) 21ur-3602
+(type2) 21ur-3605
+(type2) 21ur-3607
+(type2) 21ur-3608
+(type2) 21ur-3611
+(type2) 21ur-3617
+(type2) 21ur-3619
+(type2) 21ur-3624
+(type2) 21ur-3633
+(type2) 21ur-3638
+(type2) 21ur-3639
+(type2) 21ur-3641
+(type2) 21ur-3642
+(type2) 21ur-3643
+(type2) 21ur-3652
+(type2) 21ur-3653
+(type2) 21ur-3655
+(type2) 21ur-3658
+(type2) 21ur-3659
+(type2) 21ur-3662
+(type2) 21ur-3663
+(type2) 21ur-3665
+(type2) 21ur-3666
+(type2) 21ur-3670
+(type2) 21ur-3675
+(type2) 21ur-3681
+(type2) 21ur-3687
+(type2) 21ur-3688
+(type2) 21ur-3692
+(type2) 21ur-3696
+(type2) 21ur-3700
+(type2) 21ur-3702
+(type2) 21ur-3703
+(type2) 21ur-3711
+(type2) 21ur-3715
+(type2) 21ur-3718
+(type2) 21ur-3719
+(type2) 21ur-3722
+(type2) 21ur-3726
+(type2) 21ur-3727
+(type2) 21ur-3728
+(type2) 21ur-3736
+(type2) 21ur-3738
+(type2) 21ur-3744
+(type2) 21ur-3746
+(type2) 21ur-3747
+(type2) 21ur-3750
+(type2) 21ur-3751
+(type2) 21ur-3752
+(type2) 21ur-3753
+(type2) 21ur-3754
+(type2) 21ur-3757
+(type2) 21ur-3759
+(type2) 21ur-3763
+(type2) 21ur-3767
+(type2) 21ur-3770
+(type2) 21ur-3771
+(type2) 21ur-3772
+(type2) 21ur-3773
+(type2) 21ur-3774
+(type2) 21ur-3775
+(type2) 21ur-3778
+(type2) 21ur-3780
+(type2) 21ur-3786
+(type2) 21ur-3795
+(type2) 21ur-3800
+(type2) 21ur-3829
+(type2) 21ur-3860
+(type2) 21ur-3861
+(type2) 21ur-3864
+(type2) 21ur-3867
+(type2) 21ur-3868
+(type2) 21ur-3869
+(type2) 21ur-3880
+(type2) 21ur-3881
+(type2) 21ur-3883
+(type2) 21ur-3893
+(type2) 21ur-3896
+(type2) 21ur-3901
+(type2) 21ur-3909
+(type2) 21ur-3912
+(type2) 21ur-3925
+(type2) 21ur-3926
+(type2) 21ur-3936
+(type2) 21ur-3937
+(type2) 21ur-3938
+(type2) 21ur-3944
+(type2) 21ur-3962
+(type2) 21ur-3965
+(type2) 21ur-3968
+(type2) 21ur-3981
+(type2) 21ur-3999
+(type2) 21ur-4017
+(type2) 21ur-4020
+(type2) 21ur-4034
+(type2) 21ur-4035
+(type2) 21ur-4040
+(type2) 21ur-4048
+(type2) 21ur-4064
+(type2) 21ur-4069
+(type2) 21ur-4071
+(type2) 21ur-4099
+(type2) 21ur-4100
+(type2) 21ur-4111
+(type2) 21ur-4124
+(type2) 21ur-4126
+(type2) 21ur-4133
+(type2) 21ur-4138
+(type2) 21ur-4141
+(type2) 21ur-4150
+(type2) 21ur-4168
+(type2) 21ur-4170
+(type2) 21ur-4178
+(type2) 21ur-4191
+(type2) 21ur-4195
+(type2) 21ur-4201
+(type2) 21ur-4276
+(type2) 21ur-4284
+(type2) 21ur-4294
+(type2) 21ur-4306
+(type2) 21ur-4314
+(type2) 21ur-4322
+(type2) 21ur-4328
+(type2) 21ur-4329
+(type2) 21ur-4347
+(type2) 21ur-4402
+(type2) 21ur-4406
+(type2) 21ur-4412
+(type2) 21ur-4421
+(type2) 21ur-4431
+(type2) 21ur-4438
+(type2) 21ur-4471
+(type2) 21ur-4507
+(type2) 21ur-4511
+(type2) 21ur-4521
+(type2) 21ur-4525
+(type2) 21ur-4537
+(type2) 21ur-4555
+(type2) 21ur-4557
+(type2) 21ur-4559
+(type2) 21ur-4560
+(type2) 21ur-4563
+(type2) 21ur-4568
+(type2) 21ur-4577
+(type2) 21ur-4582
+(type2) 21ur-4583
+(type2) 21ur-4596
+(type2) 21ur-4604
+(type2) 21ur-4612
+(type2) 21ur-4614
+(type2) 21ur-4617
+(type2) 21ur-4631
+(type2) 21ur-4637
+(type2) 21ur-4645
+(type2) 21ur-4659
+(type2) 21ur-4663
+(type2) 21ur-4664
+(type2) 21ur-4667
+(type2) 21ur-4682
+(type2) 21ur-4685
+(type2) 21ur-4689
+(type2) 21ur-4722
+(type2) 21ur-4735
+(type2) 21ur-4750
+(type2) 21ur-4753
+(type2) 21ur-4757
+(type2) 21ur-4760
+(type2) 21ur-4768
+(type2) 21ur-4779
+(type2) 21ur-4791
+(type2) 21ur-4795
+(type2) 21ur-4806
+(type2) 21ur-4818
+(type2) 21ur-4819
+(type2) 21ur-4829
+(type2) 21ur-4835
+(type2) 21ur-4848
+(type2) 21ur-4849
+(type2) 21ur-4857
+(type2) 21ur-4875
+(type2) 21ur-4879
+(type2) 21ur-4894
+(type2) 21ur-4905
+(type2) 21ur-4907
+(type2) 21ur-4910
+(type2) 21ur-4949
+(type2) 21ur-4952
+(type2) 21ur-4953
+(type2) 21ur-4954
+(type2) 21ur-4956
+(type2) 21ur-4964
+(type2) 21ur-4967
+(type2) 21ur-4968
+(type2) 21ur-4969
+(type2) 21ur-4970
+(type2) 21ur-4974
+(type2) 21ur-4982
+(type2) 21ur-4987
+(type2) 21ur-4997
+(type2) 21ur-5005
+(type2) 21ur-5006
+(type2) 21ur-5047
+(type2) 21ur-5049
+(type2) 21ur-5054
+(type2) 21ur-5062
+(type2) 21ur-5074
+(type2) 21ur-5084
+(type2) 21ur-5125
+(type2) 21ur-5138
+(type2) 21ur-5156
+(type2) 21ur-5165
+(type2) 21ur-5167
+(type2) 21ur-5170
+(type2) 21ur-5176
+(type2) 21ur-5193
+(type2) 21ur-5194
+(type2) 21ur-5203
+(type2) 21ur-5204
+(type2) 21ur-5206
+(type2) 21ur-5207
+(type2) 21ur-5241
+(type2) 21ur-5249
+(type2) 21ur-5258
+(type2) 21ur-5262
+(type2) 21ur-5264
+(type2) 21ur-5268
+(type2) 21ur-5279
+(type2) 21ur-5284
+(type2) 21ur-5285
+(type2) 21ur-5287
+(type2) 21ur-5292
+(type2) 21ur-5295
+(type2) 21ur-5307
+(type2) 21ur-5317
+(type2) 21ur-5319
+(type2) 21ur-5335
+(type2) 21ur-5348
+(type2) 21ur-5384
+(type2) 21ur-5385
+(type2) 21ur-5404
+(type2) 21ur-5406
+(type2) 21ur-5410
+(type2) 21ur-5413
+(type2) 21ur-5414
+(type2) 21ur-5418
+(type2) 21ur-5422
+(type2) 21ur-5423
+(type2) 21ur-5425
+(type2) 21ur-5439
+(type2) 21ur-5460
+(type2) 21ur-5463
+(type2) 21ur-5478
+(type2) 21ur-5481
+(type2) 21ur-5485
+(type2) 21ur-5501
+(type2) 21ur-5507
+(type2) 21ur-5510
+(type2) 21ur-5517
+(type2) 21ur-5521
+(type2) 21ur-5522
+(type2) 21ur-5525
+(type2) 21ur-5561
+(type2) 21ur-5566
+(type2) 21ur-5569
+(type2) 21ur-5571
+(type2) 21ur-5585
+(type2) 21ur-5597
+(type2) 21ur-5607
+(type2) 21ur-5618
+(type2) 21ur-5624
+(type2) 21ur-5634
+(type2) 21ur-5647
+(type2) 21ur-5651
+(type2) 21ur-5652
+(type2) 21ur-5654
+(type2) 21ur-5657
+(type2) 21ur-5664
+(type2) 21ur-5671
+(type2) 21ur-5700
+(type2) 21ur-5716
+(type2) 21ur-5719
+(type2) 21ur-5723
+(type2) 21ur-5736
+(type2) 21ur-5755
+(type2) 21ur-5768
+(type2) 21ur-5772
+(type2) 21ur-5774
+(type2) 21ur-5776
+(type2) 21ur-5777
+(type2) 21ur-5790
+(type2) 21ur-5793
+(type2) 21ur-5798
+(type2) 21ur-5803
+(type2) 21ur-5804
+(type2) 21ur-5809
+(type2) 21ur-5812
+(type2) 21ur-5816
+(type2) 21ur-5818
+(type2) 21ur-5827
+(type2) 21ur-5831
+(type2) 21ur-5838
+(type2) 21ur-5845
+(type2) 21ur-5859
+(type2) 21ur-5860
+(type2) 21ur-5864
+(type2) 21ur-5871
+(type2) 21ur-5878
+(type2) 21ur-5884
+(type2) 21ur-5895
+(type2) 21ur-5899
+(type2) 21ur-5902
+(type2) 21ur-5904
+(type2) 21ur-5917
+(type2) 21ur-5929
+(type2) 21ur-5938
+(type2) 21ur-5939
+(type2) 21ur-5940
+(type2) 21ur-5944
+(type2) 21ur-5945
+(type2) 21ur-5961
+(type2) 21ur-5968
+(type2) 21ur-5969
+(type2) 21ur-5972
+(type2) 21ur-5979
+(type2) 21ur-5993
+(type2) 21ur-6009
+(type2) 21ur-6032
+(type2) 21ur-6037
+(type2) 21ur-6042
+(type2) 21ur-6051
+(type2) 21ur-6061
+(type2) 21ur-6064
+(type2) 21ur-6070
+(type2) 21ur-6071
+(type2) 21ur-6089
+(type2) 21ur-6099
+(type2) 21ur-6104
+(type2) 21ur-6110
+(type2) 21ur-6115
+(type2) 21ur-6116
+(type2) 21ur-6118
+(type2) 21ur-6120
+(type2) 21ur-6122
+(type2) 21ur-6125
+(type2) 21ur-6129
+(type2) 21ur-6131
+(type2) 21ur-6133
+(type2) 21ur-6135
+(type2) 21ur-6143
+(type2) 21ur-6149
+(type2) 21ur-6152
+(type2) 21ur-6154
+(type2) 21ur-6156
+(type2) 21ur-6158
+(type2) 21ur-6159
+(type2) 21ur-6164
+(type2) 21ur-6177
+(type2) 21ur-6181
+(type2) 21ur-6182
+(type2) 21ur-6184
+(type2) 21ur-6195
+(type2) 21ur-6207
+(type2) 21ur-6209
+(type2) 21ur-6226
+(type2) 21ur-6234
+(type2) 21ur-6242
+(type2) 21ur-6249
+(type2) 21ur-6250
+(type2) 21ur-6254
+(type2) 21ur-6258
+(type2) 21ur-6259
+(type2) 21ur-6266
+(type2) 21ur-6285
+(type2) 21ur-6298
+(type2) 21ur-6306
+(type2) 21ur-6307
+(type2) 21ur-6309
+(type2) 21ur-6320
+(type2) 21ur-6323
+(type2) 21ur-6329
+(type2) 21ur-6332
+(type2) 21ur-6337
+(type2) 21ur-6338
+(type2) 21ur-6367
+(type2) 21ur-6370
+(type2) 21ur-6390
+(type2) 21ur-6391
+(type2) 21ur-6398
+(type2) 21ur-6399
+(type2) 21ur-6400
+(type2) 21ur-6405
+(type2) 21ur-6410
+(type2) 21ur-6417
+(type2) 21ur-6418
+(type2) 21ur-6423
+(type2) 21ur-6424
+(type2) 21ur-6434
+(type2) 21ur-6440
+(type2) 21ur-6444
+(type2) 21ur-6454
+(type2) 21ur-6458
+(type2) 21ur-6459
+(type2) 21ur-6466
+(type2) 21ur-6471
+(type2) 21ur-6472
+(type2) 21ur-6476
+(type2) 21ur-6479
+(type2) 21ur-6483
+(type2) 21ur-6494
+(type2) 21ur-6504
+(type2) 21ur-6543
+(type2) 21ur-6545
+(type2) 21ur-6551
+(type2) 21ur-6559
+(type2) 21ur-6560
+(type2) 21ur-6562
+(type2) 21ur-6576
+(type2) 21ur-6578
+(type2) 21ur-6579
+(type2) 21ur-6589
+(type2) 21ur-6590
+(type2) 21ur-6597
+(type2) 21ur-6605
+(type2) 21ur-6608
+(type2) 21ur-6611
+(type2) 21ur-6613
+(type2) 21ur-6615
+(type2) 21ur-6621
+(type2) 21ur-6630
+(type2) 21ur-6631
+(type2) 21ur-6646
+(type2) 21ur-6648
+(type2) 21ur-6650
+(type2) 21ur-6653
+(type2) 21ur-6655
+(type2) 21ur-6664
+(type2) 21ur-6667
+(type2) 21ur-6670
+(type2) 21ur-6675
+(type2) 21ur-6678
+(type2) 21ur-6681
+(type2) 21ur-6682
+(type2) 21ur-6686
+(type2) 21ur-6687
+(type2) 21ur-6698
+(type2) 21ur-6700
+(type2) 21ur-6701
+(type2) 21ur-6704
+(type2) 21ur-6715
+(type2) 21ur-6718
+(type2) 21ur-6722
+(type2) 21ur-6729
+(type2) 21ur-6731
+(type2) 21ur-6732
+(type2) 21ur-6733
+(type2) 21ur-6737
+(type2) 21ur-6748
+(type2) 21ur-6755
+(type2) 21ur-6766
+(type2) 21ur-6774
+(type2) 21ur-6781
+(type2) 21ur-6784
+(type2) 21ur-6786
+(type2) 21ur-6798
+(type2) 21ur-6800
+(type2) 21ur-6802
+(type2) 21ur-6818
+(type2) 21ur-6824
+(type2) 21ur-6827
+(type2) 21ur-6829
+(type2) 21ur-6839
+(type2) 21ur-6840
+(type2) 21ur-6847
+(type2) 21ur-6852
+(type2) 21ur-6856
+(type2) 21ur-6871
+(type2) 21ur-6909
+(type2) 21ur-6929
+(type2) 21ur-6933
+(type2) 21ur-6955
+(type2) 21ur-6962
+(type2) 21ur-6963
+(type2) 21ur-6972
+(type2) 21ur-6975
+(type2) 21ur-6976
+(type2) 21ur-6977
+(type2) 21ur-6979
+(type2) 21ur-6980
+(type2) 21ur-6989
+(type2) 21ur-7007
+(type2) 21ur-7018
+(type2) 21ur-7028
+(type2) 21ur-7030
+(type2) 21ur-7031
+(type2) 21ur-7044
+(type2) 21ur-7046
+(type2) 21ur-7047
+(type2) 21ur-7048
+(type2) 21ur-7061
+(type2) 21ur-7069
+(type2) 21ur-7075
+(type2) 21ur-7077
+(type2) 21ur-7085
+(type2) 21ur-7091
+(type2) 21ur-7121
+(type2) 21ur-7126
+(type2) 21ur-7136
+(type2) 21ur-7138
+(type2) 21ur-7140
+(type2) 21ur-7147
+(type2) 21ur-7182
+(type2) 21ur-7203
+(type2) 21ur-7207
+(type2) 21ur-7209
+(type2) 21ur-7217
+(type2) 21ur-7231
+(type2) 21ur-7237
+(type2) 21ur-7243
+(type2) 21ur-7263
+(type2) 21ur-7268
+(type2) 21ur-7289
+(type2) 21ur-7292
+(type2) 21ur-7298
+(type2) 21ur-7313
+(type2) 21ur-7314
+(type2) 21ur-7344
+(type2) 21ur-7374
+(type2) 21ur-7409
+(type2) 21ur-7410
+(type2) 21ur-7431
+(type2) 21ur-7432
+(type2) 21ur-7444
+(type2) 21ur-7448
+(type2) 21ur-7451
+(type2) 21ur-7462
+(type2) 21ur-7467
+(type2) 21ur-7480
+(type2) 21ur-7488
+(type2) 21ur-7501
+(type2) 21ur-7507
+(type2) 21ur-7515
+(type2) 21ur-7523
+(type2) 21ur-7524
+(type2) 21ur-7538
+(type2) 21ur-7553
+(type2) 21ur-7561
+(type2) 21ur-7568
+(type2) 21ur-7571
+(type2) 21ur-7589
+(type2) 21ur-7604
+(type2) 21ur-7606
+(type2) 21ur-7607
+(type2) 21ur-7617
+(type2) 21ur-7618
+(type2) 21ur-7620
+(type2) 21ur-7622
+(type2) 21ur-7629
+(type2) 21ur-7634
+(type2) 21ur-7635
+(type2) 21ur-7636
+(type2) 21ur-7651
+(type2) 21ur-7660
+(type2) 21ur-7663
+(type2) 21ur-7669
+(type2) 21ur-7683
+(type2) 21ur-7696
+(type2) 21ur-7705
+(type2) 21ur-7716
+(type2) 21ur-7721
+(type2) 21ur-7724
+(type2) 21ur-7727
+(type2) 21ur-7731
+(type2) 21ur-7732
+(type2) 21ur-7734
+(type2) 21ur-7756
+(type2) 21ur-7763
+(type2) 21ur-7765
+(type2) 21ur-7767
+(type2) 21ur-7776
+(type2) 21ur-7786
+(type2) 21ur-7790
+(type2) 21ur-7792
+(type2) 21ur-7794
+(type2) 21ur-7803
+(type2) 21ur-7804
+(type2) 21ur-7808
+(type2) 21ur-7812
+(type2) 21ur-7819
+(type2) 21ur-7821
+(type2) 21ur-7822
+(type2) 21ur-7823
+(type2) 21ur-7824
+(type2) 21ur-7825
+(type2) 21ur-7827
+(type2) 21ur-7830
+(type2) 21ur-7833
+(type2) 21ur-7841
+(type2) 21ur-7842
+(type2) 21ur-7846
+(type2) 21ur-7847
+(type2) 21ur-7868
+(type2) 21ur-7876
+(type2) 21ur-7884
+(type2) 21ur-7887
+(type2) 21ur-7889
+(type2) 21ur-7891
+(type2) 21ur-7898
+(type2) 21ur-7916
+(type2) 21ur-7919
+(type2) 21ur-7920
+(type2) 21ur-7928
+(type2) 21ur-7938
+(type2) 21ur-7939
+(type2) 21ur-7940
+(type2) 21ur-7944
+(type2) 21ur-7953
+(type2) 21ur-7964
+(type2) 21ur-7968
+(type2) 21ur-7969
+(type2) 21ur-7974
+(type2) 21ur-7979
+(type2) 21ur-7981
+(type2) 21ur-7983
+(type2) 21ur-7985
+(type2) 21ur-7987
+(type2) 21ur-7990
+(type2) 21ur-8000
+(type2) 21ur-8001
+(type2) 21ur-8006
+(type2) 21ur-8015
+(type2) 21ur-8023
+(type2) 21ur-8040
+(type2) 21ur-8044
+(type2) 21ur-8057
+(type2) 21ur-8060
+(type2) 21ur-8068
+(type2) 21ur-8074
+(type2) 21ur-8078
+(type2) 21ur-8080
+(type2) 21ur-8084
+(type2) 21ur-8091
+(type2) 21ur-8096
+(type2) 21ur-8104
+(type2) 21ur-8120
+(type2) 21ur-8134
+(type2) 21ur-8136
+(type2) 21ur-8139
+(type2) 21ur-8146
+(type2) 21ur-8147
+(type2) 21ur-8152
+(type2) 21ur-8153
+(type2) 21ur-8170
+(type2) 21ur-8172
+(type2) 21ur-8173
+(type2) 21ur-8175
+(type2) 21ur-8183
+(type2) 21ur-8184
+(type2) 21ur-8194
+(type2) 21ur-8197
+(type2) 21ur-8204
+(type2) 21ur-8207
+(type2) 21ur-8208
+(type2) 21ur-8211
+(type2) 21ur-8215
+(type2) 21ur-8220
+(type2) 21ur-8225
+(type2) 21ur-8227
+(type2) 21ur-8231
+(type2) 21ur-8236
+(type2) 21ur-8240
+(type2) 21ur-8243
+(type2) 21ur-8245
+(type2) 21ur-8249
+(type2) 21ur-8251
+(type2) 21ur-8261
+(type2) 21ur-8262
+(type2) 21ur-8263
+(type2) 21ur-8273
+(type2) 21ur-8286
+(type2) 21ur-8288
+(type2) 21ur-8292
+(type2) 21ur-8298
+(type2) 21ur-8315
+(type2) 21ur-8316
+(type2) 21ur-8321
+(type2) 21ur-8326
+(type2) 21ur-8333
+(type2) 21ur-8339
+(type2) 21ur-8344
+(type2) 21ur-8355
+(type2) 21ur-8360
+(type2) 21ur-8368
+(type2) 21ur-8382
+(type2) 21ur-8383
+(type2) 21ur-8384
+(type2) 21ur-8385
+(type2) 21ur-8386
+(type2) 21ur-8394
+(type2) 21ur-8399
+(type2) 21ur-8406
+(type2) 21ur-8415
+(type2) 21ur-8420
+(type2) 21ur-8423
+(type2) 21ur-8430
+(type2) 21ur-8431
+(type2) 21ur-8446
+(type2) 21ur-8448
+(type2) 21ur-8449
+(type2) 21ur-8460
+(type2) 21ur-8464
+(type2) 21ur-8465
+(type2) 21ur-8473
+(type2) 21ur-8474
+(type2) 21ur-8484
+(type2) 21ur-8485
+(type2) 21ur-8490
+(type2) 21ur-8492
+(type2) 21ur-8496
+(type2) 21ur-8499
+(type2) 21ur-8511
+(type2) 21ur-8520
+(type2) 21ur-8530
+(type2) 21ur-8534
+(type2) 21ur-8539
+(type2) 21ur-8541
+(type2) 21ur-8546
+(type2) 21ur-8556
+(type2) 21ur-8558
+(type2) 21ur-8560
+(type2) 21ur-8566
+(type2) 21ur-8572
+(type2) 21ur-8576
+(type2) 21ur-8577
+(type2) 21ur-8581
+(type2) 21ur-8583
+(type2) 21ur-8587
+(type2) 21ur-8591
+(type2) 21ur-8599
+(type2) 21ur-8600
+(type2) 21ur-8602
+(type2) 21ur-8604
+(type2) 21ur-8605
+(type2) 21ur-8609
+(type2) 21ur-8617
+(type2) 21ur-8619
+(type2) 21ur-8622
+(type2) 21ur-8623
+(type2) 21ur-8630
+(type2) 21ur-8631
+(type2) 21ur-8637
+(type2) 21ur-8638
+(type2) 21ur-8642
+(type2) 21ur-8648
+(type2) 21ur-8649
+(type2) 21ur-8650
+(type2) 21ur-8669
+(type2) 21ur-8674
+(type2) 21ur-8690
+(type2) 21ur-8692
+(type2) 21ur-8698
+(type2) 21ur-8701
+(type2) 21ur-8705
+(type2) 21ur-8716
+(type2) 21ur-8717
+(type2) 21ur-8721
+(type2) 21ur-8724
+(type2) 21ur-8737
+(type2) 21ur-8738
+(type2) 21ur-8739
+(type2) 21ur-8740
+(type2) 21ur-8741
+(type2) 21ur-8750
+(type2) 21ur-8758
+(type2) 21ur-8760
+(type2) 21ur-8761
+(type2) 21ur-8767
+(type2) 21ur-8775
+(type2) 21ur-8785
+(type2) 21ur-8786
+(type2) 21ur-8790
+(type2) 21ur-8795
+(type2) 21ur-8800
+(type2) 21ur-8803
+(type2) 21ur-8808
+(type2) 21ur-8809
+(type2) 21ur-8819
+(type2) 21ur-8826
+(type2) 21ur-8828
+(type2) 21ur-8830
+(type2) 21ur-8835
+(type2) 21ur-8837
+(type2) 21ur-8839
+(type2) 21ur-8842
+(type2) 21ur-8843
+(type2) 21ur-8848
+(type2) 21ur-8853
+(type2) 21ur-8857
+(type2) 21ur-8858
+(type2) 21ur-8860
+(type2) 21ur-8866
+(type2) 21ur-8869
+(type2) 21ur-8873
+(type2) 21ur-8881
+(type2) 21ur-8887
+(type2) 21ur-8890
+(type2) 21ur-8901
+(type2) 21ur-8906
+(type2) 21ur-8914
+(type2) 21ur-8925
+(type2) 21ur-8928
+(type2) 21ur-8939
+(type2) 21ur-8940
+(type2) 21ur-8950
+(type2) 21ur-8951
+(type2) 21ur-8959
+(type2) 21ur-8963
+(type2) 21ur-8967
+(type2) 21ur-8973
+(type2) 21ur-8984
+(type2) 21ur-8985
+(type2) 21ur-8986
+(type2) 21ur-9004
+(type2) 21ur-9013
+(type2) 21ur-9020
+(type2) 21ur-9023
+(type2) 21ur-9041
+(type2) 21ur-9047
+(type2) 21ur-9049
+(type2) 21ur-9066
+(type2) 21ur-9067
+(type2) 21ur-9074
+(type2) 21ur-9078
+(type2) 21ur-9079
+(type2) 21ur-9088
+(type2) 21ur-9094
+(type2) 21ur-9096
+(type2) 21ur-9098
+(type2) 21ur-9099
+(type2) 21ur-9109
+(type2) 21ur-9111
+(type2) 21ur-9112
+(type2) 21ur-9122
+(type2) 21ur-9123
+(type2) 21ur-9124
+(type2) 21ur-9131
+(type2) 21ur-9138
+(type2) 21ur-9141
+(type2) 21ur-9145
+(type2) 21ur-9147
+(type2) 21ur-9148
+(type2) 21ur-9149
+(type2) 21ur-9155
+(type2) 21ur-9162
+(type2) 21ur-9165
+(type2) 21ur-9166
+(type2) 21ur-9170
+(type2) 21ur-9171
+(type2) 21ur-9173
+(type2) 21ur-9180
+(type2) 21ur-9194
+(type2) 21ur-9204
+(type2) 21ur-9207
+(type2) 21ur-9208
+(type2) 21ur-9216
+(type2) 21ur-9225
+(type2) 21ur-9230
+(type2) 21ur-9232
+(type2) 21ur-9237
+(type2) 21ur-9242
+(type2) 21ur-9243
+(type2) 21ur-9245
+(type2) 21ur-9246
+(type2) 21ur-9247
+(type2) 21ur-9261
+(type2) 21ur-9263
+(type2) 21ur-9264
+(type2) 21ur-9265
+(type2) 21ur-9266
+(type2) 21ur-9274
+(type2) 21ur-9287
+(type2) 21ur-9292
+(type2) 21ur-9294
+(type2) 21ur-9302
+(type2) 21ur-9303
+(type2) 21ur-9304
+(type2) 21ur-9311
+(type2) 21ur-9313
+(type2) 21ur-9321
+(type2) 21ur-9332
+(type2) 21ur-9333
+(type2) 21ur-9337
+(type2) 21ur-9346
+(type2) 21ur-9347
+(type2) 21ur-9350
+(type2) 21ur-9358
+(type2) 21ur-9359
+(type2) 21ur-9361
+(type2) 21ur-9362
+(type2) 21ur-9365
+(type2) 21ur-9369
+(type2) 21ur-9376
+(type2) 21ur-9379
+(type2) 21ur-9385
+(type2) 21ur-9389
+(type2) 21ur-9390
+(type2) 21ur-9397
+(type2) 21ur-9398
+(type2) 21ur-9404
+(type2) 21ur-9408
+(type2) 21ur-9417
+(type2) 21ur-9425
+(type2) 21ur-9431
+(type2) 21ur-9438
+(type2) 21ur-9440
+(type2) 21ur-9441
+(type2) 21ur-9442
+(type2) 21ur-9443
+(type2) 21ur-9445
+(type2) 21ur-9447
+(type2) 21ur-9455
+(type2) 21ur-9460
+(type2) 21ur-9461
+(type2) 21ur-9469
+(type2) 21ur-9470
+(type2) 21ur-9480
+(type2) 21ur-9491
