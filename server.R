@@ -46,8 +46,19 @@ rownames(PiesFin)=as.character(Pies)
 ##Enzymes
 enzy=read.table("DATA/Enzymes.txt", sep="\t", colClasses = "character",header=T)
 rownames(enzy)=as.character(enzy$Enzyme)
-GoldenE=enzy[which(enzy$GG == "TRUE"),]
-OtherE=enzy[-c(which(enzy$GG == "TRUE")),]
+#GoldenE=enzy[which(enzy$GG == "TRUE"),]
+#OtherE=enzy[-c(which(enzy$GG == "TRUE")),]
+###Use code adapted from https://github.com/dreamRs/shinyWidgets/issues/211
+choice_values <- as.character(c(enzy$Enzyme))
+
+choice_names <- lapply(
+  X = choice_values,
+  FUN = function(x) {
+    tags$div(
+      style = "width: 160px;", x
+    )
+  }
+)
 
 ##TO DO: 
 #It will be better to make the data transformations and save them as a .RDS, for now let's keep them there
@@ -256,131 +267,9 @@ GCHTMLinfo = function(x,tabibi,cai,list){
   x=toupper(x)
   if(!is.character(x)){return(c())}
   
-  paste0("<b>Bringman Codon Adaptation Index scorex</b>: ", round(CalculateCAI(x,tabibi,cai,list),2), 
+  paste0("<b>Codon Adaptation Index</b>: ", round(CalculateCAI(x,tabibi,cai,list),2), 
          "<br><b>GC content</b>: ", as.integer((CalculateGC(x))*100), "%<br>"
   )
-}
-
-SequenceViewer = function(title,div_id,sequence,patterns,colors,tooltips){
-  if (is.null(sequence)){return(NULL)}
-  if (is.null(div_id)){return(NULL)}
-  if(!is.character(sequence)){return(c())}
-  if(length(patterns) != length(colors)){return(c())}
-  if(length(tooltips) != length(colors)){return(c())}
-  
-  if(length(patterns) != length(unique(patterns))){return(c())}
-  
-  if(length(patterns)==0){
-    paste0("<div id=\"",div_id,"\"/></div>",
-           "<script type=\"text/javascript\">",
-           "var seq",div_id," = new Sequence(\'",
-           sequence,
-           "\');",
-           "seq",div_id,".render(\'#",div_id,"\',{",
-           "\'showLineNumbers\': true,
-  \'wrapAminoAcids\': true,
-  \'charsPerLine\': 100,
-  \'toolbar\': false,
-  \'search\': false,
-  \'title\' : \"",title,"\",
-  \'sequenceMaxHeight\': \"300px\",
-  \'badge\': false
-});
-</script>                   
-                   ")
-  }else{
-    patitos=matchPattern(DNAString(paste(unlist(strsplit(paste(sequence,sep="",collapse=""),""))[1:3],sep="",collapse="")),DNAString(paste(sequence,sep="",collapse="")),fixed=T)[1]
-    #patitos=1
-    for(pat in patterns){
-      patitos=c(patitos,matchPattern(DNAString(as.character(pat)),DNAString(paste(sequence,sep="",collapse="")),fixed=T))
-    }
-    
-    
-    #subnames=c("Start")
-    #subset=patitos[1]
-    subnames=c("Start")
-    subset=patitos[1]
-    
-    patitos=patitos[order(start(patitos)),]
-    
-    if(length(patitos)>1){
-      for(n in 2:length(patitos)){
-        if(length(disjoin(c(subset,patitos[n]))) != (length(subset)+1)){
-          
-          if(length(disjoin(c(subset,patitos[n]))) == (length(subset)+2)){
-            subset=disjoin(c(subset,patitos[n]))
-            subnames=c(subnames,as.character(patitos[n]), paste(as.character(patitos[n-1]),"_;_",as.character(patitos[n]),sep=""))
-          }
-          
-          if(length(disjoin(c(subset,patitos[n]))) == (length(subset))){
-            subnames[n-1]=paste(as.character(subnames[n-1]),"_;_",as.character(patitos[n]),sep="")
-          }
-          
-        }else{
-          subset=c(subset,patitos[n])
-          subnames=c(subnames,as.character(patitos[n]))
-          
-        }     
-        
-      }}
-    
-    #subcol=c("green")
-    #subtol=c("ATG")
-    
-    subcol=c("green")
-    subtol=c("Start")
-    
-    if(length(subnames)>1){
-      for(n in 2:length(subnames)){
-        if(subnames[n] %in% patterns){
-          subcol[n]=colors[which(subnames[n]==patterns)]
-          subtol[n]=tooltips[which(subnames[n]==patterns)]
-        }else{
-          subcol[n]="grey"
-          #subtol[n]=subnames[n]
-          vecna=unlist(strsplit(subnames[n],"_;_"))
-          compna=c()
-          for(ja in vecna){
-            compna=append(compna,tooltips[which(ja==patterns)])
-          }
-          subtol[n]=paste(compna,collapse=";")
-        }
-      }
-    }
-    
-    seqcoverage="{}"
-    stpos=start(subset)
-    edpos=end(subset)
-    if(length(stpos)>0){
-      for(s in 1:length(stpos)){
-        seqcoverage=paste(seqcoverage,",
-                                    {start: ",stpos[s]-1,", end: ",edpos[s],", color: \"white\", bgcolor: \"",subcol[s],"\", underscore: false, tooltip: \"",subtol[s],"\"}",sep="",collapse="")
-      }
-    }
-    
-    paste0("<div id=\"",div_id,"\"/></div>",
-           "<script type=\"text/javascript\">",
-           "var seq",div_id," = new Sequence(\'",
-           sequence,
-           "\');",
-           "seq",div_id,".render(\'#",div_id,"\',{",
-           "\'showLineNumbers\': true,
-  \'wrapAminoAcids\': true,
-  \'charsPerLine\': 100,
-  \'toolbar\': false,
-  \'search\': false,
-  \'title\' : \"",title,"\",
-  \'sequenceMaxHeight\': \"300px\",
-  \'badge\': false
-});
-                 ",
-"var Sequence",div_id,"Coverage = [",seqcoverage,"];",
-
-"seq",div_id,".coverage(Sequence",div_id,"Coverage);",
-
-"</script>")
-    
-  }
 }
 
 #####Modify function to make it work better
@@ -643,11 +532,16 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
     
     ################################
     
-    seqcoverage="{start: 1, end: 2, color: \"black\", bgcolor: \"white\", underscore: false, tooltip: \"\"
-    }"
+    #seqcoverage="{start: 1, end: 2, color: \"black\", bgcolor: \"white\", underscore: false, tooltip: \"\"
+    #}"
+    seqcoverage="{}"
     stpos=start(subset)
     edpos=end(subset)
     if(length(stpos)>0){
+      if(stpos[1] >= 3){
+        seqcoverage="{start: 1, end: 2, color: \"black\", bgcolor: \"white\", underscore: false, tooltip: \"\"
+        }"
+        }
       for(s in 1:length(stpos)){
         seqcoverage=paste(seqcoverage,",
                                     {start: ",stpos[s]-1,", end: ",edpos[s],", color: \"white\", bgcolor: \"",subcol[s],"\", underscore: false, tooltip: \"",subtol[s],"\"}",sep="",collapse="")
@@ -715,7 +609,7 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
 }
 
 ############################################Make Ape file#################################
-PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c()){
+PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
   if(is.null(sequence)){return(NULL)}
   if(!is.character(sequence)){return(c())}
   #if(length(patterns) < 1 ){return(c(paste(sequence)))}
@@ -723,9 +617,10 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
   if(length(REVcolors) != length(FWDcolors)){return(c())}
   if(length(tooltips) != length(FWDcolors)){return(c())}
   
-  CAIS=CalculateCAI(sequence,tabibi,cai,list) 
-  GCp=as.integer((CalculateGC(sequence))*100)
-  NoPies=length(Strfindpies(sequence,PiesList,4))
+  if(optsecnotr == ""){optsecnotr=sequence}
+  CAIS=CalculateCAI(optsecnotr,tabibi,cai,list) 
+  GCp=as.integer((CalculateGC(optsecnotr))*100)
+  NoPies=length(Strfindpies(optsecnotr,PiesList,4))
   
   ##Save Lines
   FileLines=c()
@@ -769,10 +664,10 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
     }
   }
   }
-  FileLines=append(FileLines,paste("COMMENT","Generated using wormbuilder.dev",sep="     "))
+  FileLines=append(FileLines,paste("COMMENT","Generated using www.wormbuilder.org/optimizer/",sep="     "))
   FileLines=append(FileLines,paste("COMMENT","ApEinfo:methylated:1",sep="     "))
   
-  if(length(patterns) > 0){
+  
   if(!(is.null(posipat))){
     FileLines=append(FileLines,paste("FEATURES             Location/Qualifiers",sep=""))
     for(n in 1:nrow(posipat)){
@@ -784,7 +679,6 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
       FileLines=append(FileLines,paste("                     ","/ApEinfo_graphicformat=\"arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0\"",sep=""))
     }
     
-  }
   }
   FileLines=append(FileLines,paste("ORIGIN"))
   
@@ -984,133 +878,6 @@ FlagGCWindow = function(seq, window, loB, hiB){
   return(dt)
 }
 
-##Final Twist function to rule them all
-CheckTwistSynthesis = function(sequence){
-  message="pass"
-  
-  #Check if at least is a character
-  if(!(is.character(sequence))){
-    message = "Not a sequence" 
-    return (message)}
-  
-  ##Now split into characters for DNA sequence
-  seqDNA=unlist(strsplit(toupper(sequence),""))
-  
-  ##Check if DNA sequence
-  if((nchar(gsub("A|T|C|G","",toupper(paste(seqDNA,sep="",collapse="")))) != 0)){
-    message = "Strange characters in DNA sequence"
-    return(message)
-  }
-  
-  ##Check for errors in size
-  #lower than 300 bp
-  if(length(seqDNA) < 300){ ##Check for errors in size
-    message = "Sequence is smaller than 300 bp"
-    return(message)
-  }
-  
-  #larger than 500 bp
-  if(length(seqDNA) > 5000){ ##Check for errors in size
-    message = "Sequence is larger than 5 kb"
-    return(message)
-  }
-  
-  ###Now do base composition analysis
-  ##GC content
-  GCc= CalculateGC(paste(seqDNA,sep="", collapse=""))
-  
-  if(GCc > .65){
-    message = "GC content higher than 65%"
-    return(message)
-  }
-  
-  if(GCc < .25){
-    message = "GC content lower than 25%"
-    return(message)
-  }
-  
-  ##Now compositional analysis per window
-  #Check GC content per 50bp window
-  GCt= GCWindow(paste(seqDNA,sep="", collapse=""), 50)
-  difgc=max(GCt[,"gc"]) - min(GCt[,"gc"])
-  
-  if(difgc > .52){
-    message = "GC content difference between the 50bp windows is larger than 52%"
-    return(message)
-  }
-  
-  #Strange double evening out event but seems to be working... what?
-  ##I think part of the code of twist is to smooth the gc content on some regions and then re-run analysis
-  ##I think, what Amhed in the past did was to smooth by 50 windows and the check once again complex regions
-  
-  avrm=c()
-  for(i in 1:(nrow(GCt)-49)){avrm=append(avrm,mean(GCt[i:(i+49),3]))}
-  
-  ##Smoth region of GC content
-  if(min(avrm) < .2){
-    message = "Complex region with low levels of GC detected"
-    return(message)
-  }
-  
-  if(max(avrm) > .8){
-    message = "Complex region with high levels of GC detected"
-    return(message)
-  }
-  
-  ##Now homopolymer track analysis
-  ##20bp repeated sequences
-  ##First we identify duplicated sequences in the full DNA sequence, by chopping into 20 mers and see if these are present once again in the sequence
-  dupseqs=DupSeqsWin(paste(seqDNA,sep="", collapse=""),20)
-  
-  #COunt how many duplicated sequences
-  if(length(dupseqs) > 0){
-    #Aerr=append(Aerr,paste("Duplicated 20-mer:",dupseqs))
-    #ErrorFlag= ErrorFlag +1
-    message = "At least there are 2 20-mer sequences duplicated in the sequence"
-    return(message)
-  }
-  
-  ##Now melting temperature for those regions
-  ##Calculate 20-mers with TM higher than 60
-  TMt=TMWindow(paste(seqDNA,sep="", collapse=""),20)
-  timd=which(TMt[,"tm"] > 80)
-  
-  #Check if the exist
-  if(length(timd)>0){
-    #Aerr=append(Aerr,paste("20bp regions with high TM (> 80C):",length(timd)))
-    #ErrorFlag= ErrorFlag +1
-    message = paste("20bp regions with high TM (> 80C):",length(timd))
-    return(message)
-  }
-  
-  ##Highest microhomologies on kmer analysis
-  kmers=c()
-  for(k in 1:20){
-    kmers=append(kmers,sum(MicroHomPeWin(paste(seqDNA,sep="", collapse=""),k)))
-  }
-  
-  ##Check
-  if(which.max(kmers) > 10){
-    #Aerr=append(Aerr,paste("Most frequent micro-homologies seen at ",which.max(kmers), "bps",sep="", collapse=""))
-    #ErrorFlag= ErrorFlag +1
-    message = paste("Most frequent micro-homologies seen at ",which.max(kmers), "bps",sep="", collapse="")
-    return(message)
-  }
-  
-  ##Homo-polymer track larger than 10bp
-  t1s=c(MicroHomPeWin(paste(seqDNA,sep="", collapse=""),1),FALSE)
-  homotra=LogicHomoRange(t1s,10)
-  
-  ##Homopolymer tracks, finally
-  if(length(homotra)>0){
-    #Aerr=append(Aerr,paste("Homo-polymer tracks:",paste(homotra,sep="-", collapse="-")))
-    #ErrorFlag= ErrorFlag +1
-    message = paste("Homo-polymer tracks:",paste(homotra,sep="-", collapse="-"))
-    return(message)
-  }
-  
-  return(message)	
-}
 
 ##Main function
 TwistSynthesisWithCoordinates = function(sequence){
@@ -1468,60 +1235,10 @@ shinyServer(function(input, output, session) {
   ###########################################################################################
   #########################Functions#########################################################
   ###########################################################################################
-  ##Start by simple loading
-  #output$DynamicUserInterface <- renderUI({HTML("<b>Loading interface</b>")})
-  #output$DynamicUserInterface <- renderUI({uiOutput("AllResults")})
-  #output$AllResults <- renderUI({fluidRow(uiOutput("button4later"))})
-    
-  #output$button4later <- renderUI({HTML("<b>Loading results ...</b>")})
-  
-  
+
   ###########################################################################################
   ##############################Download handlers############################################
   ###########################################################################################
-  
-  ##################Download handler
-  # output$DownSeqOut <- downloadHandler(
-  #   filename <- function() {
-  #     paste("Genebuild", "fasta", sep=".")
-  #   },
-  #   
-  #   content <- function(file) {
-  #     file.copy(paste("DATA/users/",session_id,"/SeqOpop.fasta", sep=""), file)
-  #   },
-  # )
-  # 
-  # output$DownBlockConstruct <- downloadHandler(
-  #   filename <- function() {
-  #     paste("Genebuild", "fasta", sep=".")
-  #   },
-  #   
-  #   content <- function(file) {
-  #     file.copy(paste("DATA/users/",session_id,"/BlockConstruct.fasta", sep=""), file)
-  #   },
-  # )
-  # 
-  # 
-  # output$DownOriApe <- downloadHandler(
-  #   filename <- function() {
-  #     paste("Input_sequence", "gb", sep=".")
-  #   },
-  #   
-  #   content <- function(file) {
-  #     file.copy(paste("DATA/users/",session_id,"/Seqog.gb", sep=""), file)
-  #   },
-  # )
-  # 
-  # output$DownOptiApe <- downloadHandler(
-  #   filename <- function() {
-  #     paste("Output_sequence", "gb", sep=".")
-  #   },
-  #   
-  #   content <- function(file) {
-  #     file.copy(paste("DATA/users/",session_id,"/Seqpop.gb", sep=""), file)
-  #   },
-  # )
-  
   
   ###Testing with input name
   output$DownSeqOut <- downloadHandler(
@@ -1659,18 +1376,17 @@ shinyServer(function(input, output, session) {
         ##HTML("<h4>Sequence manipulation:</h4>"),
         ###Codon algorithm as option instead of  mandatory table
         
-        selectInput("selectCAI", label = HTML("<b>Optimization method
+        selectizeInput("selectCAI", label = HTML("<b>Optimization method
                                                            [<a href=\"\" onclick=\"$('#explain_codon').toggle(); return false;\">info</a>]
                                                            </b>"), 
-                    choices = list("--- Codon table ---" = 1, 
+                    choices = list("Skip Codon Optimization" = 100, "--- Codon table ---" = 1, 
                                    "Highly expressed ubiquitous genes (Serizay et al., Genome Res., 2020)" = 2, 
                                    #"Germline" = 3, 
                                    #"Neuronal" = 4, 
                                    #"Somatic" = 5, 
                                    "--- Published algorithms ---" = 6, 
                                    "High expression (Redemann et al., Nature Meth., 2011)" = 7, 
-                                   "Germline optimized (Fielmich et al., eLife, 2018)" = 8,
-                                   "--- Skip Codon Optimization ---" = 100
+                                   "Germline optimized (Fielmich et al., eLife, 2018)" = 8
                                    ), 
                     selected = 1),
         HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_codon\">
@@ -1704,8 +1420,11 @@ shinyServer(function(input, output, session) {
                   fluidRow(
                     #HTML("<tt>"),
                     column(6,
+                           
+                           tags$div(
+                             style = "width: 800px;",
                            prettyCheckboxGroup("Oenzymes", "",
-                                               c(enzy$Enzyme), inline=TRUE)
+                                               choiceNames = choice_names, choiceValues = c(enzy$Enzyme), inline=TRUE))
                           # checkboxInput("checkMetSites", label = HTML("<b>Dam/Dcm
                           #                                     [<a href=\"\" onclick=\"$('#explain_metsites').toggle(); return false;\">info</a>]
                          #                                      </b>"), value = FALSE, width='100%'),
@@ -2153,7 +1872,7 @@ actionButton("actionSeq", label = "Optimize sequence")
     if(FlaPi){eeexxttpar=append(eeexxttpar,"Remove piRNA sites: Yes")}else{eeexxttpar=append(eeexxttpar,"Remove piRNA sites: No")}
     if(FlaEnz){
       eeexxttpar=append(eeexxttpar,"Remove RE sites: Yes")
-      eeexxttpar=append(eeexxttpar,paste("Restriction sites removed: Yes", paste(Inenzy,sep=",",collapse="")))
+      eeexxttpar=append(eeexxttpar,paste("Restriction sites removed: ", paste(Inenzy,sep=", ",collapse=", "),""))
     }else{eeexxttpar=append(eeexxttpar,"Remove RE sites: No")}
     if(FlaIn){eeexxttpar=append(eeexxttpar,"Add introns: Yes")}else{eeexxttpar=append(eeexxttpar,"Add introns: No")}
     if(FlaTURS){eeexxttpar=append(eeexxttpar,"Add UTRs: Yes")}else{eeexxttpar=append(eeexxttpar,"Add UTRs: No")}
@@ -2190,39 +1909,56 @@ actionButton("actionSeq", label = "Optimize sequence")
           seqiqi=toupper(seqiqi)
           
           piss=Strfindpies(seqiqi,Pies,4)
-          if(length(piss)>0){
-            popos=c()
-            papas=c()
-            for(pipi in piss){
-              patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=4,fixed=T))
-              popos=append(popos,patotes)
-              papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
-            }
-            
-            papos=c()
-            pospos=unique(popos)
-            for(pipi in pospos){
-              papos=append(papos,paste(papas[which(pipi == popos)], collapse=";"))  
-            }
-            
-            write(paste(PasteApe(OriSeqNameIn,seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-            #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(pospos),c(rep("orange",length(pospos))),c(rep("orange",length(pospos))),c(papos),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-            ###TODO: ADD info IN HTML here
-            ###Test NewSequenceViewer = function(title,div_id,sequence,patterns,colors,tooltips,dflegends,starseq="",endseq=""){
-            #newdf=data.frame(Type=c("Start","End","Multiple annotations"),Color=c("green","red","grey"))
-            ##newdf=data.frame(Seqs=patseqs,Description=(regions)[,3],Color=(regions)[,4])
-            ##newdf=unique(newdf)
-            legdf=data.frame(Type=c("piRNA site", "RE site"),Color=c("orange","purple"))
-
-            
-            HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,oriseqstart,oriseqend),"<br>")
-          }else{
-            write(paste(PasteApe(OriSeqNameIn,seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-            #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(""),c(""),c(""),c(""),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-            legdf=data.frame(Type=c("RE site"),Color=c("purple"))
-            ###TODO: ADD info IN HTML here
-            HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,oriseqstart,oriseqend),"<br>")
+          
+          ##New approach
+          paterns=c()
+          seqpaterns=c()
+          colpaterns=c()
+          dftyp=c()
+          dfcol=c()
+          #Ezymes
+          if(length(Inenzy)>0){
+            paterns=append(paterns,Inenzy)
+            seqpaterns=append(seqpaterns,enzy[Inenzy,"Site"])
+            colpaterns=append(colpaterns,rep("purple",length(Inenzy)))
+            dftyp=append(dftyp,"RE site")
+            dfcol=append(dfcol, "purple")
           }
+          
+          piss=Strfindpies(seqiqi,Pies,4)
+          if(length(piss)>0){
+               popos=c()
+               papas=c()
+               for(pipi in piss){
+                 patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=4,fixed=T))
+                 popos=append(popos,patotes)
+                 papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
+               }
+               
+               papos=c()
+               pospos=unique(popos)
+               for(pipi in pospos){
+                 papos=append(papos,paste(papas[which(pipi == popos)], collapse=";"))  
+               }
+               
+               paterns=append(paterns,papos)
+               seqpaterns=append(seqpaterns,pospos) 
+               colpaterns=append(colpaterns,rep("orange",length(pospos)))
+               
+               dftyp=append(dftyp,"piRNA site")
+               dfcol=append(dfcol, "orange")
+          }
+          #PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
+          
+          write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+      
+          
+          legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
+           
+             HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(seqpaterns),c(colpaterns),c(paterns),legdf,oriseqstart,oriseqend),"<br>")
+          
+          
+          
         })
         
         ##ApeButtonDownOriginal
@@ -2466,7 +2202,7 @@ actionButton("actionSeq", label = "Optimize sequence")
         ######4th. step: Sequence maniputalion for restriction site removal
         writeLines(text="Restriction Sites removal",con=statfiletowork)
         
-        Inenzy=c(as.character(gegegenzymes),as.character(gogogonzymes))
+        #Inenzy=c(as.character(gegegenzymes),as.character(gogogonzymes))
         
         #If restriction sites
         if(FlaEnz & (length(Inenzy) > 0)){
@@ -2527,61 +2263,140 @@ actionButton("actionSeq", label = "Optimize sequence")
         #incProgress(1/20)
         
         ######5th. step: Sequence maniputalion to add introns
+        #writeLines(text="Adding introns",con=statfiletowork)
+        #
+        #finalvec=c()
+        #If introns
+        # if(FlaIn){
+        #   
+        #   finalvec=unlist(strsplit(toupper(SeqtoOpt),""))
+        #   stpos=c()
+        #   inpos=c()
+        #   if(typedistint == 1){ ##If early start
+        #     if(Flaframeint){ ##If in frame
+        #       stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
+        #       stpos=stpos + 1
+        #       if(sum((stpos %% 3)==0) > 3){stpos=stpos[(stpos %% 3)==0]}else{
+        #         stpos=append(stpos,start(matchPattern(DNAString("GR"),DNAString(SeqtoOpt),fixed=F)))
+        #         stpos=stpos[(stpos %% 3)==0]
+        #       }
+        #       if(length(stpos)>3){
+        #         if(sum((stpos > 50)&(stpos<150))>1){inpos=append(inpos,c(stpos[(stpos > 50)&(stpos<150)])[1])}else{inpos=c(51)}
+        #         if(sum(stpos > (inpos[1]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[1]+150))])[1])}else{inpos=c(inpos[1],inpos[1]+150)}
+        #         if(sum(stpos > (inpos[2]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[2]+150))])[1])}else{inpos=append(inpos,sample((inpos[2]+60):(length(finalvec)-1),1))}
+        #       }else{
+        #         inpos=c(99,249,399)
+        #       }
+        #       inposis=inpos[order(inpos)]
+        #     }else{
+        #       stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
+        #       stpos=stpos + 1
+        #       if(length(stpos)>3){
+        #         if(sum((stpos > 50)&(stpos<150))>1){inpos=append(inpos,c(stpos[(stpos > 50)&(stpos<150)])[1])}else{inpos=c(50)}
+        #         if(sum(stpos > (inpos[1]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[1]+150))])[1])}else{inpos=c(inpos[1],inpos[1]+150)}
+        #         if(sum(stpos > (inpos[2]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[2]+150))])[1])}else{inpos=append(inpos,sample((inpos[2]+50):(length(finalvec)-1),1))}
+        #       }else{
+        #         inpos=c(100,250,400)
+        #       }
+        #       inposis=inpos[order(inpos)]
+        #     }
+        #   }else{ ###Equi distant
+        #     if(Flaframeint){
+        #       stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
+        #       stpos=stpos + 1
+        #       if(sum((stpos %% 3)==0) > 5){stpos=stpos[(stpos %% 3)==0]}else{
+        #         stpos=append(stpos,start(matchPattern(DNAString("GR"),DNAString(SeqtoOpt),fixed=F)))
+        #         stpos=stpos[(stpos %% 3)==0]
+        #       }
+        #       inpos=quantile(stpos,names=F)[c(2,3,4)]
+        #       inposis=inpos[order(inpos)]
+        #     }else{
+        #       stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
+        #       stpos=stpos + 1
+        #       inpos=quantile(stpos,names=F)[c(2,3,4)]
+        #       inposis=inpos[order(inpos)]
+        #     }
+        #   }
+        #   
+        #   
+        #   
+        #   
+        #   SeqtoOpt=paste(c(finalvec[1:inposis[1]],as.character(IntronSeqs[typeIn,1]),finalvec[(inposis[1]+1):inposis[2]],as.character(IntronSeqs[typeIn,2]),finalvec[(inposis[2]+1):inposis[3]], as.character(IntronSeqs[typeIn,3]),finalvec[(inposis[3]+1):length(finalvec)]),sep="",collapse="")
+        # }
+        
+        ######5th. step: Sequence maniputalion to add introns
         writeLines(text="Adding introns",con=statfiletowork)
         
         finalvec=c()
-        #If introns
+        
         if(FlaIn){
-          
+          ##Make a vector where to insert introns later
           finalvec=unlist(strsplit(toupper(SeqtoOpt),""))
-          stpos=c()
-          inpos=c()
-          if(typedistint == 1){
-            if(Flaframeint){
-              stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
-              stpos=stpos + 1
-              if(sum((stpos %% 3)==0) > 3){stpos=stpos[(stpos %% 3)==0]}else{
-                stpos=append(stpos,start(matchPattern(DNAString("GR"),DNAString(SeqtoOpt),fixed=F)))
-                stpos=stpos[(stpos %% 3)==0]
+          
+          ##Find all AAGR
+          AAGRs=start(matchPattern(DNAString("AAGR"),DNAString(SeqtoOpt),fixed=F))
+          #Place in position to cut start position, i.e. AAG][R
+          if(length(AAGRs)>0){AAGRs=AAGRs+2}else{AAGRs=c()}
+          
+          ##Find all AAGN
+          AAGs=start(matchPattern(DNAString("AAG"),DNAString(SeqtoOpt),fixed=F))
+          #Place in position to cut start position, i.e. AAG][N
+          if(length(AAGs)>0){AAGs=AAGs+2}else{AAGs=c()}
+          
+          ##Find all AGR
+          AGRs=start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F))
+          #Place in position to cut start position, i.e. AG][R
+          if(length(AGRs)>0){AGRs=AGRs+1}else{AGRs=c()}
+          
+          ##Find all AG
+          AGs=start(matchPattern(DNAString("AG"),DNAString(SeqtoOpt),fixed=F))
+          #Place in position to cut start position, i.e. AG][N
+          if(length(AGs)>0){AGs=AGs+1}else{AGs=c()}
+          
+          ##Find all GR
+          GRs=start(matchPattern(DNAString("GR"),DNAString(SeqtoOpt),fixed=F))
+          #Place in position to cut start position, i.e. G][R
+          if(length(GRs)>0){GRs=GRs}else{GRs=c()}
+          
+          ##Find all NG
+          Gs=start(matchPattern(DNAString("G"),DNAString(SeqtoOpt),fixed=T))
+          #Place in position to cut start position, i.e. G][N
+          if(length(Gs)==0){inposis=c(49,149,249)}else{
+            trypos=list(AAGRs,AAGs,AGRs,AGs,GRs,Gs)
+            inposis=c()
+            trpo=1
+            while(length(inposis)!=3){
+              #First statement
+              ttpos=trypos[[trpo]]
+              inpos=c()
+              
+              ##Middle check
+              #Filter for intron
+              if(Flaframeint){ttpos=ttpos[(ttpos %% 3 == 0)]}
+              ##Now check for location
+              if(length(ttpos) >= 3){
+                if(typedistint == 1){##if early start
+                  if(sum((ttpos > 50)&(ttpos <150))>1){
+                    inpos=append(inpos,c(ttpos[(ttpos > 50)&(ttpos<150)])[1])
+                    if(sum(ttpos > (inpos[1]+150))>1){
+                      inpos=append(inpos,c(ttpos[(ttpos > (inpos[1]+150))])[1])
+                      if(sum(ttpos > (inpos[2]+150))>1){
+                        inpos=append(inpos,c(ttpos[(ttpos > (inpos[2]+150))])[1])
+                        inposis=inpos[order(inpos)]
+                      }
+                    }
+                  }
+                }else{
+                  inposis=quantile(ttpos,names=F)[c(2,3,4)]
+                  inposis=inposis[order(inposis)]	
+                }
               }
-              if(length(stpos)>3){
-                if(sum((stpos > 50)&(stpos<150))>1){inpos=append(inpos,c(stpos[(stpos > 50)&(stpos<150)])[1])}else{inpos=c(51)}
-                if(sum(stpos > (inpos[1]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[1]+150))])[1])}else{inpos=c(inpos[1],inpos[1]+150)}
-                if(sum(stpos > (inpos[2]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[2]+150))])[1])}else{inpos=append(inpos,sample((inpos[2]+60):(length(finalvec)-1),1))}
-              }else{
-                inpos=c(99,249,399)
-              }
-              inposis=inpos[order(inpos)]
-            }else{
-              stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
-              stpos=stpos + 1
-              if(length(stpos)>3){
-                if(sum((stpos > 50)&(stpos<150))>1){inpos=append(inpos,c(stpos[(stpos > 50)&(stpos<150)])[1])}else{inpos=c(50)}
-                if(sum(stpos > (inpos[1]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[1]+150))])[1])}else{inpos=c(inpos[1],inpos[1]+150)}
-                if(sum(stpos > (inpos[2]+150))>1){inpos=append(inpos,c(stpos[(stpos > (inpos[2]+150))])[1])}else{inpos=append(inpos,sample((inpos[2]+50):(length(finalvec)-1),1))}
-              }else{
-                inpos=c(100,250,400)
-              }
-              inposis=inpos[order(inpos)]
-            }
-          }else{
-            if(Flaframeint){
-              stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
-              stpos=stpos + 1
-              if(sum((stpos %% 3)==0) > 5){stpos=stpos[(stpos %% 3)==0]}else{
-                stpos=append(stpos,start(matchPattern(DNAString("GR"),DNAString(SeqtoOpt),fixed=F)))
-                stpos=stpos[(stpos %% 3)==0]
-              }
-              inpos=quantile(stpos,names=F)[c(2,3,4)]
-              inposis=inpos[order(inpos)]
-            }else{
-              stpos=append(stpos,start(matchPattern(DNAString("AGR"),DNAString(SeqtoOpt),fixed=F)))
-              stpos=stpos + 1
-              inpos=quantile(stpos,names=F)[c(2,3,4)]
-              inposis=inpos[order(inpos)]
+              
+              #End statement
+              trpo=trpo+1
+              if(trpo > length(trypos)){inposis=c(49,149,249)}
             }
           }
-          
           SeqtoOpt=paste(c(finalvec[1:inposis[1]],as.character(IntronSeqs[typeIn,1]),finalvec[(inposis[1]+1):inposis[2]],as.character(IntronSeqs[typeIn,2]),finalvec[(inposis[2]+1):inposis[3]], as.character(IntronSeqs[typeIn,3]),finalvec[(inposis[3]+1):length(finalvec)]),sep="",collapse="")
         }
         
@@ -2726,31 +2541,84 @@ actionButton("actionSeq", label = "Optimize sequence")
         
           if((ErrorFlag == 0) & !is.null(SeqtoOpt)) {
             
-            ###For output sequence
+            # ###For output sequence
+            # output$newsequence <-renderUI({
+            #   coolpatterns=c()
+            #   stpos=c()
+            #   edpos=c()
+            #   enpat=c()
+            #   enpat=append(enpat,c("GGTCTC","GAGACC"))
+            #   enpat=append(enpat,c("GCTCTTC","GAAGAGC"))
+            #   enpat=append(enpat,c("CGTCTC","GAGACG"))
+            #   colocolo=rainbow(length(enpat))
+            #   
+            #   for(t in 1:length(enpat)){
+            #     stpos=start(matchPattern(DNAString(as.character(enpat[t])),DNAString(paste(finalvec,sep="",collapse="")),fixed=T))
+            #     edpos=end(matchPattern(DNAString(as.character(enpat[t])),DNAString(paste(finalvec,sep="",collapse="")),fixed=T))
+            #     if(length(stpos)>0){
+            #       coolpatterns=rbind(coolpatterns, cbind(stpos,edpos,rep(colocolo[t],length(stpos)),rep(enpat[t],length(stpos))))
+            #     }
+            #   }
+            #   
+            #   piss=Strfindpies(SeqtoOpt,Pies,4)
+            #   if((length(piss)>0)&(FlaPi)){
+            #     popos=c()
+            #     papas=c()
+            #     for(pipi in piss){
+            #       patotes=as.character(matchPattern(DNAString(pipi),DNAString(SeqtoOpt),max.mismatch=4,fixed=T))
+            #       popos=append(popos,patotes)
+            #       papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
+            #     }
+            #     
+            #     papos=c()
+            #     pospos=unique(popos)
+            #     for(pipi in pospos){
+            #       papos=append(papos,paste(papas[which(pipi == popos)], collapse=";"))  
+            #     }
+            #     
+            #     ##Write annotated file
+            #     write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+            #     
+            #     ###TODO: ADD info IN HTML here
+            #     legdf=data.frame(Type=c("piRNA site", "RE site"),Color=c("orange","purple"))
+            #     
+            #     HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,newseqstart,newseqend),"<br>")
+            #     
+            #     
+            #   }else{
+            #     write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+            #     legdf=data.frame(Type=c("RE site"),Color=c("purple"))
+            #     
+            #     HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,newseqstart,newseqend),"<br>")
+            #     
+            #   }
+            # })
+            
+            ####New approach
             output$newsequence <-renderUI({
-              coolpatterns=c()
-              stpos=c()
-              edpos=c()
-              enpat=c()
-              enpat=append(enpat,c("GGTCTC","GAGACC"))
-              enpat=append(enpat,c("GCTCTTC","GAAGAGC"))
-              enpat=append(enpat,c("CGTCTC","GAGACG"))
-              colocolo=rainbow(length(enpat))
-              
-              for(t in 1:length(enpat)){
-                stpos=start(matchPattern(DNAString(as.character(enpat[t])),DNAString(paste(finalvec,sep="",collapse="")),fixed=T))
-                edpos=end(matchPattern(DNAString(as.character(enpat[t])),DNAString(paste(finalvec,sep="",collapse="")),fixed=T))
-                if(length(stpos)>0){
-                  coolpatterns=rbind(coolpatterns, cbind(stpos,edpos,rep(colocolo[t],length(stpos)),rep(enpat[t],length(stpos))))
-                }
+
+              ##New approach
+              paterns=c()
+              seqpaterns=c()
+              colpaterns=c()
+              dftyp=c()
+              dfcol=c()
+              #Ezymes
+              if(length(Inenzy)>0){
+                paterns=append(paterns,Inenzy)
+                seqpaterns=append(seqpaterns,enzy[Inenzy,"Site"])
+                colpaterns=append(colpaterns,rep("purple",length(Inenzy)))
+                dftyp=append(dftyp,"RE site")
+                dfcol=append(dfcol, "purple")
               }
               
-              piss=Strfindpies(SeqtoOpt,Pies,4)
-              if((length(piss)>0)&(FlaPi)){
+              if(FlaPi){
+              piss=Strfindpies(toupper(optsec),Pies,4)
+              if(length(piss)>0){
                 popos=c()
                 papas=c()
                 for(pipi in piss){
-                  patotes=as.character(matchPattern(DNAString(pipi),DNAString(SeqtoOpt),max.mismatch=4,fixed=T))
+                  patotes=as.character(matchPattern(DNAString(pipi),DNAString(toupper(optsec)),max.mismatch=4,fixed=T))
                   popos=append(popos,patotes)
                   papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
                 }
@@ -2761,31 +2629,31 @@ actionButton("actionSeq", label = "Optimize sequence")
                   papos=append(papos,paste(papas[which(pipi == popos)], collapse=";"))  
                 }
                 
-                ##Write annotated file
-                write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
-                #write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(pospos),c(rep("orange",length(pospos))),c(rep("orange",length(pospos))),c(papos),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+                paterns=append(paterns,papos)
+                seqpaterns=append(seqpaterns,pospos) 
+                colpaterns=append(colpaterns,rep("orange",length(pospos)))
                 
-                ###TODO: ADD info IN HTML here
-                legdf=data.frame(Type=c("piRNA site", "RE site"),Color=c("orange","purple"))
-                #"<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer(""
-                HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,newseqstart,newseqend),"<br>")
-                #legdf=data.frame(Type=c("piRNA site", "RE site"),Color=c("orange","purple"))
-                
-                
-                #HTML("<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewer("","oldestseq",seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,"",""),"<br>")
-                
-                
-              }else{
-                write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
-                legdf=data.frame(Type=c("RE site"),Color=c("purple"))
-                ###TODO: ADD info IN HTML here
-                HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,newseqstart,newseqend),"<br>")
-                #legdf=data.frame(Type=c("RE site"),Color=c("purple"))
-                ###TODO: ADD info IN HTML here
-                #HTML("<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewer("","oldestseq",seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,"",""),"<br>")
-                
+                dftyp=append(dftyp,"piRNA site")
+                dfcol=append(dfcol, "orange")
               }
+              }
+              #write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+              #     legdf=data.frame(Type=c("RE site"),Color=c("purple"))
+              #     
+              #     HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,newseqstart,newseqend),"<br>")
+              #     
+              #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+              write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+              
+              
+              legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
+              
+              #HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(seqpaterns),c(colpaterns),c(paterns),legdf,oriseqstart,oriseqend),"<br>")
+              HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c(seqpaterns),c(colpaterns),c(paterns),legdf,newseqstart,newseqend),"<br>")
+              
+              
             })
+            
             
             output$downloadApeOptiseq <- renderUI({
               downloadButton('DownOptiApe', 'Genbank with annotations')
@@ -2816,6 +2684,8 @@ actionButton("actionSeq", label = "Optimize sequence")
                 }
                 pimattab
               })
+              
+              
             }
             
             
@@ -2850,11 +2720,104 @@ actionButton("actionSeq", label = "Optimize sequence")
             }
             ##Now data and viewer of old sequence
             if(as.integer(typinput) == 1){ ###If original sequence
+              # output$oldsequence <-renderUI({
+              #   seqiqi=toupper(seqiqi)
+              #   
+              #   piss=Strfindpies(seqiqi,Pies,4)
+              #   if((length(piss)>0)&(FlaPi)){
+              #     popos=c()
+              #     papas=c()
+              #     for(pipi in piss){
+              #       patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=4,fixed=T))
+              #       popos=append(popos,patotes)
+              #       papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
+              #     }
+              #     
+              #     papos=c()
+              #     pospos=unique(popos)
+              #     for(pipi in pospos){
+              #       papos=append(papos,paste(papas[which(pipi == popos)], collapse=";"))  
+              #     }
+              #     ##Write annotated file
+              #     write(paste(PasteApe(OriSeqNameIn,seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+              #     #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(pospos),c(rep("orange",length(pospos))),c(rep("orange",length(pospos))),c(papos),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+              #     
+              #     ###TODO: ADD info IN HTML here
+              #     #"<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer(""
+              #     legdf=data.frame(Type=c("piRNA site", "RE site"),Color=c("orange","purple"))
+              #     
+              #     
+              #     HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,oriseqstart,oriseqend),"<br>")
+              #     
+              #     #HTML("<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer("","oldestseq",seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I")))
+              #   }else{
+              #     write(paste(PasteApe(OriSeqNameIn,seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+              #     #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(""),c(""),c(""),c(""),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+              #     
+              #     ###TODO: ADD info IN HTML here
+              #     #HTML("<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer("","oldestseq",seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I")))
+              #     legdf=data.frame(Type=c("RE site"),Color=c("purple"))
+              #     ###TODO: ADD info IN HTML here
+              #     HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,oriseqstart,oriseqend),"<br>")
+              #     
+              #     }
+              # })
+              # 
+              # 
+              # 
+              # ##ApeButtonDownOriginal
+              # output$downloadApeOriseq <- renderUI({
+              #   downloadButton('DownOriApe', 'Genbank with annotations')
+              # })
+              # 
+              # ##PiTab
+              # if(FlaPi){
+              # output$OriPiTab <- renderTable({
+              #   piesinseq=Strfindpies(toupper(seqiqi),Pies,4)
+              #   #Subsampling sequence and creating table
+              #   pimattab=c()
+              #   for(pipat in piesinseq){
+              #     
+              #     #matchpattern to find targets
+              #     matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(seqiqi)),max.mismatch=4,fixed=T))
+              #     
+              #     for(mat in matseqpie){
+              #       pimattab=rbind(pimattab,cbind(pipat,mat,stringdist(pipat,mat,"hamming")))
+              #     }
+              #   }
+              #   if(length(piesinseq) > 0){
+              #     pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
+              #     pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
+              #     rownames(pimattab)=1:nrow(pimattab)
+              #     colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
+              #     pimattab=pimattab[,-2]
+              #   }
+              #   pimattab
+              # })
+              # }
               output$oldsequence <-renderUI({
                 seqiqi=toupper(seqiqi)
                 
                 piss=Strfindpies(seqiqi,Pies,4)
-                if((length(piss)>0)&(FlaPi)){
+                
+                ##New approach
+                paterns=c()
+                seqpaterns=c()
+                colpaterns=c()
+                dftyp=c()
+                dfcol=c()
+                #Ezymes
+                if(length(Inenzy)>0){
+                  paterns=append(paterns,Inenzy)
+                  seqpaterns=append(seqpaterns,enzy[Inenzy,"Site"])
+                  colpaterns=append(colpaterns,rep("purple",length(Inenzy)))
+                  dftyp=append(dftyp,"RE site")
+                  dfcol=append(dfcol, "purple")
+                }
+                
+                if(FlaPi){
+                piss=Strfindpies(seqiqi,Pies,4)
+                if(length(piss)>0){
                   popos=c()
                   papas=c()
                   for(pipi in piss){
@@ -2868,32 +2831,27 @@ actionButton("actionSeq", label = "Optimize sequence")
                   for(pipi in pospos){
                     papos=append(papos,paste(papas[which(pipi == popos)], collapse=";"))  
                   }
-                  ##Write annotated file
-                  write(paste(PasteApe(OriSeqNameIn,seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-                  #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(pospos),c(rep("orange",length(pospos))),c(rep("orange",length(pospos))),c(papos),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
                   
-                  ###TODO: ADD info IN HTML here
-                  #"<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer(""
-                  legdf=data.frame(Type=c("piRNA site", "RE site"),Color=c("orange","purple"))
+                  paterns=append(paterns,papos)
+                  seqpaterns=append(seqpaterns,pospos) 
+                  colpaterns=append(colpaterns,rep("orange",length(pospos)))
                   
-                  
-                  HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,oriseqstart,oriseqend),"<br>")
-                  
-                  #HTML("<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer("","oldestseq",seqiqi,c(pospos,"GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c(rep("orange",length(pospos)),"purple","purple","purple","purple","purple","purple"),c(papos,"BsaI","BsaI","SapI","SapI","Esp3I","Esp3I")))
-                }else{
-                  write(paste(PasteApe(OriSeqNameIn,seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaIrev","SapI","SapIrev","Esp3I","Esp3Irev"),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-                  #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(""),c(""),c(""),c(""),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-                  
-                  ###TODO: ADD info IN HTML here
-                  #HTML("<br><b><h3>",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),SequenceViewer("","oldestseq",seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I")))
-                  legdf=data.frame(Type=c("RE site"),Color=c("purple"))
-                  ###TODO: ADD info IN HTML here
-                  HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c("GGTCTC","GAGACC","GCTCTTC","GAAGAGC","CGTCTC","GAGACG"),c("purple","purple","purple","purple","purple","purple"),c("BsaI","BsaI","SapI","SapI","Esp3I","Esp3I"),legdf,oriseqstart,oriseqend),"<br>")
-                  
-                  }
+                  dftyp=append(dftyp,"piRNA site")
+                  dfcol=append(dfcol, "orange")
+                }
+                }
+                #PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
+                
+                write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+                
+                
+                legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
+                
+                HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(seqiqi,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(seqpaterns),c(colpaterns),c(paterns),legdf,oriseqstart,oriseqend),"<br>")
+                
+                
+                
               })
-              
-              
               
               ##ApeButtonDownOriginal
               output$downloadApeOriseq <- renderUI({
@@ -2922,10 +2880,10 @@ actionButton("actionSeq", label = "Optimize sequence")
                   colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
                   pimattab=pimattab[,-2]
                 }
+                
                 pimattab
               })
               }
-              
             }
             
             

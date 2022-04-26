@@ -67,6 +67,11 @@ shinyUI(
                           border-left-color: transparent;
                           border-right-color: transparent}
                .navbar-default .navbar-brand:hover {color: #ffffff;}
+               
+    .selectize-input {
+        width: 600px;
+        padding-top: 5px;
+      }
                "),
     tags$head(tags$script(src ="sequence-viewer.bundle.js")),
     ###Extra scripts communicating java with shiny
