@@ -6,7 +6,7 @@
 ##By itself, the previous versions of the transgene builder could not allow multiple users due to the way that shiny is constructed, i.e. a single R session per app
 ##In theory, I could implement the package in a docker and mitigate the issues by creating a new session everytime a user connects it to. However, deploying a server only for that is a little cumbersome and not really required
 ##Similarly, I could use shiny proxy, but that also requires some configuration on the server's end and might obstruct the use we've implemented already.
-##For now, the apparent most appropiate option is to use the package promises and start somewhat from scratch regarding the code. All right
+##For now, the apparent most appropriate option is to use the package promises and start somewhat from scratch regarding the code. All right
 
 #Load libraries
 library(shiny)
@@ -113,15 +113,22 @@ busyIndicator(),
       ###About
       tabPanel("About",
                mainPanel(
-                 h3("The app"),
-                 HTML("<p align=\"justify\">Originally, the transgene builder app formed part of the <a href=\"https://wormbuilder.org/patc/\">PATC app</a> whose intention was to help
-                      in the elaboration of transgenes less prone to germline silencing.
-                      <br>
-                      With this tool, we hope to leverage the time required to implement novel molecular tools yet to be seen in <i>C. elegans</i>.
+                 h3("Transgene builder"),
+                 HTML("<p align=\"justify\">This website is generated via custom modified css/html page running in R via the shiny library.
+                 <br>All the templates, libraries, and programs used to produce this site are under the MIT and GNU licenses.</p>"),
+                 h3("The Laboratory of Synthetic Genome Biology"),
+                 HTML("<p align=\"justify\">
+                 The Laboratory of Synthetic Genome Biology is located in building 2 - level 3 (Ibn Al-Haytham – Above Spine) at King Abdullah University of Science and Technology (KAUST).
+                 <br><i>Contact info</i>:<br>Christian-Froekjaer Jensen, Ph.D. 
+                 <br>Assistant Professor of Bioscience
+                 <br>Laboratory of Synthetic Genome Biology
+                 <br>Email: <a href=\"mailto:cfjensen@kaust.edu.sa\">cfjensen@kaust.edu.sa</a>
+                 
                       </p>")
                )
       )
     ),
+hr(),
     HTML("<a href=\"https://syngenbio.kaust.edu.sa\">Syntetic genome biology laboratory @KAUST</a><br>"),
     HTML("<a href=\"http://www.wormbuilder.org/\">Wormbuilder</a><br>"),
     HTML("<a href=\"mailto:amhed.velazquez@kaust.edu.sa\">Contact us!</a>")
