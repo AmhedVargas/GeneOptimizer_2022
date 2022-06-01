@@ -84,8 +84,8 @@ Run the program via command line specifying an open port, e.g., 5100, and open a
 
 Alternatively, you can run the app in a graphical environment such as Rstudio.
 
-## Usage
-**Transgene adaptation**
+# Usage
+## Transgene adaptation
 This app allows any user to input coding sequences and obtain transgenes optimized for <i>C. elegans</i> expression.
 
 ## Transgene builder algorithm 
@@ -119,9 +119,9 @@ If at least three sites are found within the selected parameters, those will be 
 
 With regards to 5' and 3' UTR appending, we only add them at the start or end of the optimized sequence.
 
-**Sequence viewer and analytical modes**
+## Sequence viewer and analytical modes
 We use a slightly modified version of neXtProt sequence viewer [code](https://github.com/calipho-sib/sequence-viewer). We have alter the way the `<div>` elements are created so we can make our own annotations. These annoations can be simple gene ranges or sequence matches.
 
-## Troubleshoot
+# Troubleshoot
 
 Please feel free to [e-mail me](mailto:amhed.velazquez@kaust.edu.sa) for any question, doubt or error in the app.
