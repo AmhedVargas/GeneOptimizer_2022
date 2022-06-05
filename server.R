@@ -114,7 +114,7 @@ modbyposiz=function(x,starts,tabibi,list,cai){
   if(!is.character(x)){return(c())}
   vecseq=unlist(strsplit(x,""))
   if((length(vecseq) %% 3) != 0){return(c())}
-  if(length(starts)>0){starts=unique(starts - (starts %% 3) +1 )}
+  if(length(starts)>0){starts=unique(starts - (starts %% 3) + 1)}
   for(pos in c(starts)){
     nncod=sampnewcod(as.character(tabibi[paste(c(vecseq[pos:(pos+2)]),sep="",collapse=""),"Amino"]),paste(c(vecseq[pos:(pos+2)]),sep="",collapse=""),list,cai)
     vecseq[pos:(pos+2)]=unlist(strsplit(nncod,""))
@@ -451,7 +451,7 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
   }
   
     ##New paradigm, just add start and endseq to patterns.. not the best so better use something similar to the original function
-    ##But to do it properly, define what's going on on the chunk fo code below
+    ##But to do it properly, define what's going on on the chunk of code below
     
     ################################
     ##Initialize vector of matching pattern with the start sequence and keep the first match, let's test if instead I can do that match and then modify the end of the sequence
@@ -471,7 +471,7 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
     subnames=c("Start")
     subset=patitos[1]
     
-    patitos=patitos[order(start(patitos)),]
+    #patitos=patitos[order(start(patitos)),]
     
     if(length(patitos)>1){
       for(n in 2:length(patitos)){
@@ -1365,8 +1365,8 @@ shinyServer(function(input, output, session) {
   inituiui=function(){
     output$DynamicUserInterface <- renderUI({
       fluidRow(
-        HTML("<h2><i>C. elegans</i> transgene adaptation</h2>"),
-        radioButtons("intypeinput", label = HTML("<h4>Input</h4>"),
+        HTML("<h2><i>C. elegans</i> transgene adaptation<sup style=\"color:red;font-size:0.70em;\">Beta version</sup></h2>"),
+        radioButtons("intypeinput", label = HTML("<h4>Input [<a href=\"\" onclick=\"$('#explain_seq_input_any').toggle(); return false;\">info</a>]</h4>"),
                      choices = list("DNA" = 1, 
                                     "Protein" = 2), 
                      selected = 1, inline = TRUE, width='100%'),
@@ -1375,16 +1375,21 @@ shinyServer(function(input, output, session) {
                          fluidRow(
                            column(8,
                                   textAreaInput("seqDNA", label = HTML(""), value = "", cols= 100, rows=5, width = "600px"),
-                                  HTML("<h5>Include start and stop codons. Maximum gene length is 10 kb.</h5>")
+                                  HTML("")
                            )
                          )),
         conditionalPanel(condition = "input.intypeinput==2",
                          fluidRow(
                            column(8,
                                   textAreaInput("seqPROT", label = HTML(""), value = "", cols= 100, rows=5, width = "600px"),
-                                  HTML("Maximum protein length is 3332 aa.<br><br>")
+                                  HTML("")
                            ),
                          )),
+        HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_seq_input_any\">
+                        Sequences must:<br> have a START (ATG or M) and a STOP (* or TAA/TAG/TGA),<br>
+              be codyfiyng (multiple of three and not stop codons before the end),
+             <br> and of a maximum length of 10kb or 3333 aa.
+                          <br></div></p>"),
         
         ###Parameters
         ##HTML("<h4>Sequence manipulation:</h4>"),
@@ -1479,7 +1484,7 @@ shinyServer(function(input, output, session) {
           ))),
  HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_introns\">
                         Introns can improve transgene expression (<a href=\"https://pubmed.ncbi.nlm.nih.gov/8244003/\">Okkema <i>et al.,</i> 1993</a>). The introns are indicated by lower-case letters and are inserted at consensus splice sites (<a href=\"https://www.ncbi.nlm.nih.gov/books/NBK20075/\"><i>C. elegans</i> II, 2. ed</a>). 
-                        Introns within the first 150 basepairs are particularly efficient at improving germline expression (<a href=\"https://www.nature.com/articles/s41467-020-19898-0\">Al Johani <i>et al.,</i> 2020</a>).
+                        Introns within the first 150 basepairs are particularly efficient at improving germline expression (<a href=\"https://www.nature.com/articles/s41467-020-19898-0\">Al Johani <i>et al.,</i> 2020</a>). See our <a href=\"https://github.com/AmhedVargas/GeneOptimizer_2022\">github documentation</a> for extra information.
                     </div></p>"),
  ###Addition of UTRs
  fluidRow(
@@ -2434,7 +2439,40 @@ actionButton("actionSeq", label = "Optimize sequence")
                 dftyp=append(dftyp,"RE site")
                 dfcol=append(dfcol, "purple")
               }
-              
+              #Introns
+              if(FlaIn){
+                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,]),"-1",sep=""))
+                #paterns=append(paterns,"A")
+                seqpaterns=append(seqpaterns,toupper(as.character(IntronSeqs[typeIn,1])))
+                colpaterns=append(colpaterns,"lime")
+                
+                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,]),"-2",sep=""))
+                #paterns=append(paterns,"B")
+                seqpaterns=append(seqpaterns,toupper(as.character(IntronSeqs[typeIn,2])))
+                colpaterns=append(colpaterns,"lime")
+                
+                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,]),"-3",sep=""))
+                #paterns=append(paterns,"C")
+                seqpaterns=append(seqpaterns,toupper(as.character(IntronSeqs[typeIn,3])))
+                colpaterns=append(colpaterns,"lime")
+                dftyp=append(dftyp,"Intron")
+                dfcol=append(dfcol, "lime")
+              }
+              ##If UTRs
+              if(FlaTURS){
+                if(befUTR !=""){
+                  paterns=append(paterns,"5pUTR")
+                  seqpaterns=append(seqpaterns,toupper(befUTR))
+                  colpaterns=append(colpaterns,"fuchsia")
+                  }
+                if(aftUTR !=""){
+                  paterns=append(paterns,"3pUTR")
+                  seqpaterns=append(seqpaterns,toupper(aftUTR))
+                  colpaterns=append(colpaterns,"fuchsia")
+                }
+                dftyp=append(dftyp,"UTR")
+                dfcol=append(dfcol, "fuchsia")
+              }
               if(FlaPi){
               piss=Strfindpies(toupper(optsec),Pies,4)
               if(length(piss)>0){
@@ -2469,7 +2507,7 @@ actionButton("actionSeq", label = "Optimize sequence")
               
               #HTML("<br><b><h3>Input ",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","oldestseq",seqiqi,c(seqpaterns),c(colpaterns),c(paterns),legdf,oriseqstart,oriseqend),"<br>")
               HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c(seqpaterns),c(colpaterns),c(paterns),legdf,newseqstart,newseqend),"<br>")
-              
+              #HTML("<br><b><h3>Optimized",OriSeqNameIn,"</h3></b><br>",GCHTMLinfo(optsec,CAIS,5,AAtoCodF),NewSequenceViewerDu("","newseq",SeqtoOpt,c(seqpaterns),c(paterns),c(colpaterns),legdf,newseqstart,newseqend),"<br>")
               
             })
             

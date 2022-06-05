@@ -1,0 +1,60 @@
+LOCUS     Optimized_Sequence     913bp ds-DNA     linear     -Jun-15:49:00
+DEFINITION     .
+ACCESSION     .
+VERSION     .
+SOURCE     .
+ORGANISM     C.elegans
+COMMENT     Optimized_Sequence
+COMMENT     Codon Adaptation Index 0.52
+COMMENT     GC 47 %
+COMMENT     piRNA binding sites in sequence: 1
+COMMENT     Input sequence: ATGTCAAAAGGAGAAGAACTCTTTACCGGAGTCGTCCCAATTCTCGTCGAGCTCGACGGAGACGTAAACGGACACAAATTCTCGGTTTCCGGAGAAGGAGAAGGAGATGCTACGTATGGTAAACTGACGCTAAAGTTTATTTGCACCACCGGAAAGCTCCCAGTGCCGTGGCCAACCCTTGTGACTACCTTCTCTTATGGAGTTCAGTGCTTTTCCCGCTACCCAGACCATATGAAGCAACATGACTTCTTCAAATCAGCCATGCCAGAAGGATACGTCCAGGAGCGAACAATTTTCTTCAAGGACGATGGCAACTACAAGACTCGTGCTGAAGTCAAGTTTGAAGGAGATACTCTCGTGAACCGCATTGAGCTCAAGGGAATCGACTTTAAGGAGGACGGCAATATCCTTGGACACAAGCTCGAATACAACTATAACTCGCACAACGTGTATATAATGGCCGACAAGCAAAAAAACGGCATCAAGGTCAACTTCAAGATTCGCCACAACATCGAAGACGGGTCGGTTCAACTCGCTGATCACTACCAGCAGAACACACCAATTGGAGATGGACCAGTCCTCCTCCCTGATAATCACTACCTTTCCACTCAATCCGCTCTTAGCAAGGATCCAAATGAGAAAAGAGATCACATGGTTCTTCTCGAGTTTGTCACCGCCGCCGGAATCACCCACGGAATGGACGAGCTGTACAAGTAA
+COMMENT     Skip optimization routine: Yes
+COMMENT     RBS optimization: No
+COMMENT     Remove piRNA sites: No
+COMMENT     Remove RE sites: No
+COMMENT     Add introns: Yes
+COMMENT     Add UTRs: No
+COMMENT     consensus start site: No
+COMMENT     rps_5-1 gtttgtatttcgtatttggttaaaaattgcatttaaaaaatattgataaaaatatttccaaaaagagtaaaacaaaaaattaaattaatttttacag
+COMMENT     rps_5-2 gtatatcattgattaaatgtagaaattttattttaccacgtttctattcag
+COMMENT     rps_5-3 gtatattaattttcctggtgattcgtttaatcatttagttctttttag
+COMMENT     Generated using www.wormbuilder.org/optimizer/
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     primer_bind     98..194
+                          /locus_tag="rps_5-1"
+                          /ApEinfo_label="rps_5-1"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     369..419
+                          /locus_tag="rps_5-2"
+                          /ApEinfo_label="rps_5-2"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+     primer_bind     635..682
+                          /locus_tag="rps_5-3"
+                          /ApEinfo_label="rps_5-3"
+                     /ApEinfo_fwdcolor="orange"
+                     /ApEinfo_revcolor="orange"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0"
+ORIGIN
+     1 ATGTCAAAAG GAGAAGAACT CTTTACCGGA GTCGTCCCAA TTCTCGTCGA GCTCGACGGA
+    61 GACGTAAACG GACACAAATT CTCGGTTTCC GGAGAAGgtt tgtatttcgt atttggttaa
+   121 aaattgcatt taaaaaatat tgataaaaat atttccaaaa agagtaaaac aaaaaattaa
+   181 attaattttt acagGAGAAG GAGATGCTAC GTATGGTAAA CTGACGCTAA AGTTTATTTG
+   241 CACCACCGGA AAGCTCCCAG TGCCGTGGCC AACCCTTGTG ACTACCTTCT CTTATGGAGT
+   301 TCAGTGCTTT TCCCGCTACC CAGACCATAT GAAGCAACAT GACTTCTTCA AATCAGCCAT
+   361 GCCAGAAGgt atatcattga ttaaatgtag aaattttatt ttaccacgtt tctattcagG
+   421 ATACGTCCAG GAGCGAACAA TTTTCTTCAA GGACGATGGC AACTACAAGA CTCGTGCTGA
+   481 AGTCAAGTTT GAAGGAGATA CTCTCGTGAA CCGCATTGAG CTCAAGGGAA TCGACTTTAA
+   541 GGAGGACGGC AATATCCTTG GACACAAGCT CGAATACAAC TATAACTCGC ACAACGTGTA
+   601 TATAATGGCC GACAAGCAAA AAAACGGCAT CAAGgtatat taattttcct ggtgattcgt
+   661 ttaatcattt agttcttttt agGTCAACTT CAAGATTCGC CACAACATCG AAGACGGGTC
+   721 GGTTCAACTC GCTGATCACT ACCAGCAGAA CACACCAATT GGAGATGGAC CAGTCCTCCT
+   781 CCCTGATAAT CACTACCTTT CCACTCAATC CGCTCTTAGC AAGGATCCAA ATGAGAAAAG
+   841 AGATCACATG GTTCTTCTCG AGTTTGTCAC CGCCGCCGGA ATCACCCACG GAATGGACGA
+   901 GCTGTACAAG TAA
+//

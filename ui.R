@@ -100,8 +100,16 @@ Shiny.addCustomMessageHandler('JobStatusMessage', function(JobMessage) {
   document.getElementById(\"jobstat\").innerText = JobMessage;
       });
     "),
-#Main tab pages
 busyIndicator(),
+#' ##Add font for Beta style
+#' tags$style(HTML("
+#'       @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+#'       #divBetaAnnounce {
+#'         font-family: 'Gochi Hand', sans-serif;
+#'         color: #c8b291;
+#'       }
+#'       ")),
+#Main tab pages
     navbarPage(
       title=actionLink("link_to_tabpanel_sequenceadaptation", HTML("<b>Wormbuilder</b>")),
       windowTitle="WormBuilder transgenic tools",
