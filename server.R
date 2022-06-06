@@ -664,7 +664,7 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
     }
   }
   }
-  FileLines=append(FileLines,paste("COMMENT","Generated using www.wormbuilder.org/optimizer/",sep="     "))
+  FileLines=append(FileLines,paste("COMMENT","Generated using www.wormbuilder.org/transgenebuilder/",sep="     "))
   FileLines=append(FileLines,paste("COMMENT","ApEinfo:methylated:1",sep="     "))
   
   
@@ -1386,9 +1386,9 @@ shinyServer(function(input, output, session) {
                            ),
                          )),
         HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_seq_input_any\">
-                        Sequences must:<br> have a START (ATG or M) and a STOP (* or TAA/TAG/TGA),<br>
-              be codyfiyng (multiple of three and not stop codons before the end),
-             <br> and of a maximum length of 10kb or 3333 aa.
+                        Sequences must be an Open Reading Frame, i.e., they must have a START (ATG or M) and a STOP (* or TAA/TAG/TGA),<br>
+              be coding (multiple of three and not stop codons before the end),
+             <br> and of a maximum length of 10kb or 3333 aa and minimim length of 39 bp or 13 aa.
                           <br></div></p>"),
         
         ###Parameters
@@ -1803,10 +1803,11 @@ actionButton("actionSeq", label = "Optimize sequence")
     
     if((ErrorFlag == 0) & ((length(seqDNA) < 450) & (FlaIn))){ ##Check for errors in size
       output$ErrorMessage <- renderText({
-        paste("Error: Sequence is too short to add ~150bp spaced introns. The option will be deactivated")
+        paste("Error: Sequence is too short to add ~150bp spaced introns")
       })
-      FlaIn=FALSE
       updateCheckboxInput(session, "checkIntron", value = FALSE)
+      ErrorFlag=1
+      return(NULL)
     }
     
     if((ErrorFlag == 0) & (nchar(gsub("A|T|C|G","",toupper(paste(seqDNA,sep="",collapse="")))) != 0)){ ##Check for strange non ATCG characters
@@ -1829,6 +1830,7 @@ actionButton("actionSeq", label = "Optimize sequence")
       }
       
       ErrorFlag=1
+      return(NULL)
     } 
     
     # if((ErrorFlag == 0) & ((FlaPi)&(CodonAl == 5))){ ##Check if CAI = 1 is required
