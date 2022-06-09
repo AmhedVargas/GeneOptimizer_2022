@@ -1,8 +1,8 @@
 # Transgene builder app
-Shiny app that aids the construction of gene sequences with optimized expression for <i>C. elegans</i> and other nematodes.
+The transgene builder shiny app facilitates the adaptation of coding sequences for optimized gene expression for <i>C. elegans</i>.
 
 ## General description
-This tool allows any user to input coding sequences and obtain transgenes optimized for <i>C. elegans</i> expression. We have incorporated different methods for codon optimization that ultimately increase the germline expression of transgenes in <i>C. elegans</i>. Therefore, please make sure to install all the dependencies (see further below) in case you want to run this shiny app locally.
+The app combines commonly used codon adaptation routines and optimization steps into a simple interface. These options include codon optimization for high ubiquitous expression or to minimize germline silencing, removal of piRNA homology or restriction enzyme sites, introduction of synthetic or native introns, and addition of 5' UTRs and 3' UTRs. Please make sure to install all the library dependencies (see further below) and third party programs in case you want to run this shiny app locally.
 
 ## Structure of the repository
 The shiny app core lies onto two R scripts, the "server.R" and "ui.R" codes, and a bin folder that contains scripts and programs compiled in a Unix environment. In order to execute properly this app, we recommend its installation into somewhat recent Ubuntu distributions (16.0+) or in MacOS. Additionally, there are two extra folders, one containing text files which the app reads for its proper functioning, and another that contains html elements which formats the aesthetics and visualization of the app (more information).
