@@ -306,11 +306,11 @@ NewSequenceViewer = function(title,div_id,sequence,patterns,colors,tooltips,dfle
   }else{
     ##New paradigm, just add start and endseq to patterns.. not the best
     patterns=append(patterns,starseq)
-    colors=append(colors,"green")
+    colors=append(colors,"#a9dfbf")
     tooltips=append(tooltips,"Start")
     
     patterns=append(patterns,endseq)
-    colors=append(colors,"red")
+    colors=append(colors,"#e6b0aa")
     tooltips=append(tooltips,"End")
     
     patitos=c()
@@ -355,7 +355,7 @@ NewSequenceViewer = function(title,div_id,sequence,patterns,colors,tooltips,dfle
           subcol[n]=colors[which(subnames[n]==patterns)]
           subtol[n]=tooltips[which(subnames[n]==patterns)]
         }else{
-          subcol[n]="grey"
+          subcol[n]="#bfc9ca"
           #subtol[n]=subnames[n]
           vecna=unlist(strsplit(subnames[n],"_;_"))
           compna=c()
@@ -378,7 +378,7 @@ NewSequenceViewer = function(title,div_id,sequence,patterns,colors,tooltips,dfle
     }
     
     
-    newdf=data.frame(Type=c("Start","End","Multiple annotations"),Color=c("green","red","grey"))
+    newdf=data.frame(Type=c("Start","End","Multiple annotations"),Color=c("#a9dfbf","#e6b0aa","#bfc9ca"))
     
     
     if(is.data.frame(dflegends)){
@@ -497,7 +497,7 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
     #subcol=c("green")
     #subtol=c("ATG")
     
-    subcol=c("green")
+    subcol=c("#a9dfbf")
     subtol=c("ATG")
     
     if(length(subnames)>1){
@@ -506,7 +506,7 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
           subcol[n]=colors[which(subnames[n]==patterns)]
           subtol[n]=tooltips[which(subnames[n]==patterns)]
         }else{
-          subcol[n]="grey"
+          subcol[n]="#ccd1d1"
           #subtol[n]=subnames[n]
           vecna=unlist(strsplit(subnames[n],"_;_"))
           compna=c()
@@ -525,7 +525,7 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
     subnames=subnames[toorder]
     ##########################
     subset=append(subset,patotes)
-    subcol=append(subcol,"red")
+    subcol=append(subcol,"#e6b0aa")
     subtol=append(subtol,"Stop")
     subnames=append(subnames,"Stop codon")
     
@@ -548,12 +548,12 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
       }
     }
     
-    if("grey" %in% subcol){
+    if("#ccd1d1" %in% subcol){
       Type=c("Start","End","Multiple annotations")
-      Color=c("green","red","grey")
+      Color=c("#a9dfbf","#e6b0aa","#ccd1d1")
     }else{
       Type=c("Start","Stop")
-      Color=c("green","red")  
+      Color=c("#a9dfbf","#e6b0aa")  
       }
     
     newdf=data.frame(Type=Type,Color=Color)
@@ -606,6 +606,168 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
 
 "</script>")
     
+}
+
+##For Twist only, remove  start and end
+NewSequenceViewerTW = function(title,div_id,sequence,patterns,colors,tooltips,dflegends){
+  if(is.null(sequence)){return(NULL)}
+  if(is.null(div_id)){return(NULL)}
+  if(!is.character(sequence)){return(c())}
+  if(length(patterns) != length(colors)){return(c())}
+  if(length(tooltips) != length(colors)){return(c())}
+  
+  if(length(patterns) != length(unique(patterns))){return(c())}
+
+  ##New paradigm, just add start and endseq to patterns.. not the best so better use something similar to the original function
+  ##But to do it properly, define what's going on on the chunk of code below
+  
+  ################################
+  ##Initialize vector of matching pattern with the start sequence and keep the first match, let's test if instead I can do that match and then modify the end of the sequence
+  patitos=c()
+  if(length(patterns)>1){
+  for(pat in patterns){
+    patitos=c(patitos,matchPattern(DNAString(toupper(as.character(pat))),DNAString(toupper(sequence)),fixed=T))
+  }}else{patitos=matchPattern(DNAString(toupper(as.character(patterns))),DNAString(toupper(sequence)),fixed=T)}
+  
+  subnames=patterns[1]
+  subset=patitos[1]
+  
+  #patitos=patitos[order(start(patitos)),]
+  
+  if(length(patitos)>1){
+    for(n in 2:length(patitos)){
+      if(length(disjoin(c(subset,patitos[n]))) != (length(subset)+1)){
+        
+        if(length(disjoin(c(subset,patitos[n]))) == (length(subset)+2)){
+          subset=disjoin(c(subset,patitos[n]))
+          subnames=c(subnames,as.character(patitos[n]), paste(as.character(patitos[n-1]),"_;_",as.character(patitos[n]),sep=""))
+        }
+        
+        if(length(disjoin(c(subset,patitos[n]))) == (length(subset))){
+          subnames[n-1]=paste(as.character(subnames[n-1]),"_;_",as.character(patitos[n]),sep="")
+        }
+        
+      }else{
+        subset=c(subset,patitos[n])
+        subnames=c(subnames,as.character(patitos[n]))
+        
+      }     
+      
+    }}
+  
+  #subcol=c("green")
+  #subtol=c("ATG")
+  
+  #subcol=colors[1]
+  #subtol=tooltips[1]
+  
+  subcol=c()
+  subtol=c()
+  
+  
+    for(n in 1:length(subnames)){
+      if(subnames[n] %in% patterns){
+        subcol[n]=colors[which(subnames[n]==patterns)]
+        subtol[n]=tooltips[which(subnames[n]==patterns)]
+      }else{
+        subcol[n]="#ccd1d1"
+        #subtol[n]=subnames[n]
+        vecna=unlist(strsplit(subnames[n],"_;_"))
+        compna=c()
+        for(ja in vecna){
+          compna=append(compna,tooltips[which(ja==patterns)])
+        }
+        subtol[n]=paste(compna,collapse=";")
+      }
+    }
+  
+  ####
+  if(length(subset)>1){
+  toorder=order(start(subset))
+  subset=subset[toorder]
+  subcol=subcol[toorder]
+  subtol=subtol[toorder]
+  subnames=subnames[toorder]
+  }
+  ##########################
+  
+  
+  ################################
+  
+  #seqcoverage="{start: 1, end: 2, color: \"black\", bgcolor: \"white\", underscore: false, tooltip: \"\"
+  #}"
+  seqcoverage="{}"
+  stpos=start(subset)
+  edpos=end(subset)
+  if(length(stpos)>0){
+    if(stpos[1] >= 2){
+      seqcoverage="{start: 1, end: 2, color: \"black\", bgcolor: \"white\", underscore: false, tooltip: \"\"
+        }"
+    }
+    for(s in 1:length(stpos)){
+      seqcoverage=paste(seqcoverage,",
+                                    {start: ",stpos[s]-1,", end: ",edpos[s],", color: \"white\", bgcolor: \"",subcol[s],"\", underscore: false, tooltip: \"",subtol[s],"\"}",sep="",collapse="")
+    }
+  }
+  
+  if("#ccd1d1" %in% subcol){
+    Type=c("Multiple annotations")
+    Color=c("#ccd1d1")
+  }else{
+    Type=c("")
+    Color=c("")  
+  }
+  
+  newdf=data.frame(Type=Type,Color=Color)
+  
+  
+  if(is.data.frame(dflegends)){
+    newdf=rbind(newdf,dflegends)
+  }
+  
+  newdf=unique(newdf)
+  
+  LegendList=paste("{name: \"",newdf[1,1],"\", color: \"",newdf[1,2],"\", underscore: false}",sep="",collapse="")
+  for(n in 2:nrow(newdf)){
+    LegendList=paste(LegendList,",
+                                    {name: \"",newdf[n,1],"\", color: \"",newdf[n,2],"\", underscore: false}",sep="",collapse="")
+  }
+  
+  
+  paste0("<div id=\"",div_id,"\"/></div>",
+         "<script type=\"text/javascript\">",
+         "var seq",div_id," = new Sequence(\'",
+         sequence,
+         "\');",
+         "seq",div_id,".render(\'#",div_id,"\',{",
+         "\'showLineNumbers\': true,
+  \'wrapAminoAcids\': true,
+  \'charsPerLine\': 100,
+  \'toolbar\': false,
+  \'search\': false,
+  \'title\' : \"",title,"\",
+  \'sequenceMaxHeight\': \"300px\",
+  \'badge\': false
+});
+                 ",
+"var Sequence",div_id,"Coverage = [",seqcoverage,"];
+
+",
+
+"var Sequence",div_id,"Legend = [
+",LegendList,"
+];
+
+",
+"seq",div_id,".coverage(Sequence",div_id,"Coverage);
+",
+
+"seq",div_id,".addLegend(Sequence",div_id,"Legend);
+
+",
+
+"</script>")
+  
 }
 
 ############################################Make Ape file#################################
@@ -672,6 +834,124 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
     FileLines=append(FileLines,paste("FEATURES             Location/Qualifiers",sep=""))
     for(n in 1:nrow(posipat)){
       FileLines=append(FileLines,paste("     primer_bind     ",c(posipat[n,1]),"..",c(posipat[n,2]),"",sep=""))
+      FileLines=append(FileLines,paste("                     ",paste("/locus_tag=","\"",c(posipat[n,3]),"\"",sep="",collapse=""),sep="     "))
+      FileLines=append(FileLines,paste("                     ",paste("/ApEinfo_label=","\"",c(posipat[n,3]),"\"",sep="",collapse=""),sep="     "))
+      FileLines=append(FileLines,paste("                     ","/ApEinfo_fwdcolor=\"",c(posipat[n,4]),"\"",sep=""))
+      FileLines=append(FileLines,paste("                     ","/ApEinfo_revcolor=\"",c(posipat[n,5]),"\"",sep=""))
+      FileLines=append(FileLines,paste("                     ","/ApEinfo_graphicformat=\"arrow_data {{0 0.5 0 1 2 0 0 -1 0 -0.5} {} 0} width 5 offset 0\"",sep=""))
+    }
+    
+  }
+  FileLines=append(FileLines,paste("ORIGIN"))
+  
+  Compseq=unlist(strsplit(sequence,""))
+  
+  partseq=c()
+  
+  for(i in seq(1,length(Compseq),10)){
+    endseq=i+9
+    if(length(Compseq)-i < 9){endseq=length(Compseq)}
+    partseq=append(partseq,paste(Compseq[i:endseq],collapse=""))
+    
+  }
+  
+  i=1
+  for(num in seq(1,length(Compseq),60)){
+    index=as.character(num)
+    spaces=paste(rep(" ",6-nchar(index)),collapse="")
+    endseq=i+5
+    if((length(partseq)-i) < 5){endseq=length(partseq)}
+    FileLines=append(FileLines , paste(spaces,index," ",paste(partseq[i:(endseq)],collapse=" "),sep=""))
+    
+    i=i+6
+  }
+  
+  FileLines=append(FileLines,paste("//"))
+  
+  return(FileLines)
+}
+
+############################################Make Ape file#################################
+NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
+  #sequence: sequence to use
+  #patterns: match patterns
+  #col, fwd, rev
+  #tootips name as feature
+  #tabibi, only to calculate CAIS, as well as cai and list
+  #Pie list is to pass the pies to use
+  #extra comments, things added at the end; to modify
+  #FeatType is new
+  
+  ##Verify correct inputs
+  if(is.null(sequence)){return(NULL)}
+  if(!is.character(sequence)){return(c())}
+  #if(length(patterns) < 1 ){return(c(paste(sequence)))}
+  if(length(patterns) != length(FWDcolors)){return(c())}
+  if(length(REVcolors) != length(FWDcolors)){return(c())}
+  if(length(tooltips) != length(FWDcolors)){return(c())}
+  if(length(FeatType) != length(FWDcolors)){return(c())}
+  
+  ##Only to produce extra information
+  if(optsecnotr == ""){optsecnotr=sequence}
+  CAIS=CalculateCAI(optsecnotr,tabibi,cai,list) 
+  GCp=as.integer((CalculateGC(optsecnotr))*100)
+  NoPies=length(Strfindpies(optsecnotr,PiesList,4))
+  
+  ##Save Lines
+  FileLines=c()
+  FileLines=append(FileLines,paste("LOCUS",paste(locus_name,sep="",collapse=""),paste(nchar(sequence),"bp ds-DNA", sep=""),"linear",paste(c(unlist(strsplit(date()," ")))[c(3,2,5)],sep="",collapse="-"),sep="     "))
+  FileLines=append(FileLines,paste("DEFINITION",".",sep="     "))
+  FileLines=append(FileLines,paste("ACCESSION",".",sep="     "))
+  FileLines=append(FileLines,paste("VERSION",".",sep="     "))
+  FileLines=append(FileLines,paste("SOURCE",".",sep="     "))
+  FileLines=append(FileLines,paste("ORGANISM","C.elegans",sep="     "))
+  
+  FileLines=append(FileLines,paste("COMMENT",paste(locus_name),sep="     "))
+  
+  FileLines=append(FileLines,paste("COMMENT",paste("Codon Adaptation Index",as.character(round(CAIS,2))),sep="     "))
+  FileLines=append(FileLines,paste("COMMENT",paste("GC",as.character(GCp),"%"),sep="     "))
+  FileLines=append(FileLines,paste("COMMENT",paste("piRNA binding sites in sequence:",as.character(NoPies)),sep="     "))
+  
+  if(length(extracomments)>0){
+    for(comocomo in extracomments){
+      FileLines=append(FileLines,paste("COMMENT",paste(paste(comocomo,sep="",collapse="")),sep="     "))
+    }
+  }
+  
+  posipat=c()
+  if(length(patterns) > 0){
+    ##Match sequences
+    for(i in 1:length(patterns)){
+      stpos=start(matchPattern(DNAString(as.character(patterns[i])),DNAString(sequence),fixed=T))
+      edpos=end(matchPattern(DNAString(as.character(patterns[i])),DNAString(sequence),fixed=T))
+      if(length(stpos)>0){
+        posipat=rbind(posipat, cbind(stpos,edpos,rep(tooltips[i],length(stpos)),rep(FWDcolors[i],length(stpos)),rep(REVcolors[i],length(stpos)),rep(FeatType[i],length(stpos))))
+        }
+    }
+    
+    if(!(is.null(posipat))){
+      colnames(posipat)=c("start","end","label","fwdc","revc","feat")
+    }
+    
+    ##Remove comments of patterns
+    # if(!(is.null(posipat))){
+    #   for(i in 1:length(patterns)){
+    #     FileLines=append(FileLines,paste("COMMENT",paste(as.character(tooltips[i]),as.character(patterns[i])),sep="     "))
+    #   }
+    # }
+  }
+  FileLines=append(FileLines,paste("COMMENT","Generated using www.wormbuilder.org/transgenebuilder/",sep="     "))
+  FileLines=append(FileLines,paste("COMMENT","ApEinfo:methylated:1",sep="     "))
+  
+  
+  if(!(is.null(posipat))){
+    FileLines=append(FileLines,paste("FEATURES             Location/Qualifiers",sep=""))
+    for(n in 1:nrow(posipat)){
+      if(posipat[n,6] == "piRNA"){
+        FileLines=append(FileLines,paste("     ",posipat[n,6],"     complement(",c(posipat[n,1]),"..",c(posipat[n,2]),")",sep=""))
+        }else{
+      FileLines=append(FileLines,paste("     ",posipat[n,6],"     ",c(posipat[n,1]),"..",c(posipat[n,2]),"",sep=""))
+      }
       FileLines=append(FileLines,paste("                     ",paste("/locus_tag=","\"",c(posipat[n,3]),"\"",sep="",collapse=""),sep="     "))
       FileLines=append(FileLines,paste("                     ",paste("/ApEinfo_label=","\"",c(posipat[n,3]),"\"",sep="",collapse=""),sep="     "))
       FileLines=append(FileLines,paste("                     ","/ApEinfo_fwdcolor=\"",c(posipat[n,4]),"\"",sep=""))
@@ -1103,8 +1383,8 @@ TwistSynthesisWithCoordinatesREDO = function(sequence){
   
   if(difgc > .52){
     message = "GC content difference between the 50bp windows is larger than 52%"
-    regions[nrow(regions)+1,]=c(GCt[which.max(GCt[,"gc"])[1],1],GCt[which.max(GCt[,"gc"])[1],2],"Highest GC 50bp window","purple")
-    regions[nrow(regions)+1,]=c(GCt[which.min(GCt[,"gc"])[1],1],GCt[which.min(GCt[,"gc"])[1],2],"Lowest GC 50bp window","blue")
+    regions[nrow(regions)+1,]=c(GCt[which.max(GCt[,"gc"])[1],1],GCt[which.max(GCt[,"gc"])[1],2],"Highest GC 50bp window","#c39bd3")
+    regions[nrow(regions)+1,]=c(GCt[which.min(GCt[,"gc"])[1],1],GCt[which.min(GCt[,"gc"])[1],2],"Lowest GC 50bp window","#7fb3d5")
     errors=append(errors,message)
   }else{
     results=append(results,"There is no larger GC content difference (> 52%) between 50 bp fragments of the sequence")
@@ -1119,7 +1399,7 @@ TwistSynthesisWithCoordinatesREDO = function(sequence){
   
   ##Smooth region of GC content
   if(min(avrm) < .2){
-    regions[nrow(regions)+1,]=c(GCt[which.min(avrm)[1],1],GCt[which.min(avrm)[1]+49,2],"Complex region with low levels of GC","green")
+    regions[nrow(regions)+1,]=c(GCt[which.min(avrm)[1],1],GCt[which.min(avrm)[1]+49,2],"Complex region with low levels of GC","#f8c471")
     message = "Complex region with low levels of GC detected"
     errors=append(errors,message)
     #return (message)
@@ -1128,7 +1408,7 @@ TwistSynthesisWithCoordinatesREDO = function(sequence){
   }
   
   if(max(avrm) > .8){
-    regions[nrow(regions)+1,]=c(GCt[which.max(avrm)[1],1],GCt[which.max(avrm)[1]+49,2],"Complex region with high levels of GC","pink")
+    regions[nrow(regions)+1,]=c(GCt[which.max(avrm)[1],1],GCt[which.max(avrm)[1]+49,2],"Complex region with high levels of GC","#e59866")
     message = "Complex region with high levels of GC detected"
     errors=append(errors,message)
     #return (message)
@@ -1148,7 +1428,7 @@ TwistSynthesisWithCoordinatesREDO = function(sequence){
     unidupseqs=unique(dupseqs)
     for(pat in unidupseqs){
       matches=matchPattern(DNAString(pat),DNAString(paste(seqDNA,sep="", collapse="")),fixed=T)
-      regions[(nrow(regions)+1):(nrow(regions)+length(matches)),]=c(start(matches),end(matches),paste("Duplicated sequence:",as.character(matches)),rep("gold",length(matches)))
+      regions[(nrow(regions)+1):(nrow(regions)+length(matches)),]=c(start(matches),end(matches),paste("Duplicated sequence:",as.character(matches)),rep("#d98880",length(matches)))
     }
     message = paste("There are",length(dupseqs), "20-mer sequences identical in DNA sequence")
     errors=append(errors,message)
@@ -1173,7 +1453,7 @@ TwistSynthesisWithCoordinatesREDO = function(sequence){
   if(length(timd)>0){
     #Aerr=append(Aerr,paste("20bp regions with high TM (> 80C):",length(timd)))
     #ErrorFlag= ErrorFlag +1
-    regions[(nrow(regions)+1):(nrow(regions)+length(timd)),]=c(TMt[timd,1],TMt[timd,2],rep("Region with high melting temperature",length(timd)),rep("purple",length(timd)))
+    regions[(nrow(regions)+1):(nrow(regions)+length(timd)),]=c(TMt[timd,1],TMt[timd,2],rep("Region with high melting temperature",length(timd)),rep("#73c6b6",length(timd)))
     message = paste("20bp regions with high TM (> 80C):",length(timd))
     errors=append(errors,message)
     #return (message)
@@ -1206,7 +1486,7 @@ TwistSynthesisWithCoordinatesREDO = function(sequence){
   if(length(homotra)>0){
     #Aerr=append(Aerr,paste("Homo-polymer tracks:",paste(homotra,sep="-", collapse="-")))
     #ErrorFlag= ErrorFlag +1
-    regions[(nrow(regions)+1):(nrow(regions)+nrow(homotra)),]=c(homotra[,1],homotra[,2],rep("Micro-homology found between adjacent regions",nrow(homotra)),rep("cyan",nrow(homotra)))
+    regions[(nrow(regions)+1):(nrow(regions)+nrow(homotra)),]=c(homotra[,1],homotra[,2],rep("Micro-homology found between adjacent regions",nrow(homotra)),rep("#bfc9ca",nrow(homotra)))
     message = paste("Homo-polymer tracks:")
     errors=append(errors,message)
     message = paste0("<p style=\"color:black\">")
@@ -1398,7 +1678,7 @@ shinyServer(function(input, output, session) {
         selectizeInput("selectCAI", label = HTML("<b>Optimization method
                                                            [<a href=\"\" onclick=\"$('#explain_codon').toggle(); return false;\">info</a>]
                                                            </b>"), 
-                    choices = list("Skip Codon Optimization" = 100, "--- Codon table ---" = 1, 
+                    choices = list("No Codon Optimization" = 100, "--- Codon table ---" = 1, 
                                    "Highly expressed ubiquitous genes (Serizay et al., Genome Res., 2020)" = 2, 
                                    #"Germline" = 3, 
                                    #"Neuronal" = 4, 
@@ -1407,89 +1687,76 @@ shinyServer(function(input, output, session) {
                                    "High expression (Redemann et al., Nature Meth., 2011)" = 7, 
                                    "Germline optimized (Fielmich et al., eLife, 2018)" = 8
                                    ), 
-                    selected = 1),
+                    selected = 100),
         HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_codon\">
-                        Codon frequencies were calculated from the 500 highest expressed tissue-specific genes identified by RNA-seq on cell sorted nuclei. <a href=\"https://doi.org/10.1101/2020.02.20.958579\">Serizay <i>et al.</i> (2020)</a>. <a href=\"https://www.ahringerlab.com\">Ahringer lab</a>.
-                          <br> Please note that codon sampling is randomized and the optimized output sequence is therefore not invariant.
-                        <br>
-                        Max. expression corresponds to Codon Adaptation Index = 1. <a href=\"http://www.nature.com/nmeth/journal/v8/n3/full/nmeth.1565.html\">Redemann <i>et al.</i> (2011)</a>. <a href=\"https://worm.mpi-cbg.de/codons/cgi-bin/optimize.py\"><i>C. elegans</i> Codon Adapter</a>.
-                        <br>
-                        <u>Ge</u>rm <u>li</u>ne <u>op</u>timization was developed by <a href=\"https://www.utdickinsonlab.org\">Dan Dickinson</a> and was described in <a href=\"https://elifesciences.org/articles/38198\">Fielmich <i>et al.</i> (2018)</a>. See also: <a href=\"http://104.131.81.59/\">http://104.131.81.59/</a>. 
-                    <br>Skipping the codon optimization will run the rest of the algorithm withouth changing drastically the input sequence. Recommended if only RBS optimization, piRNA removal or addition of extra sequences is required.
+             <b>Highly expressed ubiquitous genes.</b> Codon frequencies from the 500 genes with highest ubiquitous expression identified by <a href=\"https://doi.org/10.1101/2020.02.20.958579\">Serizay <i>et al.</i> (2020)</a>. Note that codon sampling is probabilistic and the optimized output sequence will not be invariant.
+<br><br>
+<b>Max. expression.</b> This setting corresponds to optimization with Codon Adaptation Index = 1 described in <a href=\"http://www.nature.com/nmeth/journal/v8/n3/full/nmeth.1565.html\">Redemann <i>et al.</i> (2011)</a>
+ (see <a href=\"https://worm.mpi-cbg.de/codons/cgi-bin/optimize.py\"><i>C. elegans</i> Codon Adapter</a>).
+<br><br>
+<b>Germ line optimization (GLO).</b> This algorithm was developed by <a href=\"https://www.utdickinsonlab.org\">Dan Dickinson</a> and described in <a href=\"https://elifesciences.org/articles/38198\">Fielmich <i>et al.</i> (2018)</a>. 
+<br><br>
+<b>No codon optimization.</b>This option does not optimize the coding sequence but can be used to add introns, append 3' UTRs, optimize the RBS, or remove restriction sites.
              </div></p>"),
-        
-        checkboxInput("checkboxRibo", label = HTML("<b>Optimize ribosomal binding 
+         checkboxInput("checkPirna", label = HTML("<b>Minimize <i>C. elegans</i> piRNA homology
+                                                              [<a href=\"\" onclick=\"$('#explain_piRNA').toggle(); return false;\">info</a>]
+                                                              </b>"), value = FALSE, width='100%'),
+HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_piRNA\">
+      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with four mismatches or less to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>), as described in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini et al. (2022)</a>.
+Please note that this algorithm is computationally demanding and that <a href=\"http://cosbi4.ee.ncku.edu.tw/pirScan/\">Wu et al. (2018)</a> have developed an alternative algorithm for removing piRNAs.
+                    </div></p>"),
+#h1(" "),
+br(),
+##Next section
+checkboxInput("checkboxRibo", label = HTML("<b>Optimize ribosomal binding 
                                                                 [<a href=\"\" onclick=\"$('#explain_ribo').toggle(); return false;\">info</a>]</b>"), value = FALSE),
-        HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_ribo\">
+HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_ribo\">
                         This option minimizes the folding energy of positions -4 to +39 to increase ribosomal binding. This option also adds the consensus start sequence (aaaaATG). Note that ribosomal binding site optimization is not compatible with the germline optimization algorithm.
                     </div></p>"),
- fluidRow(
-   column(8,
-          checkboxInput("checkPirna", label = HTML("<b>Minimize <i>C. elegans</i> piRNA homology
-                                                              [<a href=\"\" onclick=\"$('#explain_piRNA').toggle(); return false;\">info</a>]
-                                                              </b>"), value = FALSE, width='100%')
-   )),
- HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_piRNA\">
-                        This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with less than four mismatches to all endogenous piRNAs. Please note that this algorithm is computationally demanding.
-                    </div></p>"),
- checkboxInput("checkEnzySites", label = HTML("<b>Remove restriction enzyme sites:
-                                                               [<a href=\"\" onclick=\"$('#explain_enzysites').toggle(); return false;\">info</a>]
-                                                                   </b>"), value = FALSE, width='100%'),
- conditionalPanel(condition = "input.checkEnzySites==1",
-                  fluidRow(
-                    #HTML("<tt>"),
-                    column(6,
-                           
-                           tags$div(
-                             style = "width: 800px;",
-                           prettyCheckboxGroup("Oenzymes", "",
-                                               choiceNames = choice_names, choiceValues = c(enzy$Enzyme), inline=TRUE))
-                          # checkboxInput("checkMetSites", label = HTML("<b>Dam/Dcm
-                          #                                     [<a href=\"\" onclick=\"$('#explain_metsites').toggle(); return false;\">info</a>]
-                         #                                      </b>"), value = FALSE, width='100%'),
-                        #   HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_metsites\">
-                       # Disable restriction sites affected by <a href=\"https://blog.addgene.org/plasmids-101-methylation-and-restriction-enzymes\">Dam/Dcm</a> methylases. </div></p>")
-                    ),
-                    #HTML("</tt>")
-                  )),
- HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_enzysites\">
-                        Note, this optimization is performed after piRNA removal and may re-introduce piRNAs sites. Any piRNAs sites are annotated in the sequence output.
-                          </div></p>"),
- checkboxInput("checkfouras", label = HTML("<b>Start sequence with consensus start site
+checkboxInput("checkfouras", label = HTML("<b>Start sequence with consensus start site
                                                               [<a href=\"\" onclick=\"$('#explain_consensusstart').toggle(); return false;\">info</a>]
                                                               </b>"), value = FALSE, width='100%'),
- HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_consensusstart\">
-                        This option also adds the consensus start sequence (aaaaATG).
+HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_consensusstart\">
+                        This option adds a consensus start sequence (aaaaATG).
                     </div></p>"),
- fluidRow(
-   column(8,
+ 
           checkboxInput("checkIntron", label = HTML("<b>Add three introns
                                                                [<a href=\"\" onclick=\"$('#explain_introns').toggle(); return false;\">info</a>]
                                                                </b>"), value = FALSE, width='100%'),
           conditionalPanel(condition = "input.checkIntron==1",
                            radioButtons("intropt", label = HTML(""),
-                                        choices = list(
+                                        #choices = list(
                                           #"Synthetic, Golden Gate compatible (BsaI, 51 bp, 33% GC)" = 1, 
-                                          "rps-0 (55 bp, 15% GC)" = 2, 
-                                          "rps-5 (65 bp, 22% GC)" = 3,
-                                          "rps-20 (62 bp, 28% GC)" = 4,
-                                          "Canonical Fire lab introns" = 5
-                                        ), 
+                                        #  "<i>rps-0<\i> (avg. length 55 bp, 15% GC)" = 2, 
+                                        #  "rps-5 (avg. length 65 bp, 22% GC)" = 3,
+                                         # "rps-20 (avg. length 62 bp, 28% GC)" = 4,
+                                        #  "Canonical Fire lab introns" = 5
+                                        #),
+                                        choiceNames= list(
+                                          HTML("<i>rps-0</i> (avg. length 55 bp, 15% GC)"),
+                                          HTML("<i>rps-5</i> (avg. length 65 bp, 22% GC)"),
+                                          HTML("<i>rps-20</i> (avg. length 62 bp, 28% GC)"),
+                                          HTML("Canonical Fire lab introns")
+                                          ),
+                                        choiceValues= list(2,3,4,5),
                                         selected = 2, width='100%'),
                            radioButtons("intdistop",label = HTML("Intron placement"),
                                         choices = list("Early start" = 1, 
                                                        "equidistant" = 2), 
                                         selected = 1, width='100%', inline = TRUE),
                            checkboxInput("checkintframe", label = HTML("Force introns in reading frame"), value = FALSE)
-          ))),
+          ),
  HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_introns\">
-                        Introns can improve transgene expression (<a href=\"https://pubmed.ncbi.nlm.nih.gov/8244003/\">Okkema <i>et al.,</i> 1993</a>). The introns are indicated by lower-case letters and are inserted at consensus splice sites (<a href=\"https://www.ncbi.nlm.nih.gov/books/NBK20075/\"><i>C. elegans</i> II, 2. ed</a>). 
-                        Introns within the first 150 basepairs are particularly efficient at improving germline expression (<a href=\"https://www.nature.com/articles/s41467-020-19898-0\">Al Johani <i>et al.,</i> 2020</a>). See our <a href=\"https://github.com/AmhedVargas/GeneOptimizer_2022\">github documentation</a> for extra information.
-                    </div></p>"),
+                        Introns can improve transgene expression (<a href=\"https://pubmed.ncbi.nlm.nih.gov/8244003/\">Okkema <i>et al.,</i> 1993</a>). 
+      Inserted introns sequences are lower-case and inserted at consensus splice sites (<a href=\"https://www.ncbi.nlm.nih.gov/books/NBK20075/\"><i>C. elegans</i> II, 2. ed</a>). 
+                        Introns within the first 150 basepairs are particularly efficient at improving germline expression (<a href=\"https://www.nature.com/articles/s41467-020-19898-0\">Al Johani <i>et al.,</i> 2020</a>).
+      <br><br>
+      <b>Fire lab kit introns.</b> These introns were initially used in the Fire lab vector kits (<a href=\"https://www.addgene.org/kits/firelab/\">Addgene documentation</a>).
+      <br><br>
+      <b>Ribosomal introns.</b> These introns are short endogenous introns from ribosomal genes. The higher GC content of <i>rps-20</i> can facilitate gene synthesis.
+      </div></p>"),
  ###Addition of UTRs
- fluidRow(
-   column(8,
-          checkboxInput("checkUTRs", label = HTML("<b>Append UTR's
+          checkboxInput("checkUTRs", label = HTML("<b>Append UTRs
                                                                [<a href=\"\" onclick=\"$('#explain_UTRs').toggle(); return false;\">info</a>]
                                                                </b>"), value = FALSE, width='100%'),
           conditionalPanel(condition = "input.checkUTRs==1",
@@ -1500,18 +1767,47 @@ shinyServer(function(input, output, session) {
                                         ), 
                                         selected = 1, width='100%', inline = TRUE),
                            radioButtons("p3UTR", label = HTML("3' UTR"),
-                                        choices = list(
-                                          "None" = 1, 
-                                          "rps-1 3' UTR" = 2,
-                                          "rps-4 3' UTR" = 3,
-                                          "tbb-2 3' UTR" = 4
-                                        ), 
+                                        #choices = list(
+                                        #  "None" = 1, 
+                                        #  "rps-1 3' UTR" = 2,
+                                        #  "rps-4 3' UTR" = 3,
+                                        #  "tbb-2 3' UTR" = 4
+                                        #),
+                                        choiceNames= list(
+                                          HTML("None"),
+                                          HTML("<i>rps-1</i> 3' UTR (56 bp, 23% GC)"),
+                                          HTML("<i>rps-4</i> 3' UTR (41 bp, 17% GC)"),
+                                          HTML("<i>tbb-2</i> 3' UTR (169 bp, 29% GC)")
+                                        ),
+                                        choiceValues= list(1,2,3,4),
                                         selected = 1, width='100%', inline = TRUE)
-          ))),
+          ),
  HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_UTRs\">
-                        Append untranslated regions (UTRs) before and after coding sequences.
-                    </div></p>"),
- 
+                        <b>5' UTR.</b> The synthetic 5' UTR can stimulate expression similar to introns within coding sequence (<a href=\"https://www.addgene.org/kits/firelab/\">see documentation for Fire lab 1995 vector kit</a>).
+      <br><br>
+      <b>3' UTRs.</b> The tbb-2 3'UTR is generally permissive for gene expression (<a href=\"https://pubmed.ncbi.nlm.nih.gov/18818082/\">Merritt & Seydoux, Curr. Bio., 2008</a>) but can be difficult to synthesize. <i>rps-1</i> and <i>rps-4</i> are short 3' UTRs from highly expressed ribosomal genes and are often easy to synthesize. Please note that we have not tested the quantitative effect of <i>rps-1</i> and <i>rps-4</i> on expression but synthetic genes with these 3' UTRs are expressed and can rescue phenotypes from single copy inserts (<i>e.g., unc-119</i>).
+      </div></p>"),
+checkboxInput("checkEnzySites", label = HTML("<b>Remove restriction enzyme sites</b>"), value = FALSE, width='100%'),
+conditionalPanel(condition = "input.checkEnzySites==1",
+                 fluidRow(
+                   #HTML("<tt>"),
+                   column(6,
+                          
+                          tags$div(
+                            style = "width: 800px;",
+                            prettyCheckboxGroup("Oenzymes", "",
+                                                choiceNames = choice_names, choiceValues = c(enzy$Enzyme), inline=TRUE))
+                          # checkboxInput("checkMetSites", label = HTML("<b>Dam/Dcm
+                          #                                     [<a href=\"\" onclick=\"$('#explain_metsites').toggle(); return false;\">info</a>]
+                          #                                      </b>"), value = FALSE, width='100%'),
+                          #   HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_metsites\">
+                          # Disable restriction sites affected by <a href=\"https://blog.addgene.org/plasmids-101-methylation-and-restriction-enzymes\">Dam/Dcm</a> methylases. </div></p>")
+                   ),
+                   #HTML("</tt>")
+                 )),
+#h1(" "),
+br(),
+##Next section
  ###Output manipulation
  #HTML("<h4>Visual output:</h4>"),
  #checkboxInput("checkAnno", label = HTML("<b>Annotate sequences
@@ -1694,12 +1990,16 @@ actionButton("actionSeq", label = "Optimize sequence")
     FlaTURS=input$checkUTRs
     befUTR=""
     aftUTR=""
-    
+    ##Not the best approach as I'm adding on top but good enough patch for the moment
+    nam5UTR=""
+    nam3UTR=""
     if(FlaTURS){
       befUTR=c("","ccgggattggccaaaggacccaaaggtatgtttcgaatgatactaacataacatagaacattttcaggaggacccttggagggtaccggtag")[as.integer(input$p5UTR)]
+      nam5UTR=c("None","Fire lab synthetic spliced")[as.integer(input$p5UTR)]
       aftUTR=c("","tcttataatttcattgttatgtcgcattgcgataaatgttaaaattaaaaaacttc","actgttgtttttgttgaaaaataaaattgttaatctaaaaa","atgcaaaatcctttcaagcattcccttcttctctatcactcttctttctttttgtcaaaaaattctctcgctaatttatttgcttttttaatgttattattttatgactttttatagtcactgaaaagtttgcatctgagtgaagtgaatgctatcaaaatgtgattct")[as.integer(input$p3UTR)]
+      nam3UTR=c("None","rps-1 3' UTR","rps-4 3' UTR","tbb-2 3' UTR")[as.integer(input$p3UTR)]
       }
-    
+
     if(befUTR != ""){Fla5paaa=TRUE}
     
     ##CHeck if user wants to look for issues with gene synthesis
@@ -1805,7 +2105,7 @@ actionButton("actionSeq", label = "Optimize sequence")
       output$ErrorMessage <- renderText({
         paste("Error: Sequence is too short to add ~150bp spaced introns")
       })
-      updateCheckboxInput(session, "checkIntron", value = FALSE)
+      #updateCheckboxInput(session, "checkIntron", value = FALSE)
       ErrorFlag=1
       return(NULL)
     }
@@ -1847,7 +2147,7 @@ actionButton("actionSeq", label = "Optimize sequence")
         paste("Error: Sequence cannot be optimized for ribosome binding and Germline expression at the same time. GLO algoritmh will be run on full sequence")
       })
       FlaRi=FALSE
-      updateCheckboxInput(session, "checkboxRibo", value = FALSE)
+      #updateCheckboxInput(session, "checkboxRibo", value = FALSE)
       return(NULL)
     }
     
@@ -1893,11 +2193,26 @@ actionButton("actionSeq", label = "Optimize sequence")
     if(FlaPi){eeexxttpar=append(eeexxttpar,"Remove piRNA sites: Yes")}else{eeexxttpar=append(eeexxttpar,"Remove piRNA sites: No")}
     if(FlaEnz){
       eeexxttpar=append(eeexxttpar,"Remove RE sites: Yes")
-      eeexxttpar=append(eeexxttpar,paste("Restriction sites removed: ", paste(Inenzy,sep=", ",collapse=", "),""))
+      eeexxttpar=append(eeexxttpar,"Restriction sites removed:")
+      for(totoro in Inenzy){
+        eeexxttpar=append(eeexxttpar,paste(totoro, " ",enzy[totoro,"Site"],"",sep=""))
+        }
     }else{eeexxttpar=append(eeexxttpar,"Remove RE sites: No")}
-    if(FlaIn){eeexxttpar=append(eeexxttpar,"Add introns: Yes")}else{eeexxttpar=append(eeexxttpar,"Add introns: No")}
-    if(FlaTURS){eeexxttpar=append(eeexxttpar,"Add UTRs: Yes")}else{eeexxttpar=append(eeexxttpar,"Add UTRs: No")}
-    if(Fla5paaa){eeexxttpar=append(eeexxttpar,"Add consensus start site: Yes")}else{eeexxttpar=append(eeexxttpar,"consensus start site: No")}
+    if(FlaIn){
+      eeexxttpar=append(eeexxttpar,"Add introns: Yes")
+      #for(totoro in 1:3){
+      #  eeexxttpar=append(eeexxttpar,paste(paste(rownames(IntronSeqs[typeIn,])," intron",sep=""), " ",as.character(IntronSeqs[typeIn,totoro]),"",sep=""))
+      #}
+      eeexxttpar=append(eeexxttpar,paste(paste(rownames(IntronSeqs[typeIn,])," intron",sep=""), " ",IntronSeqs[typeIn,1],",",IntronSeqs[typeIn,2],",",IntronSeqs[typeIn,3],sep=""))
+      }else{eeexxttpar=append(eeexxttpar,"Add introns: No")}
+    if(FlaTURS){
+      eeexxttpar=append(eeexxttpar,"Add UTRs: Yes")
+      eeexxttpar=append(eeexxttpar,paste("5' UTR - ",nam5UTR," ",befUTR,sep=""))
+      eeexxttpar=append(eeexxttpar,paste("3' UTR - ",nam3UTR," ",aftUTR,sep=""))
+      }else{eeexxttpar=append(eeexxttpar,"Add UTRs: No")}
+    if(Fla5paaa){
+      eeexxttpar=append(eeexxttpar,"Add consensus start site: Yes")
+      }else{eeexxttpar=append(eeexxttpar,"consensus start site: No")}
     
     ###Also, sequences to workon
     oriseqstart=paste(seqDNA[1:30],sep="",collapse="")
@@ -1935,15 +2250,18 @@ actionButton("actionSeq", label = "Optimize sequence")
           paterns=c()
           seqpaterns=c()
           colpaterns=c()
+          typpaterns=c()
           dftyp=c()
           dfcol=c()
+          Neweeexxttpar=eeexxttpar
           #Ezymes
           if(length(Inenzy)>0){
             paterns=append(paterns,Inenzy)
             seqpaterns=append(seqpaterns,enzy[Inenzy,"Site"])
-            colpaterns=append(colpaterns,rep("purple",length(Inenzy)))
+            colpaterns=append(colpaterns,rep("#d7bde2",length(Inenzy)))
+            typpaterns=append(typpaterns,rep("RE_site",length(Inenzy)))
             dftyp=append(dftyp,"RE site")
-            dfcol=append(dfcol, "purple")
+            dfcol=append(dfcol, "#d7bde2")
           }
           
           piss=Strfindpies(seqiqi,Pies,4)
@@ -1964,14 +2282,20 @@ actionButton("actionSeq", label = "Optimize sequence")
                
                paterns=append(paterns,papos)
                seqpaterns=append(seqpaterns,pospos) 
-               colpaterns=append(colpaterns,rep("orange",length(pospos)))
+               colpaterns=append(colpaterns,rep("#f9e79f",length(pospos)))
+               typpaterns=append(typpaterns,rep("piRNA",length(pospos)))
+               
+               for(totoro in 1:length(pospos)){
+                 Neweeexxttpar=append(Neweeexxttpar,paste(papos[totoro]," ",pospos[totoro],sep=""))
+               }
                
                dftyp=append(dftyp,"piRNA site")
-               dfcol=append(dfcol, "orange")
+               dfcol=append(dfcol, "#f9e79f")
           }
           #PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
-          
-          write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+          #NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
+          #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+          write(paste(NewPasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
       
           
           legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
@@ -2005,8 +2329,10 @@ actionButton("actionSeq", label = "Optimize sequence")
             pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
             pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
             rownames(pimattab)=1:nrow(pimattab)
-            colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
-            pimattab=pimattab[,-2]
+            #colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
+            #pimattab=pimattab[,-2]
+            colnames(pimattab)=c("piRNA locus","Matching piRNA","Matching sequence","Edit distance")
+            pimattab=pimattab[,-3]
           }
           
           #if(ncol(pimattab) == 1){
@@ -2015,7 +2341,8 @@ actionButton("actionSeq", label = "Optimize sequence")
           #cat(pimattab,class(pimattab))
           if(ncol(as.data.frame(pimattab))==1){
             pimattab=t(as.data.frame(pimattab))
-            colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
+            #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
+            colnames(pimattab)=c("piRNA locus","Matching piRNA","Edit distance")
             }
           pimattab
           
@@ -2431,49 +2758,59 @@ actionButton("actionSeq", label = "Optimize sequence")
               paterns=c()
               seqpaterns=c()
               colpaterns=c()
+              typpaterns=c()
               dftyp=c()
               dfcol=c()
+              Neweeexxttpar=eeexxttpar
               #Ezymes
               if(length(Inenzy)>0){
                 paterns=append(paterns,Inenzy)
                 seqpaterns=append(seqpaterns,enzy[Inenzy,"Site"])
-                colpaterns=append(colpaterns,rep("purple",length(Inenzy)))
+                colpaterns=append(colpaterns,rep("#d7bde2",length(Inenzy)))
+                typpaterns=append(typpaterns,rep("RE_site",length(Inenzy)))
                 dftyp=append(dftyp,"RE site")
-                dfcol=append(dfcol, "purple")
+                dfcol=append(dfcol, "#d7bde2")
               }
               #Introns
               if(FlaIn){
-                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,]),"-1",sep=""))
+                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,])," intron",sep=""))
                 #paterns=append(paterns,"A")
                 seqpaterns=append(seqpaterns,toupper(as.character(IntronSeqs[typeIn,1])))
-                colpaterns=append(colpaterns,"lime")
+                colpaterns=append(colpaterns,"#f5cba7")
+                typpaterns=append(typpaterns,"intron")
                 
-                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,]),"-2",sep=""))
+                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,])," intron",sep=""))
                 #paterns=append(paterns,"B")
                 seqpaterns=append(seqpaterns,toupper(as.character(IntronSeqs[typeIn,2])))
-                colpaterns=append(colpaterns,"lime")
+                colpaterns=append(colpaterns,"#f5cba7")
+                typpaterns=append(typpaterns,"intron")
                 
-                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,]),"-3",sep=""))
+                paterns=append(paterns,paste(rownames(IntronSeqs[typeIn,])," intron",sep=""))
                 #paterns=append(paterns,"C")
                 seqpaterns=append(seqpaterns,toupper(as.character(IntronSeqs[typeIn,3])))
-                colpaterns=append(colpaterns,"lime")
+                colpaterns=append(colpaterns,"#f5cba7")
+                typpaterns=append(typpaterns,"intron")
                 dftyp=append(dftyp,"Intron")
-                dfcol=append(dfcol, "lime")
+                dfcol=append(dfcol, "#f5cba7")
               }
               ##If UTRs
               if(FlaTURS){
                 if(befUTR !=""){
-                  paterns=append(paterns,"5pUTR")
+                  paterns=append(paterns,nam5UTR)
                   seqpaterns=append(seqpaterns,toupper(befUTR))
-                  colpaterns=append(colpaterns,"fuchsia")
+                  colpaterns=append(colpaterns,"#a3e4d7")
+                  typpaterns=append(typpaterns,"5'UTR")
+                  dftyp=append(dftyp,"5' UTR")
+                  dfcol=append(dfcol, "#a3e4d7")
                   }
                 if(aftUTR !=""){
-                  paterns=append(paterns,"3pUTR")
+                  paterns=append(paterns,nam3UTR)
                   seqpaterns=append(seqpaterns,toupper(aftUTR))
-                  colpaterns=append(colpaterns,"fuchsia")
-                }
-                dftyp=append(dftyp,"UTR")
-                dfcol=append(dfcol, "fuchsia")
+                  colpaterns=append(colpaterns,"#a9cce3")
+                  typpaterns=append(typpaterns,"3'UTR")
+                  dftyp=append(dftyp,"3' UTR")
+                  dfcol=append(dfcol, "#a9cce3")
+                  }
               }
               if(FlaPi){
               piss=Strfindpies(toupper(optsec),Pies,4)
@@ -2494,16 +2831,22 @@ actionButton("actionSeq", label = "Optimize sequence")
                 
                 paterns=append(paterns,papos)
                 seqpaterns=append(seqpaterns,pospos) 
-                colpaterns=append(colpaterns,rep("orange",length(pospos)))
+                colpaterns=append(colpaterns,rep("#f9e79f",length(pospos)))
+                typpaterns=append(typpaterns,rep("piRNA",length(pospos)))
+                
+                for(totoro in 1:length(pospos)){
+                  Neweeexxttpar=append(Neweeexxttpar,paste(papos[totoro]," ",pospos[totoro],sep=""))
+                  }
                 
                 dftyp=append(dftyp,"piRNA site")
-                dfcol=append(dfcol, "orange")
+                dfcol=append(dfcol, "#f9e79f")
               }
               }
               
               #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
-              write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
-              
+              #NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
+              #write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+              write(paste(NewPasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
               
               legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
               
@@ -2538,12 +2881,15 @@ actionButton("actionSeq", label = "Optimize sequence")
                   pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
                   pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
                   rownames(pimattab)=1:nrow(pimattab)
-                  colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
-                  pimattab=pimattab[,-2]
+                  #colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
+                  #pimattab=pimattab[,-2]
+                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Matching sequence","Edit distance")
+                  pimattab=pimattab[,-3]
                 }
                 if(ncol(as.data.frame(pimattab))==1){
                   pimattab=t(as.data.frame(pimattab))
-                  colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
+                  #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
+                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Edit distance")
                 }
                 pimattab
               })
@@ -2561,8 +2907,9 @@ actionButton("actionSeq", label = "Optimize sequence")
               twistres=TwistResults[[4]]
                 if(Twistcheck){
                   output$newsequenceTwist <-renderUI({
-                  HTML("<br><b><h3>Optimized ",OriSeqNameIn," <i>in-silico</i> synthesis results</h3></b><br><p style=\"color:green\"><b>Simple synthesis</b><br></p><h5><p style=\"color:green\">",paste0(paste0(twistres),sep="<br>",collapse=""),"<br></p></h5>")
-                    #NewSequenceViewer("","twistannoseq",SeqtoOpt,c(),c(),c(),c(),"","")
+                  #HTML("<br><b><h3>Optimized ",OriSeqNameIn," <i>in-silico</i> synthesis results</h3></b><br><p style=\"color:green\"><b>Simple synthesis - no problems detected</b><br></p><h5><p style=\"color:green\">",paste0(paste0(twistres),sep="<br>",collapse=""),"<br></p></h5>")
+                    HTML("<br><b><h3>Optimized ",OriSeqNameIn," <i>in-silico</i> synthesis results</h3></b><br><p style=\"color:green\"><b>Simple synthesis - no problems detected</b><br></p>")
+                      #NewSequenceViewer("","twistannoseq",SeqtoOpt,c(),c(),c(),c(),"","")
                   })
                   }else{
                     starts=as.integer(regions[,1])
@@ -2582,7 +2929,7 @@ actionButton("actionSeq", label = "Optimize sequence")
 
                   output$newsequenceTwist <-renderUI({
 
-                    HTML("<br><b><h3>Optimized ",OriSeqNameIn," <i>in-silico</i> synthesis results</h3></b><br><b><p style=\"color:red\">Complex synthesis:</b></p><br><h5><p style=\"color:red\">",paste0(paste0(errors),sep="<br>",collapse=""),"<br></p></h5>",NewSequenceViewerDu("","twistannoseq",SeqtoOpt,c(as.character(newdf[,1])),c(as.character(newdf[,3])),c(as.character(newdf[,2])),legdf,"",""))
+                    HTML("<br><b><h3>Optimized ",OriSeqNameIn," <i>in-silico</i> synthesis results</h3></b><br><b><p style=\"color:red\">Complex synthesis:</b></p><br><h5><p style=\"color:red\">",paste0(paste0(errors),sep="<br>",collapse=""),"<br></p></h5>",NewSequenceViewerTW("","twistannoseq",SeqtoOpt,c(as.character(newdf[,1])),c(as.character(newdf[,3])),c(as.character(newdf[,2])),legdf))
                   })
               }
             }
@@ -2598,15 +2945,18 @@ actionButton("actionSeq", label = "Optimize sequence")
                 paterns=c()
                 seqpaterns=c()
                 colpaterns=c()
+                typpaterns=c()
                 dftyp=c()
                 dfcol=c()
+                Neweeexxttpar=eeexxttpar
                 #Ezymes
                 if(length(Inenzy)>0){
                   paterns=append(paterns,Inenzy)
                   seqpaterns=append(seqpaterns,enzy[Inenzy,"Site"])
-                  colpaterns=append(colpaterns,rep("purple",length(Inenzy)))
+                  colpaterns=append(colpaterns,rep("#d7bde2",length(Inenzy)))
+                  typpaterns=append(typpaterns,rep("RE_site",length(Inenzy)))
                   dftyp=append(dftyp,"RE site")
-                  dfcol=append(dfcol, "purple")
+                  dfcol=append(dfcol, "#d7bde2")
                 }
                 
                 if(FlaPi){
@@ -2628,16 +2978,21 @@ actionButton("actionSeq", label = "Optimize sequence")
                   
                   paterns=append(paterns,papos)
                   seqpaterns=append(seqpaterns,pospos) 
-                  colpaterns=append(colpaterns,rep("orange",length(pospos)))
+                  colpaterns=append(colpaterns,rep("#f9e79f",length(pospos)))
+                  typpaterns=append(typpaterns,rep("piRNA",length(pospos)))
+                  
+                  for(totoro in 1:length(pospos)){
+                    Neweeexxttpar=append(Neweeexxttpar,paste(papos[totoro]," ",pospos[totoro],sep=""))
+                  }
                   
                   dftyp=append(dftyp,"piRNA site")
-                  dfcol=append(dfcol, "orange")
+                  dfcol=append(dfcol, "#f9e79f")
                 }
                 }
                 #PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
                 
-                write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-                
+                #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+                write(paste(NewPasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
                 
                 legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
                 
@@ -2671,12 +3026,15 @@ actionButton("actionSeq", label = "Optimize sequence")
                   pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
                   pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
                   rownames(pimattab)=1:nrow(pimattab)
-                  colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
-                  pimattab=pimattab[,-2]
+                  #colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
+                  #pimattab=pimattab[,-2]
+                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Matching sequence","Edit distance")
+                  pimattab=pimattab[,-3]
                 }
                 if(ncol(as.data.frame(pimattab))==1){
                   pimattab=t(as.data.frame(pimattab))
-                  colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
+                  #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
+                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Edit distance")
                 }
                 pimattab
               })
