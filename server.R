@@ -471,6 +471,12 @@ NewSequenceViewerDu = function(title,div_id,sequence,patterns,colors,tooltips,df
     subnames=c("Start")
     subset=patitos[1]
     
+    partpat=patitos[-1]
+    if(length(partpat)>2){
+      partpat=partpat[order(start(partpat))]
+      patitos=c(patitos[1],partpat)
+    }
+    
     #patitos=patitos[order(start(patitos)),]
     
     if(length(patitos)>1){
