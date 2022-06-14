@@ -1672,9 +1672,8 @@ shinyServer(function(input, output, session) {
                            ),
                          )),
         HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_seq_input_any\">
-                        Sequences must be an Open Reading Frame, i.e., they must have a START (ATG or M) and a STOP (* or TAA/TAG/TGA),<br>
-              be coding (multiple of three and not stop codons before the end),
-             <br> and of a maximum length of 10kb or 3333 aa and minimim length of 39 bp or 13 aa.
+                        Input sequences must be coding sequences with a start (ATG or M) and a stop (TAA/TAG/TGA or *). 
+             The sequence must have a minimum length of 39 bp/13 amino acids and a maximum length of 10 kb / 3333 amino acids. 
                           <br></div></p>"),
         
         ###Parameters
@@ -1695,9 +1694,9 @@ shinyServer(function(input, output, session) {
                                    ), 
                     selected = 100),
         HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_codon\">
-             <b>Highly expressed ubiquitous genes.</b> Codon frequencies from the 500 genes with highest ubiquitous expression identified by <a href=\"https://doi.org/10.1101/2020.02.20.958579\">Serizay <i>et al.</i> (2020)</a>. Note that codon sampling is probabilistic and the optimized output sequence will not be invariant.
+             <b>Highly expressed ubiquitous genes.</b> Codon frequencies from the 500 genes with highest ubiquitous expression identified by <a href=\"https://genome.cshlp.org/content/30/12/1752\">Serizay <i>et al.</i> (2020)</a>. Note that codon sampling is probabilistic and the optimized output sequence will not be invariant.
 <br><br>
-<b>Max. expression.</b> This setting corresponds to optimization with Codon Adaptation Index = 1 described in <a href=\"http://www.nature.com/nmeth/journal/v8/n3/full/nmeth.1565.html\">Redemann <i>et al.</i> (2011)</a>
+<b>Max. expression.</b> This setting corresponds to optimization with Codon Adaptation Index = 1, developed by <a href=\"https://tu-dresden.de/cmcb/biotec/forschungsgruppen/bringmann\">Henrik Bringmann's group</a> and described in <a href=\"http://www.nature.com/nmeth/journal/v8/n3/full/nmeth.1565.html\">Redemann <i>et al.</i> (2011)</a>
  (see <a href=\"https://worm.mpi-cbg.de/codons/cgi-bin/optimize.py\"><i>C. elegans</i> Codon Adapter</a>).
 <br><br>
 <b>Germ line optimization (GLO).</b> This algorithm was developed by <a href=\"https://www.utdickinsonlab.org\">Dan Dickinson</a> and described in <a href=\"https://elifesciences.org/articles/38198\">Fielmich <i>et al.</i> (2018)</a>. 
@@ -1708,11 +1707,11 @@ shinyServer(function(input, output, session) {
                                                               [<a href=\"\" onclick=\"$('#explain_piRNA').toggle(); return false;\">info</a>]
                                                               </b>"), value = FALSE, width='100%'),
 HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_piRNA\">
-      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with four mismatches or less to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>), as described in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini et al. (2022)</a>.
-Please note that this algorithm is computationally demanding and that <a href=\"http://cosbi4.ee.ncku.edu.tw/pirScan/\">Wu et al. (2018)</a> have developed an alternative algorithm for removing piRNAs.
+      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with four mismatches or less to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>), as described in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> (2022)</a>.
+<br>Please note that this algorithm is computationally demanding. Also, <a href=\"http://www.hcleelab.org/\">Heng-Chi Lee's laboratory</a> has developed an alternative algorithm for optimizing transgenes and removing piRNAs, described in <a href=\"https://academic.oup.com/nar/article/46/W1/W43/4979435\">Wu <i>et al.</i> (2018)</a> (see <a href=\"http://cosbi4.ee.ncku.edu.tw/pirScan/\">pirScan</a>).
                     </div></p>"),
 #h1(" "),
-br(),
+#br(),
 ##Next section
 checkboxInput("checkboxRibo", label = HTML("<b>Optimize ribosomal binding 
                                                                 [<a href=\"\" onclick=\"$('#explain_ribo').toggle(); return false;\">info</a>]</b>"), value = FALSE),
@@ -1749,7 +1748,7 @@ HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"e
                            radioButtons("intdistop",label = HTML("Intron placement"),
                                         choices = list("Early start" = 1, 
                                                        "equidistant" = 2), 
-                                        selected = 1, width='100%', inline = TRUE),
+                                        selected = 1, width='100%', inline = FALSE),
                            checkboxInput("checkintframe", label = HTML("Force introns in reading frame"), value = FALSE)
           ),
  HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_introns\">
@@ -1791,7 +1790,7 @@ HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"e
  HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_UTRs\">
                         <b>5' UTR.</b> The synthetic 5' UTR can stimulate expression similar to introns within coding sequence (<a href=\"https://www.addgene.org/kits/firelab/\">see documentation for Fire lab 1995 vector kit</a>).
       <br><br>
-      <b>3' UTRs.</b> The tbb-2 3'UTR is generally permissive for gene expression (<a href=\"https://pubmed.ncbi.nlm.nih.gov/18818082/\">Merritt & Seydoux, Curr. Bio., 2008</a>) but can be difficult to synthesize. <i>rps-1</i> and <i>rps-4</i> are short 3' UTRs from highly expressed ribosomal genes and are often easy to synthesize. Please note that we have not tested the quantitative effect of <i>rps-1</i> and <i>rps-4</i> on expression but synthetic genes with these 3' UTRs are expressed and can rescue phenotypes from single copy inserts (<i>e.g., unc-119</i>).
+      <b>3' UTRs.</b> The <i>tbb-2</i> 3'UTR is generally permissive for gene expression (<a href=\"https://pubmed.ncbi.nlm.nih.gov/18818082/\">Merritt & Seydoux, Curr. Bio., 2008</a>) but can be difficult to synthesize. <i>rps-1</i> and <i>rps-4</i> are short 3' UTRs from highly expressed ribosomal genes and are often easy to synthesize. Please note that we have not tested the quantitative effect of <i>rps-1</i> and <i>rps-4</i> on expression but synthetic genes with these 3' UTRs are expressed and can rescue phenotypes from single copy inserts (<i>e.g., unc-119</i>).
       </div></p>"),
 checkboxInput("checkEnzySites", label = HTML("<b>Remove restriction enzyme sites</b>"), value = FALSE, width='100%'),
 conditionalPanel(condition = "input.checkEnzySites==1",
@@ -1812,7 +1811,7 @@ conditionalPanel(condition = "input.checkEnzySites==1",
                    #HTML("</tt>")
                  )),
 #h1(" "),
-br(),
+#br(),
 ##Next section
  ###Output manipulation
  #HTML("<h4>Visual output:</h4>"),
@@ -1836,24 +1835,16 @@ br(),
                   #       Skip codon optimization but run the rest of the algorithm, e.g. RBS optimization, piRNA removal and addition of extra sequences.
                   #   </div></p>"),
                   ),
-checkboxInput("checkTwisty", label = HTML("<b>Check if sequence can be synthetized into a gene fragment
+checkboxInput("checkTwisty", label = HTML("<b>Check for gene synthesis
                                                               [<a href=\"\" onclick=\"$('#explain_Twisty').toggle(); return false;\">info</a>]
                                                               </b>"), value = FALSE, width='100%'),
 HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_Twisty\">
-                        Do not optimize and check if input sequence follows gene design guidelines of <a href=\"https://www.twistbioscience.com/\">Twist biosciences</a>.<br>
-     The following tests are performed to verify potential issues with the synthesis of the optimized sequence (Note that most synthesis issues are driven by repetitive structures and extreme GC content):
-<br>-Size synthesis limitation (higher 300 bp and lower than 5 kb)
-<br>-Overall GC content (higher than 24% and lowe than 66%) 
-<br>-Extreme GC content differences between 50 bp fragments of the sequence
-<br>-Step fluctuations in the GC content of 20 bp overlapping windows
-<br>-No repeats higher than 20 bp long
-<br>-No sequences with melting temperature higher than 60 degrees celcius
-<br>-No homopolymer, e.g. TTTT, higher than 10 bp in  thesequence
-<br>-Categorization of small repeats throughout the sequence
+                        This option checks the optimized sequence against gene synthesis guidelines from <a href=\"https://www.twistbioscience.com/\">Twist Biosciences</a>. Repetitive DNA structures and extreme transitions in GC content make DNA synthesis difficult. The higher GC content introns and shorter 3' UTRs can facilitate synthesis.  
+Specifically, we analyze the output sequence for size (> 300 bp, < 5 kb), overall GC content (> 24%, < 66%), large differences in GC content within sequence, repeats (> 20 bp), melting temperature (Tm > 60°C), and homopolymers (> 10 bp).
                     </div></p>"),
  
  verbatimTextOutput("ErrorMessage"),
- br(),
+ #br(),
 actionButton("actionSeq", label = "Optimize sequence")
  #uiOutput("AllResults")
       )

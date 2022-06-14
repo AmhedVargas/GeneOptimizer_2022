@@ -111,7 +111,8 @@ busyIndicator(),
 #'       ")),
 #Main tab pages
     navbarPage(
-      title=actionLink("link_to_tabpanel_sequenceadaptation", HTML("<b>Wormbuilder</b>")),
+      #title=actionLink("link_to_tabpanel_sequenceadaptation", HTML("<b>Wormbuilder</b>")),
+      title=HTML("<a href=\"https://wormbuilder.org/\"><b>Wormbuilder</b></a>"),
       windowTitle="WormBuilder transgenic tools",
         id = "panels",
         tabPanel("Sequence Adaptation",
@@ -122,22 +123,22 @@ busyIndicator(),
       tabPanel("About",
                mainPanel(
                  h3("Transgene builder"),
-                 HTML("<p align=\"justify\">This website is generated via custom modified css/html page running in R via the shiny library.
-                 <br>All the templates, libraries, and programs used to produce this site are under the MIT and GNU licenses.</p>"),
-                 h3("The Laboratory of Synthetic Genome Biology"),
                  HTML("<p align=\"justify\">
-                 The Laboratory of Synthetic Genome Biology is located in building 2 - level 3 (Ibn Al-Haytham – Above Spine) at King Abdullah University of Science and Technology (KAUST).
-                 <br><i>Contact info</i>:<br>Christian-Froekjaer Jensen, Ph.D. 
+                      This application is developed by postdoc Amhed Velazquez and is currently a beta version. Please let us know if you find any bugs so we can fix the site.
+                 <br>
+                 This website is generated via custom modified css/html page running in R via the shiny library. All the templates, libraries, and programs used to produce this site are under the MIT and GNU licenses.
+                 </p>"),
+                 br(),
+                 HTML("<p align=\"justify\">
+                 <i>Contact info</i>:<br>Christian-Froekjaer Jensen, Ph.D. 
                  <br>Assistant Professor of Bioscience
                  <br>Laboratory of Synthetic Genome Biology
                  <br>Email: <a href=\"mailto:cfjensen@kaust.edu.sa\">cfjensen@kaust.edu.sa</a>
-                 
                       </p>")
                )
       )
     ),
 hr(),
-    HTML("<a href=\"https://syngenbio.kaust.edu.sa\">Syntetic genome biology laboratory @KAUST</a><br>"),
     HTML("<a href=\"http://www.wormbuilder.org/\">Wormbuilder</a><br>"),
     HTML("<a href=\"mailto:amhed.velazquez@kaust.edu.sa\">Contact us!</a>")
     
