@@ -1678,7 +1678,7 @@ shinyServer(function(input, output, session) {
         selectizeInput("selectCAI", label = HTML("<b>Optimization method
                                                            [<a href=\"\" onclick=\"$('#explain_codon').toggle(); return false;\">info</a>]
                                                            </b>"), 
-                    choices = list("No Codon Optimization" = 100, "--- Codon table ---" = 1, 
+                    choices = list("No codon optimization" = 100, "--- Codon table ---" = 1, 
                                    "Highly expressed ubiquitous genes (Serizay et al., Genome Res., 2020)" = 2, 
                                    #"Germline" = 3, 
                                    #"Neuronal" = 4, 
@@ -1736,7 +1736,7 @@ HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"e
                                           HTML("<i>rps-0</i> (avg. length 55 bp, 15% GC)"),
                                           HTML("<i>rps-5</i> (avg. length 65 bp, 22% GC)"),
                                           HTML("<i>rps-20</i> (avg. length 62 bp, 28% GC)"),
-                                          HTML("Canonical Fire lab introns")
+                                          HTML("Canonical Fire lab (avg. length 51 bp, 24% GC)")
                                           ),
                                         choiceValues= list(2,3,4,5),
                                         selected = 2, width='100%'),
@@ -1765,7 +1765,7 @@ HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"e
                                           "None" = 1, 
                                           "Fire lab synthetic spliced" = 2
                                         ), 
-                                        selected = 1, width='100%', inline = TRUE),
+                                        selected = 1, width='100%', inline = FALSE),
                            radioButtons("p3UTR", label = HTML("3' UTR"),
                                         #choices = list(
                                         #  "None" = 1, 
@@ -1775,12 +1775,12 @@ HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"e
                                         #),
                                         choiceNames= list(
                                           HTML("None"),
-                                          HTML("<i>rps-1</i> 3' UTR (56 bp, 23% GC)"),
-                                          HTML("<i>rps-4</i> 3' UTR (41 bp, 17% GC)"),
-                                          HTML("<i>tbb-2</i> 3' UTR (169 bp, 29% GC)")
+                                          HTML("<i>rps-1</i> (56 bp, 23% GC)"),
+                                          HTML("<i>rps-4</i> (41 bp, 17% GC)"),
+                                          HTML("<i>tbb-2</i> (169 bp, 29% GC)")
                                         ),
                                         choiceValues= list(1,2,3,4),
-                                        selected = 1, width='100%', inline = TRUE)
+                                        selected = 1, width='100%', inline = FALSE)
           ),
  HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_UTRs\">
                         <b>5' UTR.</b> The synthetic 5' UTR can stimulate expression similar to introns within coding sequence (<a href=\"https://www.addgene.org/kits/firelab/\">see documentation for Fire lab 1995 vector kit</a>).
