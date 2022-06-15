@@ -40,8 +40,12 @@ Pies=readLines("DATA/HengPies.txt")
 
 PiesNA=readLines("DATA/HengNames.txt")
 
-PiesFin=cbind(Pies,PiesNA)
+#New main table, this one should substitute in the future the other piRNA lists
+#PiesFin=cbind(Pies,PiesNA)
+PiesFin=read.table("DATA/piRNA_list.txt",sep="\t",header=F,stringsAsFactors=F)
+PiesFin=cbind(Pies,PiesNA,as.character(PiesFin[,3]))
 rownames(PiesFin)=as.character(Pies)
+
 
 ##Enzymes
 enzy=read.table("DATA/Enzymes.txt", sep="\t", colClasses = "character",header=T)
@@ -799,7 +803,7 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
   FileLines=append(FileLines,paste("SOURCE",".",sep="     "))
   FileLines=append(FileLines,paste("ORGANISM","C.elegans",sep="     "))
   
-  FileLines=append(FileLines,paste("COMMENT",paste(locus_name),sep="     "))
+  FileLines=append(FileLines,paste("COMMENT",paste(paste(paste(unlist(strsplit(locus_name,"_")),sep=" ",collapse=" ")," (Coding sequence is annoted in uppercase)"),sep="     ")))
   
   FileLines=append(FileLines,paste("COMMENT",paste("Codon Adaptation Index",as.character(round(CAIS,2))),sep="     "))
   FileLines=append(FileLines,paste("COMMENT",paste("GC",as.character(GCp),"%"),sep="     "))
@@ -878,7 +882,7 @@ PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,ta
 }
 
 ############################################Make Ape file#################################
-NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
+NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr="",maximm=4){
   #sequence: sequence to use
   #patterns: match patterns
   #col, fwd, rev
@@ -901,7 +905,7 @@ NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips
   if(optsecnotr == ""){optsecnotr=sequence}
   CAIS=CalculateCAI(optsecnotr,tabibi,cai,list) 
   GCp=as.integer((CalculateGC(optsecnotr))*100)
-  NoPies=length(Strfindpies(optsecnotr,PiesList,4))
+  NoPies=length(Strfindpies(optsecnotr,PiesList,maximm))
   
   ##Save Lines
   FileLines=c()
@@ -912,7 +916,7 @@ NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips
   FileLines=append(FileLines,paste("SOURCE",".",sep="     "))
   FileLines=append(FileLines,paste("ORGANISM","C.elegans",sep="     "))
   
-  FileLines=append(FileLines,paste("COMMENT",paste(locus_name),sep="     "))
+  FileLines=append(FileLines,paste("COMMENT",paste(paste(paste(unlist(strsplit(locus_name,"_")),sep=" ",collapse=" ")," (Coding sequence is annoted in uppercase)"),sep="     ")))
   
   FileLines=append(FileLines,paste("COMMENT",paste("Codon Adaptation Index",as.character(round(CAIS,2))),sep="     "))
   FileLines=append(FileLines,paste("COMMENT",paste("GC",as.character(GCp),"%"),sep="     "))
@@ -1706,8 +1710,19 @@ shinyServer(function(input, output, session) {
          checkboxInput("checkPirna", label = HTML("<b>Minimize <i>C. elegans</i> piRNA homology
                                                               [<a href=\"\" onclick=\"$('#explain_piRNA').toggle(); return false;\">info</a>]
                                                               </b>"), value = FALSE, width='100%'),
+
+###Add conditional input
+conditionalPanel(condition = "input.checkPirna==1",
+                 selectizeInput("selectPiMM", label = HTML("<b>Max. number of mismatches</b>"), 
+                                choices = list("0" = 0, "1" = 1, 
+                                               "2" = 2,
+                                               "3" = 3,
+                                               "4" = 4
+                                ), 
+                                selected = 4)
+),
 HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_piRNA\">
-      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with four mismatches or less to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>), as described in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> (2022)</a>.
+      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with up to four mismatches or less to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>), as described in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> (2022)</a>.
 <br>Please note that this algorithm is computationally demanding. Also, <a href=\"http://www.hcleelab.org/\">Heng-Chi Lee's laboratory</a> has developed an alternative algorithm for optimizing transgenes and removing piRNAs, described in <a href=\"https://academic.oup.com/nar/article/46/W1/W43/4979435\">Wu <i>et al.</i> (2018)</a> (see <a href=\"http://cosbi4.ee.ncku.edu.tw/pirScan/\">pirScan</a>).
                     </div></p>"),
 #h1(" "),
@@ -1931,6 +1946,12 @@ actionButton("actionSeq", label = "Optimize sequence")
     
     ##Remove piRNas?
     FlaPi=input$checkPirna
+    ##Max Mismatches
+    if(FlaPi){
+      maxMM=as.integer(input$selectPiMM)
+    }else{
+      maxMM=4
+      }
     
     ##Add introns?
     FlaIn=input$checkIntron
@@ -2187,7 +2208,10 @@ actionButton("actionSeq", label = "Optimize sequence")
     
     
     if(FlaRi){eeexxttpar=append(eeexxttpar,"RBS optimization: Yes")}else{eeexxttpar=append(eeexxttpar,"RBS optimization: No")}
-    if(FlaPi){eeexxttpar=append(eeexxttpar,"Remove piRNA sites: Yes")}else{eeexxttpar=append(eeexxttpar,"Remove piRNA sites: No")}
+    if(FlaPi){
+      eeexxttpar=append(eeexxttpar,"Remove piRNA sites: Yes")
+      eeexxttpar=append(eeexxttpar,paste("Maxmimum number of mismatches to 20-mer piRNA binding region:", maxMM,sep=" "))
+    }else{eeexxttpar=append(eeexxttpar,"Remove piRNA sites: No")}
     if(FlaEnz){
       eeexxttpar=append(eeexxttpar,"Remove RE sites: Yes")
       eeexxttpar=append(eeexxttpar,"Restriction sites removed:")
@@ -2241,7 +2265,7 @@ actionButton("actionSeq", label = "Optimize sequence")
         output$oldsequence <-renderUI({
           seqiqi=toupper(seqiqi)
           
-          piss=Strfindpies(seqiqi,Pies,4)
+          piss=Strfindpies(seqiqi,Pies,maxMM)
           
           ##New approach
           paterns=c()
@@ -2261,12 +2285,12 @@ actionButton("actionSeq", label = "Optimize sequence")
             dfcol=append(dfcol, "#d7bde2")
           }
           
-          piss=Strfindpies(seqiqi,Pies,4)
+          piss=Strfindpies(seqiqi,Pies,maxMM)
           if(length(piss)>0){
                popos=c()
                papas=c()
                for(pipi in piss){
-                 patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=4,fixed=T))
+                 patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=maxMM,fixed=T))
                  popos=append(popos,patotes)
                  papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
                }
@@ -2286,13 +2310,13 @@ actionButton("actionSeq", label = "Optimize sequence")
                  Neweeexxttpar=append(Neweeexxttpar,paste(papos[totoro]," ",pospos[totoro],sep=""))
                }
                
-               dftyp=append(dftyp,"piRNA site")
+               dftyp=append(dftyp,"piRNA homology")
                dfcol=append(dfcol, "#f9e79f")
           }
           #PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
           #NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
           #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-          write(paste(NewPasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+          write(paste(NewPasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,maximm=maxMM),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
       
           
           legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
@@ -2310,13 +2334,13 @@ actionButton("actionSeq", label = "Optimize sequence")
         
         ##PiTab
         output$OriPiTab <- renderTable({
-          piesinseq=Strfindpies(toupper(seqiqi),Pies,4)
+          piesinseq=Strfindpies(toupper(seqiqi),Pies,maxMM)
           #Subsampling sequence and creating table
           pimattab=c()
           for(pipat in piesinseq){
             
             #matchpattern to find targets
-            matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(seqiqi)),max.mismatch=4,fixed=T))
+            matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(seqiqi)),max.mismatch=maxMM,fixed=T))
             
             for(mat in matseqpie){
               pimattab=rbind(pimattab,cbind(pipat,mat,stringdist(pipat,mat,"hamming")))
@@ -2324,11 +2348,15 @@ actionButton("actionSeq", label = "Optimize sequence")
           }
           if(length(piesinseq) > 0){
             pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
-            pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
+            #pimattab[,2]=paste("substitute(paste(italic(",PiesFin[pimattab[,2],3],")))",sep="")
+            pimattab[,2]=paste("",PiesFin[pimattab[,2],3],"",sep="")
+            
+            #if(ncol(as.data.frame(pimattab))!=1){pimattab=pimattab[order(pimattab[,4]),]}
+            
             rownames(pimattab)=1:nrow(pimattab)
             #colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
             #pimattab=pimattab[,-2]
-            colnames(pimattab)=c("piRNA locus","Matching piRNA","Matching sequence","Edit distance")
+            colnames(pimattab)=c("piRNA","Matching piRNA","Matching sequence","Mismatches")
             pimattab=pimattab[,-3]
           }
           
@@ -2339,8 +2367,10 @@ actionButton("actionSeq", label = "Optimize sequence")
           if(ncol(as.data.frame(pimattab))==1){
             pimattab=t(as.data.frame(pimattab))
             #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
-            colnames(pimattab)=c("piRNA locus","Matching piRNA","Edit distance")
-            }
+            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
+          }else{
+            if(ncol(as.data.frame(pimattab)) == 3){pimattab=pimattab[order(pimattab[,3]),]}
+          }
           pimattab
           
         })
@@ -2392,7 +2422,7 @@ actionButton("actionSeq", label = "Optimize sequence")
           rev=grep("GAGACC",x=inseqs)
           all=unique(c(fwd,rev))
           if((length(all) != 0)&(length(all) != length(inseqs))){inseqs=inseqs[-c(all)]}
-          id=order(sapply(inseqs,function(x){Strcondepies(x,Pies,4)}))[1]
+          id=order(sapply(inseqs,function(x){Strcondepies(x,Pies,maxMM)}))[1]
           SeqStart=inseqs[id]
         }else{ ###Not optimization
           if(CodonAl != 6){
@@ -2438,11 +2468,12 @@ actionButton("actionSeq", label = "Optimize sequence")
               setrep=append(setrep,repcds(paste(c(seqDNA[40:length(seqDNA)]),sep="",collapse=""),CAIS,AAtoCodF,CodonAl))
             }
             inseqs=setrep
-            fwd=grep("GGTCTC",x=inseqs)
-            rev=grep("GAGACC",x=inseqs)
-            all=unique(c(fwd,rev))
-            if((length(all) != 0)&(length(all) != length(inseqs))){inseqs=inseqs[-c(all)]}
-            id=order(sapply(inseqs,function(x){Strcondepies(x,Pies,4)}))[1]
+            ###Outdated, we dont remove anymore RE sites before
+            #fwd=grep("GGTCTC",x=inseqs)
+            #rev=grep("GAGACC",x=inseqs)
+            #all=unique(c(fwd,rev))
+            #if((length(all) != 0)&(length(all) != length(inseqs))){inseqs=inseqs[-c(all)]}
+            id=order(sapply(inseqs,function(x){Strcondepies(x,Pies,maxMM)}))[1]
             SeqEnd=inseqs[id]
           }
         }
@@ -2458,16 +2489,16 @@ actionButton("actionSeq", label = "Optimize sequence")
         
         ##If PiRNA removal
         if(FlaPi){
-          pipipis=Strfindpies(SeqtoOpt,Pies,4)
+          pipipis=Strfindpies(SeqtoOpt,Pies,maxMM)
           if(length(pipipis) > 0 ){
             stpos=c()
             for(pipi in pipipis){
-              stpos=append(stpos,start(matchPattern(DNAString(pipi),DNAString(SeqtoOpt),max.mismatch=4,fixed=T)))
+              stpos=append(stpos,start(matchPattern(DNAString(pipi),DNAString(SeqtoOpt),max.mismatch=maxMM,fixed=T)))
             }
             stpos=unique(c(stpos,stpos+3,stpos+6,stpos+9,stpos+12,stpos+15))
             SeqtoOpt=modbyposiz(SeqtoOpt,stpos,CAIS,AAtoCodF,8)
             
-            pipipis=Strfindpies(SeqtoOpt,Pies,4)
+            pipipis=Strfindpies(SeqtoOpt,Pies,maxMM)
             if(length(pipipis) > 0 ){
               Iter=1
               nflag=TRUE
@@ -2475,12 +2506,12 @@ actionButton("actionSeq", label = "Optimize sequence")
                 
                 stpos=c()
                 for(pipi in pipipis){
-                  stpos=append(stpos,start(matchPattern(DNAString(pipi),DNAString(SeqtoOpt),max.mismatch=4,fixed=T)))
+                  stpos=append(stpos,start(matchPattern(DNAString(pipi),DNAString(SeqtoOpt),max.mismatch=maxMM,fixed=T)))
                 }
                 stpos=unique(c(stpos,stpos+3,stpos+6,stpos+9,stpos+12,stpos+15))
                 SeqtoOpt=modbyposiz(SeqtoOpt,stpos,CAIS,AAtoCodF,8)
                 
-                pipipis=Strfindpies(SeqtoOpt,Pies,4)
+                pipipis=Strfindpies(SeqtoOpt,Pies,maxMM)
                 
                 if(length(pipipis) > 0 ){Iter=1+Iter}else{nflag=FALSE}
               }
@@ -2535,8 +2566,6 @@ actionButton("actionSeq", label = "Optimize sequence")
                 }
                 stpos=unique(c(stpos))
                 SeqtoOpt=modbyposiz(SeqtoOpt,stpos,CAIS,AAtoCodF,8)
-                
-                pipipis=Strfindpies(SeqtoOpt,Pies,4)
                 
                 all=c()
                 for(patito in enpat){
@@ -2810,12 +2839,12 @@ actionButton("actionSeq", label = "Optimize sequence")
                   }
               }
               if(FlaPi){
-              piss=Strfindpies(toupper(optsec),Pies,4)
+              piss=Strfindpies(toupper(optsec),Pies,maxMM)
               if(length(piss)>0){
                 popos=c()
                 papas=c()
                 for(pipi in piss){
-                  patotes=as.character(matchPattern(DNAString(pipi),DNAString(toupper(optsec)),max.mismatch=4,fixed=T))
+                  patotes=as.character(matchPattern(DNAString(pipi),DNAString(toupper(optsec)),max.mismatch=maxMM,fixed=T))
                   popos=append(popos,patotes)
                   papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
                 }
@@ -2835,7 +2864,7 @@ actionButton("actionSeq", label = "Optimize sequence")
                   Neweeexxttpar=append(Neweeexxttpar,paste(papos[totoro]," ",pospos[totoro],sep=""))
                   }
                 
-                dftyp=append(dftyp,"piRNA site")
+                dftyp=append(dftyp,"piRNA homology")
                 dfcol=append(dfcol, "#f9e79f")
               }
               }
@@ -2843,7 +2872,7 @@ actionButton("actionSeq", label = "Optimize sequence")
               #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
               #NewPasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,FeatType,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
               #write(paste(PasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
-              write(paste(NewPasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,optsecnotr=optsec),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
+              write(paste(NewPasteApe(paste("Optimized_",OriSeqNameIn,sep=""),SeqtoOpt,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,optsecnotr=optsec,maximm=maxMM),collapse="\n"),paste("DATA/users/",session_id,"/Seqpop.gb", sep=""))
               
               legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
               
@@ -2861,13 +2890,13 @@ actionButton("actionSeq", label = "Optimize sequence")
             ##PiTab
             if(FlaPi){
               output$OptiPiTab <- renderTable({
-                piesinseq=Strfindpies(toupper(optsec),Pies,4)
+                piesinseq=Strfindpies(toupper(optsec),Pies,maxMM)
                 #Subsampling sequence and creating table
                 pimattab=c()
                 for(pipat in piesinseq){
                   
                   #matchpattern to find targets
-                  matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(optsec)),max.mismatch=4,fixed=T))
+                  matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(optsec)),max.mismatch=maxMM,fixed=T))
                   
                   for(mat in matseqpie){
                     pimattab=rbind(pimattab,cbind(pipat,mat,stringdist(pipat,mat,"hamming")))
@@ -2876,17 +2905,20 @@ actionButton("actionSeq", label = "Optimize sequence")
                 
                 if(length(piesinseq) > 0){
                   pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
-                  pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
+                  pimattab[,2]=paste(PiesFin[pimattab[,2],3],"",sep="")
+                  #if(ncol(as.data.frame(pimattab))!=1){pimattab=pimattab[order(pimattab[,4]),]}
                   rownames(pimattab)=1:nrow(pimattab)
                   #colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
                   #pimattab=pimattab[,-2]
-                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Matching sequence","Edit distance")
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Matching sequence","Mismatches")
                   pimattab=pimattab[,-3]
                 }
                 if(ncol(as.data.frame(pimattab))==1){
                   pimattab=t(as.data.frame(pimattab))
                   #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
-                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Edit distance")
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
+                }else{
+                  if(ncol(as.data.frame(pimattab)) == 3){pimattab=pimattab[order(pimattab[,3]),]}
                 }
                 pimattab
               })
@@ -2936,7 +2968,7 @@ actionButton("actionSeq", label = "Optimize sequence")
               output$oldsequence <-renderUI({
                 seqiqi=toupper(seqiqi)
                 
-                piss=Strfindpies(seqiqi,Pies,4)
+                piss=Strfindpies(seqiqi,Pies,maxMM)
                 
                 ##New approach
                 paterns=c()
@@ -2957,12 +2989,12 @@ actionButton("actionSeq", label = "Optimize sequence")
                 }
                 
                 if(FlaPi){
-                piss=Strfindpies(seqiqi,Pies,4)
+                piss=Strfindpies(seqiqi,Pies,maxMM)
                 if(length(piss)>0){
                   popos=c()
                   papas=c()
                   for(pipi in piss){
-                    patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=4,fixed=T))
+                    patotes=as.character(matchPattern(DNAString(pipi),DNAString(seqiqi),max.mismatch=maxMM,fixed=T))
                     popos=append(popos,patotes)
                     papas=append(papas,rep(PiesFin[piss,2],length(patotes)))
                   }
@@ -2982,14 +3014,14 @@ actionButton("actionSeq", label = "Optimize sequence")
                     Neweeexxttpar=append(Neweeexxttpar,paste(papos[totoro]," ",pospos[totoro],sep=""))
                   }
                   
-                  dftyp=append(dftyp,"piRNA site")
+                  dftyp=append(dftyp,"piRNA homology")
                   dfcol=append(dfcol, "#f9e79f")
                 }
                 }
                 #PasteApe = function(locus_name,sequence,patterns,FWDcolors,REVcolors,tooltips,tabibi,cai,list,PiesList,extracomments=c(),optsecnotr=""){
                 
                 #write(paste(PasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),CAIS,5,AAtoCodF,Pies,extracomments=eeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
-                write(paste(NewPasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
+                write(paste(NewPasteApe(OriSeqNameIn,seqiqi,c(seqpaterns),c(colpaterns),c(colpaterns),c(paterns),c(typpaterns),CAIS,5,AAtoCodF,Pies,extracomments=Neweeexxttpar,maximm=maxMM),collapse="\n"),paste("DATA/users/",session_id,"/Seqog.gb", sep=""))
                 
                 legdf=data.frame(Type=c(dftyp),Color=c(dfcol))
                 
@@ -3007,13 +3039,13 @@ actionButton("actionSeq", label = "Optimize sequence")
               ##PiTab
               if(FlaPi){
               output$OriPiTab <- renderTable({
-                piesinseq=Strfindpies(toupper(seqiqi),Pies,4)
+                piesinseq=Strfindpies(toupper(seqiqi),Pies,maxMM)
                 #Subsampling sequence and creating table
                 pimattab=c()
                 for(pipat in piesinseq){
                   
                   #matchpattern to find targets
-                  matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(seqiqi)),max.mismatch=4,fixed=T))
+                  matseqpie=as.character(matchPattern(DNAString(pipat),DNAString(toupper(seqiqi)),max.mismatch=maxMM,fixed=T))
                   
                   for(mat in matseqpie){
                     pimattab=rbind(pimattab,cbind(pipat,mat,stringdist(pipat,mat,"hamming")))
@@ -3021,18 +3053,23 @@ actionButton("actionSeq", label = "Optimize sequence")
                 }
                 if(length(piesinseq) > 0){
                   pimattab=cbind(PiesFin[pimattab[,1],2],pimattab)
-                  pimattab[,2]=paste(pimattab[,2],"|<-|",sep="")
+                  pimattab[,2]=paste(PiesFin[pimattab[,2],3],"",sep="")
+                  #if(ncol(as.data.frame(pimattab))!=1){pimattab=pimattab[order(pimattab[,4]),]}
                   rownames(pimattab)=1:nrow(pimattab)
+                  #if(ncol(pimattab)==4){pimattab=pimattab[order(pimattab[,4]),]}
                   #colnames(pimattab)=c("piRNA locus","21-U reverse complement sequence","Matching sequence","Edit distance")
                   #pimattab=pimattab[,-2]
-                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Matching sequence","Edit distance")
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Matching sequence","Mismatches")
                   pimattab=pimattab[,-3]
                 }
+                
                 if(ncol(as.data.frame(pimattab))==1){
                   pimattab=t(as.data.frame(pimattab))
                   #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
-                  colnames(pimattab)=c("piRNA locus","Matching piRNA","Edit distance")
-                }
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
+                }else{
+                  if(ncol(as.data.frame(pimattab)) == 3){pimattab=pimattab[order(pimattab[,3]),]}
+                  }
                 pimattab
               })
               }
