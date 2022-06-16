@@ -47,7 +47,7 @@ PiesFin=cbind(Pies,PiesNA,as.character(PiesFin[,3]))
 rownames(PiesFin)=as.character(Pies)
 ##New piRNA data
 extraPiinfo=read.table("DATA/piRNA_abundance.tsv",sep="\t",header=F,stringsAsFactors=F)
-extraPiinfo[rownames(extraPiinfo),]=as.character(extraPiinfo[,1])
+rownames(extraPiinfo)=as.character(extraPiinfo[,1])
 ##Add extra names
 extraPisite=setdiff(unique(c(rownames(extraPiinfo), as.character(PiesNA))),rownames(extraPiinfo))
 extraPiinfo[extraPisite,]=cbind(extraPisite,rep("n.d.",length(extraPisite)),rep("n.d.",length(extraPisite)))
