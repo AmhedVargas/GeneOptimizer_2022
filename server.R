@@ -45,8 +45,12 @@ PiesNA=readLines("DATA/HengNames.txt")
 PiesFin=read.table("DATA/piRNA_list.txt",sep="\t",header=F,stringsAsFactors=F)
 PiesFin=cbind(Pies,PiesNA,as.character(PiesFin[,3]))
 rownames(PiesFin)=as.character(Pies)
-
-
+##New piRNA data
+extraPiinfo=read.table("DATA/piRNA_abundance.tsv",sep="\t",header=F,stringsAsFactors=F)
+extraPiinfo[rownames(extraPiinfo),]=as.character(extraPiinfo[,1])
+##Add extra names
+extraPisite=setdiff(unique(c(rownames(extraPiinfo), as.character(PiesNA))),rownames(extraPiinfo))
+extraPiinfo[extraPisite,]=cbind(extraPisite,rep("n.d.",length(extraPisite)),rep("n.d.",length(extraPisite)))
 ##Enzymes
 enzy=read.table("DATA/Enzymes.txt", sep="\t", colClasses = "character",header=T)
 rownames(enzy)=as.character(enzy$Enzyme)
@@ -1722,8 +1726,9 @@ conditionalPanel(condition = "input.checkPirna==1",
                                 selected = 4)
 ),
 HTML("<p align=\"justify\"><div class=\"explain\" style=\"display: none\" id=\"explain_piRNA\">
-      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm removes, when possible, sequences with up to four mismatches or less to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>), as described in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> (2022)</a>.
-<br>Please note that this algorithm is computationally demanding. Also, <a href=\"http://www.hcleelab.org/\">Heng-Chi Lee's laboratory</a> has developed an alternative algorithm for optimizing transgenes and removing piRNAs, described in <a href=\"https://academic.oup.com/nar/article/46/W1/W43/4979435\">Wu <i>et al.</i> (2018)</a> (see <a href=\"http://cosbi4.ee.ncku.edu.tw/pirScan/\">pirScan</a>).
+      This option annotates and minimizes sequence homology to piRNAs to reduce germline silencing. The algorithm uses Hamming distance to identify piRNA homology and removes, when possible, sequences with up to four mismatches to the 20-mer binding region of all annotated class I and class 2 endogenous piRNAs (<a href=\"https://s3.eu-central-1.amazonaws.com/wormbuilder.dev/Downloads/Endogenous_piRNA_list.txt\">list</a>). We demonstrated in <a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> (2022)</a> that synthetic piRNAs with three mismatches significantly reduced expression and observed small effects with four mismatches.
+The output annotates piRNA abundance based on Priyadarshini <i>et al.</i> (2022) and tissue-specific expression based on <a href=\"https://pubmed.ncbi.nlm.nih.gov/23516384/\">Billi <i>et al.</i> (2013)</a>.
+     <br>Please note that this algorithm is computationally demanding and removing piRNAs comes at the cost of reducing the optimality of algorithms (e.g., the CAI is slightly reduced for every piRNA homology removed). <a href=\"http://www.hcleelab.org/\">Heng-Chi Lee's laboratory</a> has developed an alternative algorithm for optimizing transgenes and removing piRNAs, described in <a href=\"https://academic.oup.com/nar/article/46/W1/W43/4979435\">Wu <i>et al.</i> (2018)</a> (see <a href=\"http://cosbi4.ee.ncku.edu.tw/pirScan/\">pirScan</a>).
                     </div></p>"),
 #h1(" "),
 #br(),
@@ -2368,8 +2373,14 @@ actionButton("actionSeq", label = "Optimize sequence")
             pimattab=t(as.data.frame(pimattab))
             #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
             colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
+            pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
+            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
           }else{
-            if(ncol(as.data.frame(pimattab)) == 3){pimattab=pimattab[order(pimattab[,3]),]}
+            if(ncol(as.data.frame(pimattab)) == 3){
+            pimattab=pimattab[order(pimattab[,3]),]
+            pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
+            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+            }
           }
           pimattab
           
@@ -2917,8 +2928,14 @@ actionButton("actionSeq", label = "Optimize sequence")
                   pimattab=t(as.data.frame(pimattab))
                   #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
                   colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
+                  pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
                 }else{
-                  if(ncol(as.data.frame(pimattab)) == 3){pimattab=pimattab[order(pimattab[,3]),]}
+                  if(ncol(as.data.frame(pimattab)) == 3){
+                    pimattab=pimattab[order(pimattab[,3]),]
+                    pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
+                    colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+                    }
                 }
                 pimattab
               })
@@ -3067,8 +3084,14 @@ actionButton("actionSeq", label = "Optimize sequence")
                   pimattab=t(as.data.frame(pimattab))
                   #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
                   colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
+                  pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
                 }else{
-                  if(ncol(as.data.frame(pimattab)) == 3){pimattab=pimattab[order(pimattab[,3]),]}
+                  if(ncol(as.data.frame(pimattab)) == 3){
+                    pimattab=pimattab[order(pimattab[,3]),]
+                    pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
+                    colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+                    }
                   }
                 pimattab
               })
