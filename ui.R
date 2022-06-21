@@ -109,6 +109,8 @@ busyIndicator(),
 #'         color: #c8b291;
 #'       }
 #'       ")),
+tags$style(type = "text/css", ".navbar{padding-left:15px;
+       padding-right:15px ; margin-right:auto; margin-left:auto;}"),
 #Main tab pages
     navbarPage(
       #title=actionLink("link_to_tabpanel_sequenceadaptation", HTML("<b>Wormbuilder</b>")),
@@ -118,7 +120,7 @@ busyIndicator(),
         tabPanel("Sequence Adaptation",
                  mainPanel(
                      uiOutput("DynamicUserInterface")
-                 )),
+                 , width = 12)),
       ###About
       tabPanel("About",
                mainPanel(
@@ -135,7 +137,7 @@ busyIndicator(),
                  <br>Laboratory of Synthetic Genome Biology
                  <br>Email: <a href=\"mailto:cfjensen@kaust.edu.sa\">cfjensen@kaust.edu.sa</a>
                       </p>")
-               )
+                 , width = 12)
       )
     ),
 hr(),

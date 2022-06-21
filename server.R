@@ -1658,6 +1658,7 @@ shinyServer(function(input, output, session) {
   ###Render UI controls given a function called init
   inituiui=function(){
     output$DynamicUserInterface <- renderUI({
+      #fillPage(
       fluidRow(
         HTML("<h2><i>C. elegans</i> transgene adaptation<sup style=\"color:red;font-size:0.70em;\">Beta version</sup></h2>"),
         radioButtons("intypeinput", label = HTML("<h4>Input [<a href=\"\" onclick=\"$('#explain_seq_input_any').toggle(); return false;\">info</a>]</h4>"),
@@ -1868,6 +1869,7 @@ Specifically, we analyze the output sequence for size (> 300 bp, < 5 kb), overal
 actionButton("actionSeq", label = "Optimize sequence")
  #uiOutput("AllResults")
       )
+#)
     })
     
   }
