@@ -1896,6 +1896,7 @@ actionButton("actionSeq", label = "Optimize sequence")
     
     #tableOutput("OriPiTab"),
     output$OriPiTab <- renderTable({})
+    output$TextPitab <- renderUI({})
     
     #htmlOutput("newsequence"),
     output$newsequence <- renderUI({})
@@ -1905,6 +1906,7 @@ actionButton("actionSeq", label = "Optimize sequence")
     
     #tableOutput("OptiPiTab")
     output$OptiPiTab <- renderTable({})
+    output$TextOPitab <- renderUI({})
     
     #outputbutton4later
     #output$button4later <- renderUI({HTML("<b>Loading results ...</b>")})
@@ -2259,6 +2261,7 @@ actionButton("actionSeq", label = "Optimize sequence")
           htmlOutput("oldsequence"),
           br(),
           tableOutput("OriPiTab"),
+          htmlOutput("TextPitab"),
           br(),
           uiOutput("downloadApeOriseq")
           #dataTableOutput("OriPiTab")
@@ -2376,17 +2379,23 @@ actionButton("actionSeq", label = "Optimize sequence")
             #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
             colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
             pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
-            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance<sup>1</sup>","Tissue expression<sup>2</sup>")
           }else{
             if(ncol(as.data.frame(pimattab)) == 3){
             pimattab=pimattab[order(pimattab[,3]),]
             pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
-            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+            colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance<sup>1</sup>","Tissue expression<sup>2</sup>")
             }
           }
           pimattab
           
-        })
+        }, sanitize.text.function = function(x) x)
+        output$TextPitab <- renderUI(
+          {
+            #HTML("<p style=\"font-size:12px;\"><b>1:</b> Calculated<br><b>2:</b></p>")
+            HTML("<b><sup>1</sup>:</b> Average reads per million seen in short RNA sequencing libraries (<a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> 2022</a>).<br>
+                 <b><sup>2</sup>:</b> Enrichment score as described in <a href=\"https://pubmed.ncbi.nlm.nih.gov/23516384/\">Billi <i>et al.</i> (2013)</a>.")
+            })
         
       }
       output$button4later <- renderUI({actionButton("actionRESET", label = "RESET")})
@@ -2728,6 +2737,7 @@ actionButton("actionSeq", label = "Optimize sequence")
               br(),
               #uiOutput("downloadoptseq"),
               tableOutput("OptiPiTab"),
+              htmlOutput("TextOPitab"),
               br(),
               uiOutput("downloadApeOptiseq"),
               ###Then Twist analysis
@@ -2736,6 +2746,7 @@ actionButton("actionSeq", label = "Optimize sequence")
               htmlOutput("oldsequence"),
               br(),
               tableOutput("OriPiTab"),
+              htmlOutput("TextPitab"),
               br(),
               uiOutput("downloadApeOriseq")
               #DT::dataTableOutput('OptiPiTab')
@@ -2754,12 +2765,14 @@ actionButton("actionSeq", label = "Optimize sequence")
               br(),
               #uiOutput("downloadoptseq"),
               tableOutput("OptiPiTab"),
+              htmlOutput("TextOPitab"),
               br(),
               uiOutput("downloadApeOptiseq"),
               ##Then previous
               htmlOutput("oldsequence"),
               br(),
               tableOutput("OriPiTab"),
+              htmlOutput("TextPitab"),
               br(),
               uiOutput("downloadApeOriseq")
               #DT::dataTableOutput('OptiPiTab')
@@ -2931,17 +2944,22 @@ actionButton("actionSeq", label = "Optimize sequence")
                   #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
                   colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
                   pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
-                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance<sup>1</sup>","Tissue expression<sup>2</sup>")
                 }else{
                   if(ncol(as.data.frame(pimattab)) == 3){
                     pimattab=pimattab[order(pimattab[,3]),]
                     pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
-                    colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+                    colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance<sup>1</sup>","Tissue expression<sup>2</sup>")
                     }
                 }
                 pimattab
-              })
-              
+              }, sanitize.text.function = function(x) x)
+              output$TextOPitab <- renderUI(
+                {
+                  #HTML("<p style=\"font-size:12px;\"><b>1:</b> Calculated<br><b>2:</b></p>")
+                  HTML("<b><sup>1</sup>:</b> Average reads per million seen in short RNA sequencing libraries (<a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> 2022</a>).<br>
+                 <b><sup>2</sup>:</b> Enrichment score as described in <a href=\"https://pubmed.ncbi.nlm.nih.gov/23516384/\">Billi <i>et al.</i> (2013)</a>.")
+                })
               
             }
             
@@ -3087,16 +3105,22 @@ actionButton("actionSeq", label = "Optimize sequence")
                   #colnames(pimattab)=c("piRNA locus","Matching sequence","Edit distance")
                   colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches")
                   pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
-                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+                  colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance<sup>1</sup>","Tissue expression<sup>2</sup>")
                 }else{
                   if(ncol(as.data.frame(pimattab)) == 3){
                     pimattab=pimattab[order(pimattab[,3]),]
                     pimattab=cbind(pimattab,extraPiinfo[as.character(pimattab[,1]),2:3])
-                    colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance","Tissue expression")
+                    colnames(pimattab)=c("piRNA","Matching piRNA","Mismatches","piRNA abundance<sup>1</sup>","Tissue expression<sup>2</sup>")
                     }
                   }
                 pimattab
-              })
+              }, sanitize.text.function = function(x) x)
+              output$TextPitab <- renderUI(
+                {
+                  #HTML("<p style=\"font-size:12px;\"><b>1:</b> Calculated<br><b>2:</b></p>")
+                  HTML("<b><sup>1</sup>:</b> Average reads per million seen in short RNA sequencing libraries (<a href=\"https://doi.org/10.1038/s41592-021-01369-z\">Priyardarshini <i>et al.</i> 2022</a>).<br>
+                 <b><sup>2</sup>:</b> Enrichment score as described in <a href=\"https://pubmed.ncbi.nlm.nih.gov/23516384/\">Billi <i>et al.</i> (2013)</a>.")
+                })
               }
             }
             
