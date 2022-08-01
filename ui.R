@@ -100,6 +100,7 @@ Shiny.addCustomMessageHandler('JobStatusMessage', function(JobMessage) {
   document.getElementById(\"jobstat\").innerText = JobMessage;
       });
     "),
+includeHTML("www/ga.html"),
 busyIndicator(),
 #' ##Add font for Beta style
 #' tags$style(HTML("
