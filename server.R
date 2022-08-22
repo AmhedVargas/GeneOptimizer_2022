@@ -2210,7 +2210,7 @@ actionButton("actionSeq", label = "Optimize sequence")
     if(as.integer(typinput) == 1){eeexxttpar=append(eeexxttpar,paste("Input sequence: ",secdnausr,sep="",collapse=""))}
     if(as.integer(typinput) == 2){eeexxttpar=append(eeexxttpar,paste("Input sequence: ",secprousr,sep="",collapse=""))}
     if(FlaModOnly | FlaAna){eeexxttpar=append(eeexxttpar,"Skip optimization routine: Yes")}else{
-      if(CodonAl == 2){eeexxttpar=append(eeexxttpar,"Optimization routine: Ubiquitous (stochastic, frequently used codons)")}
+      if(CodonAl == 1){eeexxttpar=append(eeexxttpar,"Optimization routine: Ubiquitous (stochastic, frequently used codons)")}
       if(CodonAl == 5){eeexxttpar=append(eeexxttpar,"Optimization routine: Redemann et al. (2011)")}
       if(CodonAl == 6){eeexxttpar=append(eeexxttpar,"Optimization routine: Fielmich et al. (2018)")}
     }
@@ -2670,7 +2670,7 @@ actionButton("actionSeq", label = "Optimize sequence")
                     }
                   }
                 }else{
-                  inposis=quantile(ttpos,names=F)[c(2,3,4)]
+                  inposis=as.integer(quantile(ttpos,names=F)[c(2,3,4)])
                   inposis=inposis[order(inposis)]	
                 }
               }
