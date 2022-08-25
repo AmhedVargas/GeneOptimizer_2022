@@ -2058,7 +2058,7 @@ actionButton("actionSeq", label = "Optimize sequence")
         seqDNA=unlist(strsplit(toupper(trDNA),""))
         ###Make sure to make analysis flag off and Twist off
         FlaAna=FALSE
-        FlaTwisty=FALSE
+        #FlaTwisty=FALSE
       }
     }else{
       seqDNA=unlist(strsplit(toupper(secdnausr),""))
